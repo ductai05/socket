@@ -3,10 +3,10 @@
 #include "sendmail.h"
 
 int main(){
-	// client (request): 
-    newMail(true, "dua xe", "");
+    // client (request): 
+    // newMail(true, "dua xe", "");
 
     // server (response): 
-    // newMail(false, "list process", "dandadan.png");
+    newMail(false, "ok dua xe voi ba gia toc do", "dandadan.png");
     return 0;
 }

@@ -18,6 +18,11 @@ newMail(bool client, string task, string fileContent)
  + fileContent = "" nếu là client gửi (client không cần gửi file); 
     fileContent = "path gì đó" nếu là server gửi file png/txt (file nhẹ thôi tại smtp yếu)
 
-4. Thực thi:
+3.1. Thực thi:
 - Mở CMD, biên dịch chương trình: g++ main.cpp sendmail.cpp -o main
 -> được file main.exe -> ấn
+
+4, Hướng dẫn nhận mail bằng POP3
+- Cài đặt gmail nhận POP3, lưu bản sao trong hộp thư đến
+- Vào receive.cpp thay userPass
+- Biên dịch -> chạy

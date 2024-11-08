@@ -42,6 +42,7 @@ void sendMail(string from, string to, string subject, string body, string userPa
     }
 
     batFile << "@echo off\n";
+
     batFile << "(\n";
     batFile << "echo From: " << from << "\n";
     batFile << "echo To: " << to << "\n";
