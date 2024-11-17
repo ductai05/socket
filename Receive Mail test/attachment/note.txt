@@ -1,0 +1,28 @@
+1. Cài OpenSSL và path
+- Tải Win64 OpenSSL v3.4.0 Light hoặc dùng file có sẵn trong github
+  +  https://slproweb.com/products/Win32OpenSSL.html   -> tải Win64 OpenSSL v3.4.0 Light , file EXE -> cài đặt
+-  Thêm C:\Program Files\OpenSSL-Win64\bin vào PATH
+
+2. Cài đặt gmail để nhận gửi mail (bằng app password)
+- Bật bảo mật 2 lớp cho gmail (có xác minh sđt)
+- Tạo mật khẩu ứng dụng ở https://myaccount.google.com/apppasswords
+
+3. Hướng dẫn gửi mail SMTP
+- Vào file sendmail.cpp, thay string from = mail người gửi, string to = mail người nhận 
+(dùng 1 mail để gửi, nhận); thay string userPass thành dạng "gmail:apppasswords"
+
+- trong main.cpp có hướng dẫn sử dụng hàm newMail để gửi mail: 
+newMail(bool client, string task, string fileContent)
+ + client = true nếu là client gửi request, client = false nếu là server gửi response
+ + task = "nhiệm vụ cần server thực hiện"
+ + fileContent = "" nếu là client gửi (client không cần gửi file); 
+    fileContent = "path gì đó" nếu là server gửi file png/txt (file nhẹ thôi tại smtp yếu)
+
+3.1. Thực thi:
+- Mở CMD, biên dịch chương trình: g++ main.cpp sendmail.cpp -o main
+-> được file main.exe -> ấn
+
+4, Hướng dẫn nhận mail bằng POP3
+- Cài đặt gmail nhận POP3, lưu bản sao trong hộp thư đến
+- Vào receive.cpp thay userPass
+- Biên dịch -> chạy

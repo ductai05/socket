@@ -140,25 +140,18 @@ vector<unsigned char> base64_decode(const std::string &in) {
 }
 
 void saveFile(const std::string &filename, const std::vector<unsigned char> &data) {
-    string directory = "attachment";
-    string command = "mkdir " + directory;
-    system(command.c_str());
-    string fullPath = directory + "/" + filename;
+    // string directory = "attachment";
+    // string command = "mkdir " + directory;
+    // system(command.c_str());
+    // string fullPath = directory + "/" + filename;
 
-    ofstream out(fullPath, std::ios::binary);
+    ofstream out(filename, std::ios::binary);
     out.write(reinterpret_cast<const char*>(data.data()), data.size());
     out.close();
 }
 
 void readLatestMail(){
     string fileName = "latest_email.eml";
-
-    int k = 0;
-    while(!ifstream(fileName).good()){
-        Sleep(1000); k++;
-        if (k == 5) return;
-    } // dam bao latest_email.eml da duoc tao
-
     ifstream inFile(fileName);
     string line;
     string subject, body, responseType, numTask, time;
@@ -232,7 +225,7 @@ void autoGetMail(){
     string userPass = "ductai.dt05@gmail.com:gofe zjfi ktmw fxno";
     string filebat = createFileBatGetID(userPass);
     getID(filebat);
-    while(!std::ifstream("id.txt").good()) Sleep(1000); // dam bao id.txt da duoc tao
+    while(!std::ifstream("id.txt").good()) Sleep(1000);
     cout << "exist id.txt\n"; // wait for id.txt created
 
     int idMailNow = 0, orderNow = 1;

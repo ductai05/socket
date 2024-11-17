@@ -14,6 +14,6 @@ using namespace std;
 string getCurrentDateTime();
 string getContentType(string fileContent);
 void sendMail(string from, string to, string subject, string body, string userPass, string fileContent);
-void newMail(bool client, string task, string fileContent);
+void newMail(bool client, string task, string numTask, string fileContent);
 
 #endif

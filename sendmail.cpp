@@ -104,15 +104,15 @@ void sendMail(string from, string to, string subject, string body, string userPa
 // string task = list app / camera / screenshot....
 // client request -> fileContent = ""; server response -> fileContent = "abc.txt/png"
 
-void newMail(bool client, string task, string fileContent){
+void newMail(bool client, string task, string numTask, string fileContent){
     string daytime = getCurrentDateTime();
     string typeOfSend;
-    if (client) typeOfSend = "[request]: ";
-    else typeOfSend = "[response]: ";
+    if (client) typeOfSend = "[request_" + numTask + "]: ";
+    else typeOfSend = "[response_" + numTask + "]: ";
     string from = "ductai.dt05@gmail.com";
     string to = "ductai.dt05@gmail.com";
     string subject = typeOfSend + daytime;
-    string body = task;
+    string body = (client ? "[task] " : "[rep] ") + task;
     string userPass = "ductai.dt05@gmail.com:gofe zjfi ktmw fxno";
 
     sendMail(from, to, subject, body, userPass, fileContent);

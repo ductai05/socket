@@ -4,9 +4,9 @@
 
 int main(){
     // client (request): 
-    // newMail(true, "dua xe", "");
+    // newMail(true, "di dua xe", "1", "");
 
     // server (response): 
-    newMail(false, "ok dua xe voi ba gia toc do", "dandadan.png");
+    newMail(false, "gui cho file cpp ne", "2", "note.txt");
     return 0;
 }
