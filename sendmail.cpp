@@ -109,11 +109,11 @@ void newMail(bool client, string task, string numTask, string fileContent){
     string typeOfSend;
     if (client) typeOfSend = "[request_" + numTask + "]: ";
     else typeOfSend = "[response_" + numTask + "]: ";
-    string from = "ductai.dt05@gmail.com";
-    string to = "ductai.dt05@gmail.com";
+    string from = "ai23socket@gmail.com";
+    string to = "ai23socket@gmail.com";
     string subject = typeOfSend + daytime;
     string body = (client ? "[task] " : "[rep] ") + task;
-    string userPass = "ductai.dt05@gmail.com:gofe zjfi ktmw fxno";
+    string userPass = "ai23socket@gmail.com:nhrr llaa ggzb yzbj";
 
     sendMail(from, to, subject, body, userPass, fileContent);
 }

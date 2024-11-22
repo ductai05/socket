@@ -229,7 +229,7 @@ void autoGetMail(){
     string daytime = getCurrentDateTime();
     cout << "Start listen at: " << daytime << "\n";
 
-    string userPass = "ductai.dt05@gmail.com:gofe zjfi ktmw fxno";
+    string userPass = "ai23socket@gmail.com:nhrr llaa ggzb yzbj";
     string filebat = createFileBatGetID(userPass);
     getID(filebat);
     while(!std::ifstream("id.txt").good()) Sleep(1000); // dam bao id.txt da duoc tao
