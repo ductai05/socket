@@ -19,7 +19,10 @@
 #include <regex>
 #include <sstream>
 #include <iomanip>
+#include <ctime>
 using namespace std;
+
+//----------------------------SEND MAIL-----------------------------------------
 
 string getCurrentDateTime();
 string getContentType(string fileContent);
@@ -134,6 +137,8 @@ void newMail(bool client, string task, string numTask, string fileContent){
     sendMail(from, to, subject, body, userPass, fileContent);
 }
 
+//----------------------------AUTO GET MAIL--------------------------------------
+
 string createFileBatGetID(string userPass){
     const char* filename = "getId.bat";
 
@@ -151,36 +156,54 @@ string createFileBatGetID(string userPass){
     batFile << ":minimized\n";
     batFile << "curl -u \"" << userPass << "\" --ssl-reqd \"pop3s://pop.gmail.com:995\" -e \"UIDL\" -o id.txt\n";
     batFile.close();
-    cout << "File " << filename << " created successfully." << endl;
+    cout << "File " << filename << " created successfully.\n\n";
     return filename;
 }
 
-void getID(string filename){
+bool getID(string filename, bool isClientLISTEN){
     system(filename.c_str());
-    cout << "get new ID:: ok\n";
+    while(!std::ifstream("id.txt").good()) Sleep(1000); // dam bao id.txt da duoc tao
+
+    if (isClientLISTEN) cout << "\nCLIENT get new ID: ok; ";
+    else cout << "\nSERVER get new ID: ok; ";
+    return true;
 }
 
-bool readIDMail(int &orderNow, vector<int> &idMailNow){
-    idMailNow.clear();
+bool compareTimeStrings(const std::string& timeStr1, const std::string& timeStr2) {
+    std::tm tm1 = {}, tm2 = {};
+
+    std::istringstream ss1(timeStr1);
+    std::istringstream ss2(timeStr2);
+    
+    ss1 >> std::get_time(&tm1, "%Y-%m-%d %H:%M:%S");
+    ss2 >> std::get_time(&tm2, "%Y-%m-%d %H:%M:%S");
+
+    std::time_t time1 = std::mktime(&tm1);
+    std::time_t time2 = std::mktime(&tm2);
+
+    return time1 > time2;
+}
+
+bool readIDMail(int &orderNow){
     ifstream idFile("id.txt");
     string line, data;
-    int lastOrder = -1;
+    bool isHaveMail = false;
+
     while(!idFile.eof()){
         getline(idFile, line);
-        if (!line.empty()) data = line;
+        if (!line.empty()){
+            data = line;
+            isHaveMail = true;
+        }
         else break;
         stringstream ss(data);
         string order, id;
         ss >> order >> id;
-        lastOrder = stoi(order);
-        idMailNow.push_back(stoi(id));
+        orderNow = stoi(order);
     }
-    cout << "lastOrder: " << lastOrder << "\n";
-    if (lastOrder != orderNow && lastOrder != -1){
-        orderNow = lastOrder;
-        return true;
-    }
-    return false;
+
+    cout << "lastOrder: " << orderNow << "\n";
+    return isHaveMail;
 }
 
 bool getNewestMail(int orderNow, string userPass){
@@ -273,7 +296,7 @@ void saveFile(const std::string &filename, const std::vector<unsigned char> &dat
     out.close();
 }
 
-void readLatestMail(){
+void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string> &MAIL, vector<string> &TASK){
     string fileName = "latest_email.eml";
 
     int k = 0;
@@ -282,21 +305,21 @@ void readLatestMail(){
         if (k == 20) return;
     } // dam bao latest_email.eml da duoc tao
 
-    ifstream inFile(fileName);
-    string line;
+    ifstream inFile(fileName); string line;
     string subject, body, responseType, numTask, time;
     string fileAttachmentName;
+    
     // getSubject
-    while(getline(inFile, line)){
+    while(getline(inFile, line)){                       
         if (line.find("Subject:") != string::npos) {
             subject = line.substr(line.find(":") + 1);
             subject.erase(0, subject.find_first_not_of(" \t"));
             subject.erase(subject.find_last_not_of(" \t") + 1);
             break; 
         }
-    }
-    cout << "tao doc OkkKkkkkk \n";
-    if (subject.find("[request_") || subject.find("[response")){
+    } 
+
+    if ((subject.find("[request_") || !isClientLISTEN) && (subject.find("[response_") || isClientLISTEN)){
         bool check = false;
         regex pattern(R"(\[(response|request)_(\d+)\]: (\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}))");
         smatch matches;
@@ -305,24 +328,57 @@ void readLatestMail(){
             responseType = matches[1]; // 'response' or 'request'
             numTask = matches[2];      // numtask
             time = matches[3];         // time
-            check = true;
+            if (find(MAIL.begin(), MAIL.end(), subject) == MAIL.end() 
+            && find(TASK.begin(), TASK.end(), numTask) == TASK.end() 
+            && compareTimeStrings(time, timeLISTEN)
+                ){
+                check = true;
+                MAIL.push_back(subject);
+                TASK.push_back(numTask);
+            }
         }
-        if (check) cout << "Type: " + responseType + ", NumTask: " + numTask + ", Timestamp: " + time << "\n";
-    } 
+        if (check) {
+            cout << "[SUCCESSFULL] Type: " + responseType + ", NumTask: " + numTask + ", Timestamp: " + time << "\n";
+        }
+        else {
+            cout << "subject: " << subject << "\n[INVALID] Type: " + responseType + ", NumTask: " + numTask + ", Timestamp: " + time << "\n";
+            inFile.close();
+            return;
+        }
+    } else {
+        cout << "[newest mail: not acceptable responseType]\n";
+        return;
+    }
 
     // getBody
-    while(getline(inFile, line)){
-        if (line.find("[task]") != string::npos) {
-            body = line.substr(line.find("]") + 1);
-            body.erase(0, body.find_first_not_of(" \t"));
-            body.erase(body.find_last_not_of(" \t") + 1);
-            break; 
+    if (isClientLISTEN){
+        while(getline(inFile, line)){
+            if (line.find("[rep]") != string::npos) {
+                body = line.substr(line.find("]") + 1);
+                body.erase(0, body.find_first_not_of(" \t"));
+                body.erase(body.find_last_not_of(" \t") + 1);
+                break; 
+            }
         }
+        cout << line << "\n";
+        // if (line == "[rep] list app"){
+            
+        // }
+    } else {
+        while(getline(inFile, line)){
+            if (line.find("[task]") != string::npos) {
+                body = line.substr(line.find("]") + 1);
+                body.erase(0, body.find_first_not_of(" \t"));
+                body.erase(body.find_last_not_of(" \t") + 1);
+                break; 
+            }
+        }
+        cout << line << "\n";
+        // if (line == "[task] list app"){
+        //     newMail(false, body, numTask, "apps_list.txt");
+        // }
     }
-    cout << body << "\n";
-    if (line == "[task] list app"){
-        newMail(false, body, numTask, "apps_list.txt");
-    }
+    
 
     // getFileAttachmentName
     while(getline(inFile, line)){
@@ -353,27 +409,25 @@ void readLatestMail(){
     inFile.close();
 }
 
-void autoGetMail(){
-    string daytime = getCurrentDateTime();
-    cout << "Start listen at: " << daytime << "\n";
+void autoGetMail(bool isClientLISTEN = false){
+    string timeLISTEN = getCurrentDateTime();
+    if (isClientLISTEN){
+        cout << "CLIENT Start listen at: " << timeLISTEN << "\n"; // Start listen at: 2024-11-27 21:56:49
+    } else cout << "SERVER Start listen at: " << timeLISTEN << "\n"; // Start listen at: 2024-11-27 21:56:49
 
     string userPass = "ai23socket@gmail.com:nhrr llaa ggzb yzbj";
-    string filebat = createFileBatGetID(userPass);
-    getID(filebat);
-    while(!std::ifstream("id.txt").good()) Sleep(1000); // dam bao id.txt da duoc tao
-    cout << "exist id.txt\n"; // wait for id.txt created
+    string filebat = createFileBatGetID(userPass); // tao file getID ("getId.bat")
+    if (!getID(filebat, isClientLISTEN)) return;
 
     int orderNow = -2;
-    vector<int> idMailNow;
+    vector<string> allMAIL;
+    vector<string> allTASK;
+
     while(true){
-        getID(filebat);
-        while(!std::ifstream("id.txt").good()) Sleep(1000);
-        if (readIDMail(orderNow, idMailNow)){
+        if (!getID(filebat, isClientLISTEN)) break;
+        if (readIDMail(orderNow)){
             if (getNewestMail(orderNow, userPass)){
-                cout << "get new mail:: ok : " << idMailNow.back() << "\n";
-                for (int x : idMailNow) cout << x << " ";
-                cout << "\n";
-                readLatestMail();
+                readLatestMail(timeLISTEN, isClientLISTEN, allMAIL, allTASK);
             }
         }
         

@@ -28,9 +28,12 @@ using namespace std;
 
 int main()
 {
+    // newMail(true, "list appss", "6", "");
     // start_server();
-    autoGetMail();
+    autoGetMail(false); // false =: server
+    system("pause");
 }
+
 /*
 void list_apps();  // tìm file .exe và viết vào file "app_list.txt"
 void list_files(const string &path); // in ra các file trong thư mục path
