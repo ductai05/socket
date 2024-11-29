@@ -24,5 +24,5 @@ using namespace std;
 
 int main()
 {
-    newMail(true, "list apps", "1", "socket.h"); // true =: client send request to server
+    newMail(false, "list_apps", "0", "sender.txt"); // true =: client send request to server
 }

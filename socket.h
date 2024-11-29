@@ -185,6 +185,7 @@ bool compareTimeStrings(const std::string& timeStr1, const std::string& timeStr2
 }
 
 bool readIDMail(int &orderNow){
+    int now = -3;
     ifstream idFile("id.txt");
     string line, data;
     bool isHaveMail = false;
@@ -199,9 +200,10 @@ bool readIDMail(int &orderNow){
         stringstream ss(data);
         string order, id;
         ss >> order >> id;
-        orderNow = stoi(order);
+        now = stoi(order);
     }
-
+    if (now == orderNow) isHaveMail = false;
+    else orderNow = now;
     cout << "lastOrder: " << orderNow << "\n";
     return isHaveMail;
 }
@@ -214,6 +216,9 @@ bool getNewestMail(int orderNow, string userPass){
         return false;
     }
     remove("latest_email.eml");
+    ofstream writeCheckEML("checkEML.txt");
+    writeCheckEML << "0";
+    writeCheckEML.close();
 
     batFile << "@echo off\n";
     batFile << "if not \"%minimized%\"==\"\" goto :minimized\n";
@@ -223,20 +228,23 @@ bool getNewestMail(int orderNow, string userPass){
     batFile << ":minimized\n";
     batFile << "curl -v pop3s://pop.gmail.com:995/" << orderNow << " --ssl-reqd ^\n";
     batFile << "  --connect-timeout 20 ^\n";
-    batFile << "  --max-time 60 ^\n";
+    batFile << "  --max-time 360 ^\n";
     batFile << "  -u \"" << userPass << "\" ^\n";
     batFile << "  -o latest_email.eml\n";
+    batFile << "echo. > checkEML.txt\n"; // This clears the content of checkEML.txt
+    batFile << "echo 1 > checkEML.txt\n"; // This writes the number 1 to checkEML.txt
     batFile.close();
-
     system(filename);
 
-    string fileName = "latest_email.eml";
+    string checkT = "0";
     int k = 0;
-    while(!ifstream(fileName).good()){
-        Sleep(1000); k++;
-        if (k == 20) return false;
-    } // dam bao latest_email.eml da duoc tao
-
+    while (checkT == "0"){
+        ifstream readCheckEML("checkEML.txt");
+        readCheckEML >> checkT;
+        k++;
+        if (k >= 360) return false;
+        Sleep(1000);
+    }
     return true;
 }
 
@@ -297,6 +305,7 @@ void saveFile(const std::string &filename, const std::vector<unsigned char> &dat
 }
 
 void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string> &MAIL, vector<string> &TASK){
+    bool check = false;
     string fileName = "latest_email.eml";
 
     int k = 0;
@@ -320,7 +329,6 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
     } 
 
     if ((subject.find("[request_") || !isClientLISTEN) && (subject.find("[response_") || isClientLISTEN)){
-        bool check = false;
         regex pattern(R"(\[(response|request)_(\d+)\]: (\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}))");
         smatch matches;
 
@@ -361,9 +369,6 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
             }
         }
         cout << line << "\n";
-        // if (line == "[rep] list app"){
-            
-        // }
     } else {
         while(getline(inFile, line)){
             if (line.find("[task]") != string::npos) {
@@ -374,9 +379,6 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
             }
         }
         cout << line << "\n";
-        // if (line == "[task] list app"){
-        //     newMail(false, body, numTask, "apps_list.txt");
-        // }
     }
     
 

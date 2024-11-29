@@ -30,7 +30,7 @@ int main()
 {
     // newMail(true, "list appss", "6", "");
     // start_server();
-    autoGetMail(false); // false =: server
+    autoGetMail(true); // false =: server
     system("pause");
 }
 
