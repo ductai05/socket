@@ -24,11 +24,6 @@ using namespace std;
 
 //----------------------------SEND MAIL-----------------------------------------
 
-string getCurrentDateTime();
-string getContentType(string fileContent);
-void sendMail(string from, string to, string subject, string body, string userPass, string fileContent);
-void newMail(bool client, string task, string numTask, string fileContent);
-
 string getCurrentDateTime() {
     std::time_t t = std::time(nullptr);
     std::tm* now = std::localtime(&t);
@@ -36,19 +31,6 @@ string getCurrentDateTime() {
     std::ostringstream oss;
     oss << std::put_time(now, "%Y-%m-%d %H:%M:%S");
     return oss.str();
-}
-
-string getContentType(string fileContent){
-    int n = fileContent.size();
-    if(n < 3) return "";
-    if (fileContent[n - 3] == 't' && fileContent[n - 2] == 'x' && fileContent[n - 1] == 't'){
-        return "text/plain";
-    } else if (fileContent[n - 3] == 'p' && fileContent[n - 2] == 'n' && fileContent[n - 1] == 'g'){
-        return "image/png";
-    } else if (fileContent[n - 3] == 'j' && fileContent[n - 2] == 'p' && fileContent[n - 1] == 'g'){
-        return "image/jpeg";
-    }
-    return "";
 }
 
 void sendMail(string from, string to, string subject, string body, string userPass, string fileContent = "") {
@@ -86,9 +68,10 @@ void sendMail(string from, string to, string subject, string body, string userPa
         batFile << "echo.\n";
         batFile << "echo --boundary\n";
 
-        string contentType = getContentType(fileContent);
+        string contentType = ""; //getContentType(fileContent);
+        string nameFileContent = fileContent.substr(fileContent.find('/') + 1);
         batFile << "echo Content-Type: " << contentType << "; name=\"" << fileContent << "\"\n";
-        batFile << "echo Content-Disposition: attachment; filename=\"" << fileContent << "\"\n";
+        batFile << "echo Content-Disposition: attachment; filename=\"" << nameFileContent << "\"\n";
         batFile << "echo Content-Transfer-Encoding: base64\n";
         batFile << "echo.\n";
         batFile << "certutil -encode " << fileContent << " temp1.txt >nul\n";
@@ -128,12 +111,12 @@ void newMail(bool client, string task, string numTask, string fileContent){
     string typeOfSend;
     if (client) typeOfSend = "[request_" + numTask + "]: ";
     else typeOfSend = "[response_" + numTask + "]: ";
-    string from = "ai23socket@gmail.com";
-    string to = "ai23socket@gmail.com";
+    string from = "ai23socket@gmail.com"; //from = "ductaidt05@gmail.com";
+    string to = "ai23socket@gmail.com"; //to = "ductaidt05@gmail.com";
     string subject = typeOfSend + daytime;
     string body = (client ? "[task] " : "[rep] ") + task;
     string userPass = "ai23socket@gmail.com:nhrr llaa ggzb yzbj";
-
+    //userPass = "ductaidt05@gmail.com:bveh frje cysx mjot";
     sendMail(from, to, subject, body, userPass, fileContent);
 }
 
@@ -228,7 +211,7 @@ bool getNewestMail(int orderNow, string userPass){
     batFile << ":minimized\n";
     batFile << "curl -v pop3s://pop.gmail.com:995/" << orderNow << " --ssl-reqd ^\n";
     batFile << "  --connect-timeout 20 ^\n";
-    batFile << "  --max-time 360 ^\n";
+    batFile << "  --max-time 60 ^\n";
     batFile << "  -u \"" << userPass << "\" ^\n";
     batFile << "  -o latest_email.eml\n";
     batFile << "echo. > checkEML.txt\n"; // This clears the content of checkEML.txt
@@ -418,6 +401,7 @@ void autoGetMail(bool isClientLISTEN = false){
     } else cout << "SERVER Start listen at: " << timeLISTEN << "\n"; // Start listen at: 2024-11-27 21:56:49
 
     string userPass = "ai23socket@gmail.com:nhrr llaa ggzb yzbj";
+    // userPass = "ductai.dt05@gmail.com:bveh frje cysx mjot";
     string filebat = createFileBatGetID(userPass); // tao file getID ("getId.bat")
     if (!getID(filebat, isClientLISTEN)) return;
 
