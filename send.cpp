@@ -24,5 +24,10 @@ using namespace std;
 
 int main()
 {
-    newMail(true, "list_app2s", "1", ""); // true =: client send request to server
+    string task;
+    for (int i = 0; i < 1; i++){
+        task += "oekekekeke ne https://facebook.com/ductai05 ";
+    }
+    task += "fffffffffff";
+    newMail(true, task, "2", "send.cpp"); // true =: client send request to server
 }

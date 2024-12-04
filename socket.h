@@ -96,11 +96,11 @@ void sendMail(const string& from, const string& to, const string& subject, const
         emailFile << body << "\n\n";
     } else {
         // co tep dinh kem:
-        emailFile << body << << "\n\n"; //" " << encodedFileContent << "\n\n";
+        emailFile << body << "\n\n"; //" " << encodedFileContent << "\n\n";
     }
       
     // Thêm tệp đính kèm
-    if (!fileName.empty() && (1 == 2)) {
+    if (!fileName.empty() && (1 == 1)) {
         emailFile << "--boundary\n";
         emailFile << "Content-Type: application/octet-stream; name=\"" << fileName << "\"\n";
         emailFile << "Content-Disposition: attachment; filename=\"" << fileName << "\"\n";
@@ -151,7 +151,8 @@ void newMail(bool client, string task, string numTask, string fileContent){
 
 bool getID(string userPass, bool isClientLISTEN){
     remove("0id.txt");
-    string ex = "curl -u \"" + userPass + "\" --ssl-reqd \"pop3s://pop.gmail.com:995\" -e \"UIDL\" -o 0id.txt\n";
+    string ex = "curl -s -# -v imaps://imap.gmail.com/INBOX --ssl-reqd --connect-timeout 20 --max-time 15 -u \"" 
+    + userPass +"\" -X \"UID SEARCH ALL\" -o 0id.txt";
     int result = system(ex.c_str());
     if (result == -1) {
         if (isClientLISTEN) cout << "\nCLIENT getID: FAIL; ";
@@ -182,29 +183,38 @@ bool compareTimeStrings(const std::string& timeStr1, const std::string& timeStr2
 bool readIDMail(int &orderNow){
     int now = -3;
     ifstream idFile("0id.txt");
-    string line, data;
     bool isHaveMail = false;
 
-    while(!idFile.eof()){
-        getline(idFile, line);
-        if (!line.empty()){
-            data = line;
-            isHaveMail = true;
-        }
-        else break;
-        stringstream ss(data);
-        string order, id;
-        ss >> order >> id;
-        now = stoi(order);
+    ifstream file("0id.txt"); // Mở file
+    if (!file.is_open()) {
+        std::cerr << "Can't read id!\n";
+        return false;
     }
+
+    string line, number, last_number;
+    if (getline(file, line)) { // Đọc dòng đầu tiên
+        istringstream iss(line);
+
+        while (iss >> number) { // Tách từng số
+            last_number = number; // Cập nhật số cuối cùng
+        }
+
+    }
+    file.close(); // Đóng file
+    now = stoi(last_number);
+
     if (now == orderNow) isHaveMail = false;
-    else orderNow = now;
+    else {
+        orderNow = now;
+        isHaveMail = true;
+    }
     cout << "lastOrder: " << orderNow << "\n";
     return isHaveMail;
 }
 
 bool getNewestMail(int orderNow, string userPass){
-    string ex = "curl -s -# -v pop3s://pop.gmail.com:995/" + to_string(orderNow) 
+
+    string ex = "curl -v imaps://imap.gmail.com/INBOX/;UID=" + to_string(orderNow) 
     + " --ssl-reqd --connect-timeout 20  --max-time 15 -u \"" + userPass + "\" -o 0latest_email.eml";
 
     int result = system(ex.c_str());
@@ -403,7 +413,8 @@ void autoGetMail(bool isClientLISTEN = false){
             }
         }
         
-        Sleep(5000);
+        cout << "Sleep 15s... \n";
+        Sleep(15000);
     }
     // remove("latest_email.eml");
 }
