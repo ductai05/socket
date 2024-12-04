@@ -92,10 +92,15 @@ void sendMail(const string& from, const string& to, const string& subject, const
     emailFile << "Content-Type: multipart/mixed; boundary=\"boundary\"\n\n";
     emailFile << "--boundary\n";
     emailFile << "Content-Type: text/plain; charset=\"UTF-8\"\n\n";
-    emailFile << body << "\n\n";  // Nội dung email
-
+    if (encodedFileContent.empty()){
+        emailFile << body << "\n\n";
+    } else {
+        // co tep dinh kem:
+        emailFile << body << << "\n\n"; //" " << encodedFileContent << "\n\n";
+    }
+      
     // Thêm tệp đính kèm
-    if (!fileName.empty()) {
+    if (!fileName.empty() && (1 == 2)) {
         emailFile << "--boundary\n";
         emailFile << "Content-Type: application/octet-stream; name=\"" << fileName << "\"\n";
         emailFile << "Content-Disposition: attachment; filename=\"" << fileName << "\"\n";
@@ -391,6 +396,8 @@ void autoGetMail(bool isClientLISTEN = false){
     while(true){
         if (!getID(userPass, isClientLISTEN)) break;
         if (readIDMail(orderNow)){
+            cout << "Get a new mail. Waiting server...\n";
+            Sleep(5000);
             if (getNewestMail(orderNow, userPass)){
                 readLatestMail(timeLISTEN, isClientLISTEN, allMAIL, allTASK);
             }
