@@ -33,73 +33,95 @@ string getCurrentDateTime() {
     return oss.str();
 }
 
-void sendMail(string from, string to, string subject, string body, string userPass, string fileContent = "") {
-    const char* filename = "0sendMail.bat";
+// Hàm mã hóa Base64
+string base64_encode(const std::string& in) {
+    static const char* base64_chars = 
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        "abcdefghijklmnopqrstuvwxyz"
+        "0123456789+/";
+    
+    std::string out;
+    int val = 0, valb = -6;
+    for (unsigned char c : in) {
+        val = (val << 8) + c;
+        valb += 8;
+        while (valb >= 0) {
+            out.push_back(base64_chars[(val >> valb) & 0x3F]);
+            valb -= 6;
+        }
+    }
+    while (valb >= 0) {
+        out.push_back(base64_chars[(val >> valb) & 0x3F]);
+        valb -= 6;
+    }
+    while (out.size() % 4) out.push_back('=');
+    return out;
+}
 
-    ofstream batFile(filename);
-    if (!batFile) {
-        cerr << "Can't create file: " << filename << endl;
+void sendMail(const string& from, const string& to, const string& subject, const string& body, const string& userPass, const string& fileName) {
+    string encodedFileContent;
+    if (!fileName.empty()){
+        ifstream file(fileName, std::ios::binary);
+        if (!file) {
+            std::cerr << "Khong the mo tep dinh kem!" << std::endl;
+            return;
+        }
+
+        // Đọc nội dung tệp
+        stringstream buffer;
+        buffer << file.rdbuf();
+        string fileContent = buffer.str();
+        file.close();
+
+        // Mã hóa nội dung tệp sang Base64
+        encodedFileContent = base64_encode(fileContent);
+    }
+
+    // Tạo tệp email
+    ofstream emailFile("0sendEmail.txt");
+    if (!emailFile) {
+        std::cerr << "Khong the mo tep de ghi noi dung mail!" << std::endl;
         return;
     }
 
-    batFile << "@echo off\n";
+    // Ghi thông tin email vào tệp
+    emailFile << "From: " << from << "\n";
+    emailFile << "To: " << to << "\n";
+    emailFile << "Subject: " << subject << "\n";
+    emailFile << "MIME-Version: 1.0\n";
+    emailFile << "Content-Type: multipart/mixed; boundary=\"boundary\"\n\n";
+    emailFile << "--boundary\n";
+    emailFile << "Content-Type: text/plain; charset=\"UTF-8\"\n\n";
+    emailFile << body << "\n\n";  // Nội dung email
 
-    batFile << "(\n";
-    batFile << "echo From: " << from << "\n";
-    batFile << "echo To: " << to << "\n";
-    batFile << "echo Subject: " << subject << "\n";
-
-    if (fileContent.empty()) {
-        // Nếu không có file đính kèm, gửi email đơn giản
-        batFile << "echo Content-Type: text/plain; charset=\"UTF-8\"\n";
-        batFile << "echo.\n";
-        batFile << "echo " << body << "\n";
-        batFile << ") > 0sendEmail.txt\n\n";
-    } else {
-        // Nếu có file đính kèm, gửi email với MIME
-        batFile << "echo MIME-Version: 1.0\n";
-        batFile << "echo Content-Type: multipart/mixed; boundary=\"boundary\"\n";
-        batFile << "echo Content-Transfer-Encoding: 7bit\n";
-        batFile << "echo.\n";
-        batFile << "echo --boundary\n";
-        batFile << "echo Content-Type: text/plain; charset=\"UTF-8\"\n";
-        batFile << "echo.\n";
-        batFile << "echo " << body << "\n";
-        batFile << "echo.\n";
-        batFile << "echo --boundary\n";
-
-        string contentType = ""; //getContentType(fileContent);
-        string nameFileContent = fileContent.substr(fileContent.find('/') + 1);
-        batFile << "echo Content-Type: " << contentType << "; name=\"" << fileContent << "\"\n";
-        batFile << "echo Content-Disposition: attachment; filename=\"" << nameFileContent << "\"\n";
-        batFile << "echo Content-Transfer-Encoding: base64\n";
-        batFile << "echo.\n";
-        batFile << "certutil -encode " << fileContent << " temp1.txt >nul\n";
-        batFile << "findstr /v /c:- temp1.txt\n";
-        batFile << "del temp1.txt\n";
-        batFile << "echo.\n";
-        batFile << "echo --boundary--\n";
-        batFile << ") > 0sendEmail.txt\n\n";
+    // Thêm tệp đính kèm
+    if (!fileName.empty()) {
+        emailFile << "--boundary\n";
+        emailFile << "Content-Type: application/octet-stream; name=\"" << fileName << "\"\n";
+        emailFile << "Content-Disposition: attachment; filename=\"" << fileName << "\"\n";
+        emailFile << "Content-Transfer-Encoding: base64\n\n";
+        emailFile << encodedFileContent << "\n";  // Nội dung mã hóa Base64 của tệp đính kèm
     }
 
-    batFile << "curl --url \"smtp://smtp.gmail.com:587\" --ssl-reqd ^\n";
-    batFile << "     --mail-from \"" << from << "\" ^\n";
-    batFile << "     --mail-rcpt \"" << to << "\" ^\n";
-    batFile << "     --user \"" << userPass << "\" ^\n";
-    batFile << "     -T 0sendEmail.txt\n";
-    // batFile << "pause\n";
+    emailFile << "--boundary--\n";
+    emailFile.close();
 
-    batFile.close();
-    cout << "File " << filename << " created successfully." << endl;
+    // Tạo lệnh curl
+    std::string ex = "curl --url \"smtp://smtp.gmail.com:587\" --ssl-reqd "
+                     "--mail-from \"" + from + "\" "
+                     "--mail-rcpt \"" + to + "\" "
+                     "--user \"" + userPass + "\" "
+                     "--upload-file \"0sendEmail.txt\"";
 
-    int result = system(filename);
+    // Gọi lệnh curl
+    int result = system(ex.c_str());
     if (result == -1) {
-        cerr << "Can't execute file: " << filename << endl;
+        std::cerr << "Khong the gui email!\n";
         return;
     }
 
+    // Xóa tệp tạm thời
     remove("0sendEmail.txt");
-    remove("0sendMail.bat");
 }
 
 // bool client == true -> request; client == false -> response 
@@ -122,39 +144,19 @@ void newMail(bool client, string task, string numTask, string fileContent){
 
 //----------------------------AUTO GET MAIL--------------------------------------
 
-string createFileBatGetID(string userPass){
-    const char* filename = "0getId.bat";
-
-    ofstream batFile(filename);
-    if (!batFile) {
-        cerr << "Can't create file: " << filename << endl;
-        return "";
-    }
-
-    batFile << "@echo off\n";
-    batFile << "if not \"%minimized%\"==\"\" goto :minimized\n";
-    batFile << "set minimized=true\n";
-    batFile << "start /min cmd /c \"%~dpnx0\"\n";
-    batFile << "goto :EOF\n";
-    batFile << ":minimized\n";
-    batFile << "curl -u \"" << userPass << "\" --ssl-reqd \"pop3s://pop.gmail.com:995\" -e \"UIDL\" -o 0id.txt\n";
-    batFile.close();
-    cout << "File " << filename << " created successfully.\n\n";
-    return filename;
-}
-
-bool getID(string filename, bool isClientLISTEN){
+bool getID(string userPass, bool isClientLISTEN){
     remove("0id.txt");
-    int result = system(filename.c_str());
+    string ex = "curl -u \"" + userPass + "\" --ssl-reqd \"pop3s://pop.gmail.com:995\" -e \"UIDL\" -o 0id.txt\n";
+    int result = system(ex.c_str());
     if (result == -1) {
-        cerr << "Can't getID.\n";
+        if (isClientLISTEN) cout << "\nCLIENT getID: FAIL; ";
+        else cout << "\nSERVER getID: FAIL; ";
         return false;
+    } else {
+        if (isClientLISTEN) cout << "\nCLIENT getID: DONE; ";
+        else cout << "\nSERVER getID: DONE; ";
+        return true;
     }
-    while(!std::ifstream("0id.txt").good()) Sleep(1000); // dam bao id.txt da duoc tao
-
-    if (isClientLISTEN) cout << "\nCLIENT get new ID: ok; ";
-    else cout << "\nSERVER get new ID: ok; ";
-    return true;
 }
 
 bool compareTimeStrings(const std::string& timeStr1, const std::string& timeStr2) {
@@ -197,42 +199,14 @@ bool readIDMail(int &orderNow){
 }
 
 bool getNewestMail(int orderNow, string userPass){
-    const char* filename = "0getMail.bat";
-    ofstream batFile(filename);
-    if (!batFile) {
-        cerr << "Can't create file: " << filename << endl;
+    string ex = "curl -s -# -v pop3s://pop.gmail.com:995/" + to_string(orderNow) 
+    + " --ssl-reqd --connect-timeout 20  --max-time 15 -u \"" + userPass + "\" -o 0latest_email.eml";
+
+    int result = system(ex.c_str());
+    if (result == -1) {
+        cout << "Can't get newest mail.\n";
         return false;
-    }
-    remove("0latest_email.eml");
-    ofstream writeCheckEML("0checkEML.txt");
-    writeCheckEML << "0";
-    writeCheckEML.close();
-
-    batFile << "@echo off\n";
-    batFile << "if not \"%minimized%\"==\"\" goto :minimized\n";
-    batFile << "set minimized=true\n";
-    batFile << "start /min cmd /c \"%~dpnx0\"\n";
-    batFile << "goto :EOF\n";
-    batFile << ":minimized\n";
-    batFile << "curl -v pop3s://pop.gmail.com:995/" << orderNow << " --ssl-reqd ^\n";
-    batFile << "  --connect-timeout 20 ^\n";
-    batFile << "  --max-time 15 ^\n";
-    batFile << "  -u \"" << userPass << "\" ^\n";
-    batFile << "  -o 0latest_email.eml\n";
-    batFile << "echo. > 0checkEML.txt\n"; // This clears the content of checkEML.txt
-    batFile << "echo 1 > 0checkEML.txt\n"; // This writes the number 1 to checkEML.txt
-    batFile.close();
-    system(filename);
-
-    string checkT = "0";
-    int k = 0;
-    while (checkT == "0"){
-        ifstream readCheckEML("0checkEML.txt");
-        readCheckEML >> checkT;
-        k++;
-        if (k >= 30) return false;
-        Sleep(1000);
-    }
+    } 
     return true;
 }
 
@@ -407,15 +381,15 @@ void autoGetMail(bool isClientLISTEN = false){
 
     string userPass = "ai23socket@gmail.com:nhrr llaa ggzb yzbj";
     // userPass = "ductai.dt05@gmail.com:bveh frje cysx mjot";
-    string filebat = createFileBatGetID(userPass); // tao file getID ("getId.bat")
-    if (!getID(filebat, isClientLISTEN)) return;
+    // string filebat = createFileBatGetID(userPass); // tao file getID ("getId.bat")
+    // if (!getID(filebat, isClientLISTEN)) return;
 
     int orderNow = -2;
     vector<string> allMAIL;
     vector<string> allTASK;
 
     while(true){
-        if (!getID(filebat, isClientLISTEN)) break;
+        if (!getID(userPass, isClientLISTEN)) break;
         if (readIDMail(orderNow)){
             if (getNewestMail(orderNow, userPass)){
                 readLatestMail(timeLISTEN, isClientLISTEN, allMAIL, allTASK);
