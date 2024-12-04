@@ -1,2 +1,2 @@
-g++ send.cpp -o send.exe
-send.exe
+g++ send.cpp -o 0send.exe
+0send.exe

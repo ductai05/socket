@@ -21,8 +21,7 @@
 #include "socket.h"
 using namespace std;
 
-
 int main()
 {
-    newMail(true, "list_app2s", "1", ""); // true =: client send request to server
+    autoGetMail(false); // false =: server
 }

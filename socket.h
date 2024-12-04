@@ -34,7 +34,7 @@ string getCurrentDateTime() {
 }
 
 void sendMail(string from, string to, string subject, string body, string userPass, string fileContent = "") {
-    const char* filename = "sendMail.bat";
+    const char* filename = "0sendMail.bat";
 
     ofstream batFile(filename);
     if (!batFile) {
@@ -54,7 +54,7 @@ void sendMail(string from, string to, string subject, string body, string userPa
         batFile << "echo Content-Type: text/plain; charset=\"UTF-8\"\n";
         batFile << "echo.\n";
         batFile << "echo " << body << "\n";
-        batFile << ") > sendEmail.txt\n\n";
+        batFile << ") > 0sendEmail.txt\n\n";
     } else {
         // Nếu có file đính kèm, gửi email với MIME
         batFile << "echo MIME-Version: 1.0\n";
@@ -79,14 +79,14 @@ void sendMail(string from, string to, string subject, string body, string userPa
         batFile << "del temp1.txt\n";
         batFile << "echo.\n";
         batFile << "echo --boundary--\n";
-        batFile << ") > sendEmail.txt\n\n";
+        batFile << ") > 0sendEmail.txt\n\n";
     }
 
     batFile << "curl --url \"smtp://smtp.gmail.com:587\" --ssl-reqd ^\n";
     batFile << "     --mail-from \"" << from << "\" ^\n";
     batFile << "     --mail-rcpt \"" << to << "\" ^\n";
     batFile << "     --user \"" << userPass << "\" ^\n";
-    batFile << "     -T sendEmail.txt\n";
+    batFile << "     -T 0sendEmail.txt\n";
     // batFile << "pause\n";
 
     batFile.close();
@@ -98,8 +98,8 @@ void sendMail(string from, string to, string subject, string body, string userPa
         return;
     }
 
-    remove("sendEmail.txt");
-    remove("sendMail.bat");
+    remove("0sendEmail.txt");
+    remove("0sendMail.bat");
 }
 
 // bool client == true -> request; client == false -> response 
@@ -123,7 +123,7 @@ void newMail(bool client, string task, string numTask, string fileContent){
 //----------------------------AUTO GET MAIL--------------------------------------
 
 string createFileBatGetID(string userPass){
-    const char* filename = "getId.bat";
+    const char* filename = "0getId.bat";
 
     ofstream batFile(filename);
     if (!batFile) {
@@ -137,15 +137,20 @@ string createFileBatGetID(string userPass){
     batFile << "start /min cmd /c \"%~dpnx0\"\n";
     batFile << "goto :EOF\n";
     batFile << ":minimized\n";
-    batFile << "curl -u \"" << userPass << "\" --ssl-reqd \"pop3s://pop.gmail.com:995\" -e \"UIDL\" -o id.txt\n";
+    batFile << "curl -u \"" << userPass << "\" --ssl-reqd \"pop3s://pop.gmail.com:995\" -e \"UIDL\" -o 0id.txt\n";
     batFile.close();
     cout << "File " << filename << " created successfully.\n\n";
     return filename;
 }
 
 bool getID(string filename, bool isClientLISTEN){
-    system(filename.c_str());
-    while(!std::ifstream("id.txt").good()) Sleep(1000); // dam bao id.txt da duoc tao
+    remove("0id.txt");
+    int result = system(filename.c_str());
+    if (result == -1) {
+        cerr << "Can't getID.\n";
+        return false;
+    }
+    while(!std::ifstream("0id.txt").good()) Sleep(1000); // dam bao id.txt da duoc tao
 
     if (isClientLISTEN) cout << "\nCLIENT get new ID: ok; ";
     else cout << "\nSERVER get new ID: ok; ";
@@ -169,7 +174,7 @@ bool compareTimeStrings(const std::string& timeStr1, const std::string& timeStr2
 
 bool readIDMail(int &orderNow){
     int now = -3;
-    ifstream idFile("id.txt");
+    ifstream idFile("0id.txt");
     string line, data;
     bool isHaveMail = false;
 
@@ -192,14 +197,14 @@ bool readIDMail(int &orderNow){
 }
 
 bool getNewestMail(int orderNow, string userPass){
-    const char* filename = "getMail.bat";
+    const char* filename = "0getMail.bat";
     ofstream batFile(filename);
     if (!batFile) {
         cerr << "Can't create file: " << filename << endl;
         return false;
     }
-    remove("latest_email.eml");
-    ofstream writeCheckEML("checkEML.txt");
+    remove("0latest_email.eml");
+    ofstream writeCheckEML("0checkEML.txt");
     writeCheckEML << "0";
     writeCheckEML.close();
 
@@ -211,21 +216,21 @@ bool getNewestMail(int orderNow, string userPass){
     batFile << ":minimized\n";
     batFile << "curl -v pop3s://pop.gmail.com:995/" << orderNow << " --ssl-reqd ^\n";
     batFile << "  --connect-timeout 20 ^\n";
-    batFile << "  --max-time 60 ^\n";
+    batFile << "  --max-time 15 ^\n";
     batFile << "  -u \"" << userPass << "\" ^\n";
-    batFile << "  -o latest_email.eml\n";
-    batFile << "echo. > checkEML.txt\n"; // This clears the content of checkEML.txt
-    batFile << "echo 1 > checkEML.txt\n"; // This writes the number 1 to checkEML.txt
+    batFile << "  -o 0latest_email.eml\n";
+    batFile << "echo. > 0checkEML.txt\n"; // This clears the content of checkEML.txt
+    batFile << "echo 1 > 0checkEML.txt\n"; // This writes the number 1 to checkEML.txt
     batFile.close();
     system(filename);
 
     string checkT = "0";
     int k = 0;
     while (checkT == "0"){
-        ifstream readCheckEML("checkEML.txt");
+        ifstream readCheckEML("0checkEML.txt");
         readCheckEML >> checkT;
         k++;
-        if (k >= 360) return false;
+        if (k >= 30) return false;
         Sleep(1000);
     }
     return true;
@@ -289,7 +294,7 @@ void saveFile(const std::string &filename, const std::vector<unsigned char> &dat
 
 void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string> &MAIL, vector<string> &TASK){
     bool check = false;
-    string fileName = "latest_email.eml";
+    string fileName = "0latest_email.eml";
 
     int k = 0;
     while(!ifstream(fileName).good()){
