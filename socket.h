@@ -103,7 +103,13 @@ void sendMail(const string& from, const string& to, const string& subject, const
     if (!fileName.empty() && (1 == 1)) {
         emailFile << "--boundary\n";
         emailFile << "Content-Type: application/octet-stream; name=\"" << fileName << "\"\n";
-        emailFile << "Content-Disposition: attachment; filename=\"" << fileName << "\"\n";
+        
+        string name = "";
+        size_t lastSlash = fileName.find_last_of("/");
+        if (lastSlash != std::string::npos)
+            name = fileName.substr(lastSlash + 1);
+
+        emailFile << "Content-Disposition: attachment; filename=\"" << name << "\"\n";
         emailFile << "Content-Transfer-Encoding: base64\n\n";
         emailFile << encodedFileContent << "\n";  // Nội dung mã hóa Base64 của tệp đính kèm
     }
@@ -201,7 +207,11 @@ bool readIDMail(int &orderNow){
 
     }
     file.close(); // Đóng file
-    now = stoi(last_number);
+    
+    if (last_number == "SEARCH")
+        return false;
+    else
+        now = stoi(last_number);
 
     if (now == orderNow) isHaveMail = false;
     else {
@@ -407,14 +417,14 @@ void autoGetMail(bool isClientLISTEN = false){
         if (!getID(userPass, isClientLISTEN)) break;
         if (readIDMail(orderNow)){
             cout << "Get a new mail. Waiting server...\n";
-            Sleep(5000);
+            Sleep(3000);
             if (getNewestMail(orderNow, userPass)){
                 readLatestMail(timeLISTEN, isClientLISTEN, allMAIL, allTASK);
             }
         }
         
-        cout << "Sleep 15s... \n";
-        Sleep(15000);
+        cout << "Sleep 7s... \n";
+        Sleep(7000);
     }
     // remove("latest_email.eml");
 }
