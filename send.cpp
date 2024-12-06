@@ -25,9 +25,13 @@ using namespace std;
 int main()
 {
     string task;
-    for (int i = 0; i < 1; i++){
-        task += "oekekekeke ne https://facebook.com/ductai05 ";
-    }
-    task += "fffffffffff";
-    newMail(true, task, "2", "send.cpp"); // true =: client send request to server
+    task = "list_apps";
+    // list_apps; list_services; get_screenshot; shutdown; webcam_on; webcam_off; running_apps;
+    // get_file “<đường dẫn>” 
+    // list_files “<đường dẫn>” 
+    // find_path “<tên app>”
+    // run_app “<đường dẫn>”
+    // close_app “<tên.exe>”
+
+    newMail(true, task, "0", ""); // true =: client send request to server
 }
