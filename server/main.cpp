@@ -34,6 +34,6 @@ void start_server()
 
 int main()
 {    
-    // start_server();
+    start_server();
     autoGetMail(false);
 }
