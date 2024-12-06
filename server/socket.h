@@ -1,557 +1,214 @@
-// socket.txt
-#ifndef SOCKET_H
-#define SOCKET_H
+#ifndef PROCESS_H
+#define PROCESS_H
+namespace fs = std::filesystem;
 
-//----------------------------SEND MAIL-----------------------------------------
+// Các hàm xây dựng
+void list_apps();  // tìm file .exe và viết vào file "app_list.txt"
+void list_files(const string &path); // in ra các file trong thư mục path
+void find_app_path(const string &app_name); // tìm các đường dẫn có tên là app_name
+bool run_app(const std::string &path); // chạy app khi biết đường dẫn file .exe
+void get_screenshot(); // chụp màn hình rồi lưu thành screen.jpeg
+void shut_down(); // tắt máy
+bool camera_switch(bool cam_status); // 0/1 -> tắt/bật cam
+bool end_task(const std::string& task_name); // kill một chương trình
+void list_running_apps(); // viết danh sách các chương trình đang chạy vào file running_apps.txt
 
-string getCurrentDateTime() {
-    std::time_t t = std::time(nullptr);
-    std::tm* now = std::localtime(&t);
-
-    std::ostringstream oss;
-    oss << std::put_time(now, "%Y-%m-%d %H:%M:%S");
-    return oss.str();
+bool camera_switch(bool cam_status) 
+{
+    int result;
+    if (cam_status) { // turn on
+        result = system("start microsoft.windows.camera:");
+    } else { // turn off
+        result = system("taskkill /im WindowsCamera.exe /f");
+    }
+    return (result == 0); // Trả về true nếu lệnh thành công, false nếu không
 }
 
-// Hàm mã hóa Base64
-string base64_encode(const std::string& in) {
-    static const char* base64_chars = 
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        "abcdefghijklmnopqrstuvwxyz"
-        "0123456789+/";
-    
-    std::string out;
-    int val = 0, valb = -6;
-    for (unsigned char c : in) {
-        val = (val << 8) + c;
-        valb += 8;
-        while (valb >= 0) {
-            out.push_back(base64_chars[(val >> valb) & 0x3F]);
-            valb -= 6;
-        }
-    }
-    while (valb >= 0) {
-        out.push_back(base64_chars[(val >> valb) & 0x3F]);
-        valb -= 6;
-    }
-    while (out.size() % 4) out.push_back('=');
-    return out;
+void shut_down()
+{
+    system("c:\\windows\\system32\\shutdown /s");
 }
 
-void sendMail(const string& from, const string& to, const string& subject, const string& body, const string& userPass, const string& fileName) {
-    string encodedFileContent;
-    if (!fileName.empty()){
-        ifstream file(fileName, std::ios::binary);
-        if (!file) {
-            std::cerr << "Khong the mo tep dinh kem!" << std::endl;
-            return;
-        }
-
-        // Đọc nội dung tệp
-        stringstream buffer;
-        buffer << file.rdbuf();
-        string fileContent = buffer.str();
-        file.close();
-
-        // Mã hóa nội dung tệp sang Base64
-        encodedFileContent = base64_encode(fileContent);
-    }
-
-    // Tạo tệp email
-    ofstream emailFile("0sendEmail.txt");
-    if (!emailFile) {
-        std::cerr << "Khong the mo tep de ghi noi dung mail!" << std::endl;
-        return;
-    }
-
-    // Ghi thông tin email vào tệp
-    emailFile << "From: " << from << "\n";
-    emailFile << "To: " << to << "\n";
-    emailFile << "Subject: " << subject << "\n";
-    emailFile << "MIME-Version: 1.0\n";
-    emailFile << "Content-Type: multipart/mixed; boundary=\"boundary\"\n\n";
-    emailFile << "--boundary\n";
-    emailFile << "Content-Type: text/plain; charset=\"UTF-8\"\n\n";
-    if (encodedFileContent.empty()){
-        emailFile << body << "\n\n";
-    } else {
-        // co tep dinh kem:
-        emailFile << body << "\n\n"; //" " << encodedFileContent << "\n\n";
-    }
-      
-    // Thêm tệp đính kèm
-    if (!fileName.empty() && (1 == 1)) {
-        emailFile << "--boundary\n";
-        emailFile << "Content-Type: application/octet-stream; name=\"" << fileName << "\"\n";
-
-        string name = "";
-        size_t lastSlash = fileName.find_last_of("/");
-        if (lastSlash != std::string::npos)
-            name = fileName.substr(lastSlash + 1);
-
-        emailFile << "Content-Disposition: attachment; filename=\"" << name << "\"\n";
-        emailFile << "Content-Transfer-Encoding: base64\n\n";
-        emailFile << encodedFileContent << "\n";  // Nội dung mã hóa Base64 của tệp đính kèm
-    }
-
-    emailFile << "--boundary--\n";
-    emailFile.close();
-
-    // Tạo lệnh curl
-    std::string ex = "curl --url \"smtp://smtp.gmail.com:587\" --ssl-reqd "
-                     "--mail-from \"" + from + "\" "
-                     "--mail-rcpt \"" + to + "\" "
-                     "--user \"" + userPass + "\" "
-                     "--upload-file \"0sendEmail.txt\"";
-
-    // Gọi lệnh curl
-    int result = system(ex.c_str());
-    if (result == -1) {
-        std::cerr << "Khong the gui email!\n";
-        return;
-    }
-
-    // Xóa tệp tạm thời
-    remove("0sendEmail.txt");
-}
-
-// bool client == true -> request; client == false -> response 
-// string task = list app / camera / screenshot....
-// client request -> fileContent = ""; server response -> fileContent = "abc.txt/png"
-
-void newMail(bool client, string task, string numTask, string fileContent){
-    string daytime = getCurrentDateTime();
-    string typeOfSend;
-    if (client) typeOfSend = "[request_" + numTask + "]: ";
-    else typeOfSend = "[response_" + numTask + "]: ";
-    string from = "ai23socket@gmail.com"; //from = "ductaidt05@gmail.com";
-    string to = "ai23socket@gmail.com"; //to = "ductaidt05@gmail.com";
-    string subject = typeOfSend + daytime;
-    string body = (client ? "[task] " : "[rep] ") + task;
-    string userPass = "ai23socket@gmail.com:nhrr llaa ggzb yzbj";
-    //userPass = "ductaidt05@gmail.com:bveh frje cysx mjot";
-    sendMail(from, to, subject, body, userPass, fileContent);
-}
-
-//----------------------------AUTO GET MAIL--------------------------------------
-
-bool getID(string userPass, bool isClientLISTEN){
-    remove("0id.txt");
-    string ex = "curl -s -# -v imaps://imap.gmail.com/INBOX --ssl-reqd --connect-timeout 20 --max-time 15 -u \"" 
-    + userPass +"\" -X \"UID SEARCH ALL\" -o 0id.txt > nul 2>&1";
-    int result = system(ex.c_str());
-    if (result == -1) {
-        if (isClientLISTEN) cout << "\nCLIENT getID: FAIL; ";
-        else cout << "\nSERVER getID: FAIL; ";
-        return false;
-    } else {
-        return true;
-    }
-}
-
-bool compareTimeStrings(const std::string& timeStr1, const std::string& timeStr2) {
-    std::tm tm1 = {}, tm2 = {};
-
-    std::istringstream ss1(timeStr1);
-    std::istringstream ss2(timeStr2);
-    
-    ss1 >> std::get_time(&tm1, "%Y-%m-%d %H:%M:%S");
-    ss2 >> std::get_time(&tm2, "%Y-%m-%d %H:%M:%S");
-
-    std::time_t time1 = std::mktime(&tm1);
-    std::time_t time2 = std::mktime(&tm2);
-
-    return time1 > time2;
-}
-
-bool readIDMail(int &orderNow){
-    int now = -3;
-    ifstream idFile("0id.txt");
-    bool isHaveMail = false;
-
-    ifstream file("0id.txt"); // Mở file
-    if (!file.is_open()) {
-        cerr << "Can't read id!\n";
-        return false;
-    }
-
-    string line, number, last_number;
-    if (getline(file, line)) { // Đọc dòng đầu tiên
-        istringstream iss(line);
-
-        while (iss >> number) { // Tách từng số
-            last_number = number; // Cập nhật số cuối cùng
-        }
-
-    }
-    file.close(); // Đóng file
-    if(last_number == "SEARCH")
-        return false;
-    else
-        now = stoi(last_number);
-
-    if (now <= orderNow) 
-        isHaveMail = false;
-    else
-        isHaveMail = true;
-    orderNow = now;
-    return isHaveMail;
-}
-
-bool getNewestMail(int orderNow, string userPass){
-    string ex = "curl -v imaps://imap.gmail.com/INBOX/;UID=" + to_string(orderNow) 
-        + " --ssl-reqd --connect-timeout 20  --max-time 15 -u \"" + userPass + "\" -o 0latest_email.eml > nul 2>&1";
-
-    int result = system(ex.c_str());
-    if (result == -1) 
-    {
-        cout << "Can't get newest mail.\n";
-        return false;
-    } 
-    return true;
-}
-
-bool extractInfo(const string &subject, string &responseType, string &numTask, string &time) {
-    regex pattern(R"(\[(response|request)_(\d+)\]: (\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}))");
-    smatch matches;
-
-    if (regex_search(subject, matches, pattern)) {
-        responseType = matches[1]; // 'response' or 'request'
-        numTask = matches[2];        // numtask
-        time = matches[3];      // time
-        return true;
-    }
-
+// nếu str kết thúc bằng ending
+bool endsWith(const string& str, const string& ending) 
+{
+    if (str.length() >= ending.length()) 
+        return str.compare(str.length() - ending.length(), ending.length(), ending) == 0;
     return false;
 }
 
-// Map for base64
-map<char, int> base64_map = {
-    {'A', 0}, {'B', 1}, {'C', 2}, {'D', 3}, {'E', 4}, {'F', 5},
-    {'G', 6}, {'H', 7}, {'I', 8}, {'J', 9}, {'K', 10}, {'L', 11},
-    {'M', 12}, {'N', 13}, {'O', 14}, {'P', 15}, {'Q', 16}, {'R', 17},
-    {'S', 18}, {'T', 19}, {'U', 20}, {'V', 21}, {'W', 22}, {'X', 23},
-    {'Y', 24}, {'Z', 25}, {'a', 26}, {'b', 27}, {'c', 28}, {'d', 29},
-    {'e', 30}, {'f', 31}, {'g', 32}, {'h', 33}, {'i', 34}, {'j', 35},
-    {'k', 36}, {'l', 37}, {'m', 38}, {'n', 39}, {'o', 40}, {'p', 41},
-    {'q', 42}, {'r', 43}, {'s', 44}, {'t', 45}, {'u', 46}, {'v', 47},
-    {'w', 48}, {'x', 49}, {'y', 50}, {'z', 51}, {'0', 52}, {'1', 53},
-    {'2', 54}, {'3', 55}, {'4', 56}, {'5', 57}, {'6', 58}, {'7', 59},
-    {'8', 60}, {'9', 61}, {'+', 62}, {'/', 63}, {'=', -1}
-};
+// tìm bằng cách đệ quy vào từng thư mục
+void find_apps_recur(const string& path, ofstream &outFile)
+{
+    if (!fs::exists(path) || !fs::is_directory(path))
+        return;
+    try
+    {
+        for (const auto& entry : fs::directory_iterator(path)) 
+        {
+            string filename = entry.path().filename().string();
 
-// Ham giai ma base64
-vector<unsigned char> base64_decode(const std::string &in) {
-    vector<unsigned char> out;
-    int val = 0, valb = -8;
-    for (unsigned char c : in) {
-        if (base64_map.find(c) == base64_map.end()) continue; // Skip ki tu ko phai base64
-        val = (val << 6) + base64_map[c];
-        valb += 6;
-        if (valb >= 0) {
-            out.push_back((val >> valb) & 0xFF);
-            valb -= 8;
+            if (fs::is_directory(entry.status())) 
+                find_apps_recur(path + "/" + filename, outFile);
+            else if(endsWith(filename, ".exe"))
+                outFile << path + "/" + filename << '\n';
         }
     }
-    return out;
+    catch(const fs::filesystem_error& e){}
 }
 
-void saveFile(const std::string &filename, const std::vector<unsigned char> &data) {
-    string directory = "attachment";
-    string command = "mkdir " + directory;
-    system(command.c_str());
-    string fullPath = directory + "/" + filename;
-
-    ofstream out(fullPath, std::ios::binary);
-    out.write(reinterpret_cast<const char*>(data.data()), data.size());
-    out.close();
-}
-
-string get_path(const string& command)
+void list_apps()
 {
-    size_t start = command.find('"');
-    size_t end = command.find('"', start + 1);
-    
-    if (start != std::string::npos && end != std::string::npos) 
-        return command.substr(start + 1, end - start - 1);
-    
-    return ""; // Trả về chuỗi rỗng nếu không tìm thấy
-}
-
-void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string> &MAIL, vector<string> &TASK){
-    bool check = false;
-    string fileName = "0latest_email.eml";
-
-    int k = 0;
-    while(!ifstream(fileName).good()){
-        Sleep(1000); k++;
-        if (k == 20) return;
-    } // dam bao latest_email.eml da duoc tao
-
-    ifstream inFile(fileName); string line;
-    string subject, body, responseType, numTask, time;
-    string fileAttachmentName;
-    
-    // getSubject
-    while(getline(inFile, line)){                       
-        if (line.find("Subject:") != string::npos) {
-            subject = line.substr(line.find(":") + 1);
-            subject.erase(0, subject.find_first_not_of(" \t"));
-            subject.erase(subject.find_last_not_of(" \t") + 1);
-            break; 
-        }
-    } 
-
-    if ((subject.find("[request_") || !isClientLISTEN) && (subject.find("[response_") || isClientLISTEN)){
-        regex pattern(R"(\[(response|request)_(\d+)\]: (\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}))");
-        smatch matches;
-
-        if (regex_search(subject, matches, pattern)) {
-            responseType = matches[1]; // 'response' or 'request'
-            numTask = matches[2];      // numtask
-            time = matches[3];         // time
-            if (find(MAIL.begin(), MAIL.end(), subject) == MAIL.end() 
-            && find(TASK.begin(), TASK.end(), numTask) == TASK.end() 
-            && compareTimeStrings(time, timeLISTEN)
-                ){
-                check = true;
-                MAIL.push_back(subject);
-                TASK.push_back(numTask);
-            }
-        }
-        if (check) {
-            cout << "[SUCCESSFULL] Type: " + responseType + ", NumTask: " + numTask + ", Timestamp: " + time << "\n";
-        }
-        else {
-            cout << "subject: " << subject << "\n[INVALID] Type: " + responseType + ", NumTask: " + numTask + ", Timestamp: " + time << "\n";
-            inFile.close();
+    vector<string> paths = {"C:/Program Files (x86)", "C:/Program Files", "C:/Users/kHOA/AppData/Local", "C:/Users/kHOA/AppData/Roaming"};
+    ofstream outFile("uploads\\apps_list.txt");
+    for(string path : paths)
+    { 
+        if (!fs::exists(path) || !fs::is_directory(path)) 
+        {
+            outFile << "The Specified Path is Invalid!";
+            outFile.close();
             return;
         }
-    } else {
-        cout << "[newest mail: not acceptable responseType]\n";
+        find_apps_recur(path, outFile);
+    }
+    outFile.close();
+}
+
+void list_files(const string &path) 
+{
+    ofstream outFile("uploads\\files_list.txt");
+    if (!fs::exists(path) || !fs::is_directory(path)) 
+    {
+        outFile << "The Specified Path is Invalid!";
+        outFile.close();
         return;
     }
 
-    // getBody
-    if (isClientLISTEN){
-        while(getline(inFile, line)){
-            if (line.find("[rep]") != string::npos) {
-                body = line.substr(line.find("]") + 1);
-                body.erase(0, body.find_first_not_of(" \t"));
-                body.erase(body.find_last_not_of(" \t") + 1);
-                break; 
-            }
+    outFile << path << '\n';
+    for (const auto& entry : fs::directory_iterator(path)) 
+    {
+        outFile << "|--- " << entry.path().filename().string();
+        if (fs::is_directory(entry.status())) 
+        {
+            outFile << "/";
         }
-        cout << line << "\n";
-    } else {
-        while(getline(inFile, line)){
-            if (line.find("[task]") != string::npos) {
-                body = line.substr(line.find("]") + 1);
-                body.erase(0, body.find_first_not_of(" \t"));
-                body.erase(body.find_last_not_of(" \t") + 1);
-                break; 
-            }
-        }
-        cout << line << "\n";
+        outFile << '\n';
     }
+    outFile.close();
+}
 
-    // getFileAttachmentName
-    while(getline(inFile, line)){
-        if (line.find("filename=\"") != string::npos) {
-            fileAttachmentName = line.substr(line.find("\"") + 1);
-            fileAttachmentName = fileAttachmentName.substr(0, fileAttachmentName.size() - 1);
-
-            getline(inFile, line); 
-            //getline(inFile, line); // skip 1 lines
-            break; 
-        }
-    }
-    cout << fileAttachmentName << "\n";
-
-    // get base64 
-    string base64_data;
-    int i = 1;
-    while (getline(inFile, line)) {
-        if (line == "--boundary--") break;
-        base64_data += line;
-    }
-    
-    // Giai ma base64
-    vector<unsigned char> decoded_data = base64_decode(base64_data);
-
-    // Luu file
-    saveFile(fileAttachmentName, decoded_data);
-    inFile.close();
-
-    // numTask, body
-    if(body == "list_apps")
+void buildlps(const string &s, int *&lps)
+{
+    int n = s.size();
+    lps = new int[n];
+    for(int i = 0; i < n; i++)
+        lps[i] = 0;
+    for(int i = 1; i < n; i++)
     {
-        newMail(false, body, numTask, "uploads/apps_list.txt");
-    }
-    else if(body == "list_services")
-    {
-        ofstream outFile("uploads/messages.txt");
-        outFile << "list_apps: List the server applications directory\n";
-        outFile << "list_services: List all services\n";
-        outFile << "get_screenshot: Take screenshots of the server\n";
-        outFile << "shutdown: Shutdown the server\n";
-        outFile << "webcam_on: Turn on the camera\n";
-        outFile << "webcam_off: Turn off the camera\n";
-        outFile << "get_file \"<path>\": Get file from server\n";
-        outFile << "list_file \"<path>\": Get all the files in the path\n";
-        outFile << "find_path \"<app name>\": Find all related path when knowing the app name\n";
-        outFile << "run_app \"<path>\": Run app using the path\n";
-        outFile << "running_apps: List running apps\n";
-        outFile << "close_app \"<app.exe>\": Close an app\n";
-        outFile.close();
-        newMail(false, body, numTask, string("uploads")+"/"+"messages.txt");
-    }
-    else if(body == "get_screenshot")
-    {
-        get_screenshot();
-        newMail(false, body, numTask, "uploads/screen.jpeg");
-    }
-    else if(body == "shutdown")
-    {
-        ofstream outFile("uploads/messages.txt");
-        outFile << "Server is shutting down.";
-        outFile.close();
-        newMail(false, body, numTask, "uploads/messages.txt");
-        shut_down();
-    }
-    else if(body == "webcam_on")
-    {
-        ofstream outFile("uploads/messages.txt");
-        if(camera_switch(1))
-        {
-            outFile << "Successfully turned on the camera";
-        }
-        else
-        {
-            outFile << "Failed when turning on the camera";
-        }
-        outFile.close();
-        newMail(false, body, numTask, "uploads/messages.txt");
-    }
-    else if(body == "webcam_off")
-    {
-        ofstream outFile("uploads/messages.txt");
-        if(camera_switch(0))
-        {
-            outFile << "Successfully turned off the camera";
-        }
-        else
-        {
-            outFile << "Failed when turning off the camera";
-        }
-        outFile.close();
-        newMail(false, body, numTask, "uploads/messages.txt");
-    }
-    else if(body.find("get_file") != string::npos)
-    {
-        string path = get_path(body);
-        ifstream file(path, std::ios::binary);
-        if (!file) 
-        {
-            ofstream outFile("uploads/messages.txt");
-            outFile << "Invalid path";
-            outFile.close();
-            newMail(false, body, numTask, "uploads/messages.txt");
-        }
-        else newMail(false, body, numTask, path);
-    }
-    else if(body.find("list_file") != string::npos)
-    {
-        string path = get_path(body);
-        ifstream file(path, std::ios::binary);
-        if (!file) 
-        {
-            ofstream outFile("uploads/messages.txt");
-            outFile << "Invalid path";
-            outFile.close();
-            newMail(false, body, numTask, "uploads/messages.txt");
-        }
-        else
-        {
-            list_files(path);
-            newMail(false, body, numTask, "uploads/files_list.txt");
-        }
-    }
-    else if(body.find("run_app") != string::npos)
-    {
-        ofstream outFile("uploads/messages.txt");
-        string path = get_path(body);
-        if(run_app(path))
-            outFile << "Successfully run the application\n";
-        else
-            outFile << "Failed when running the application\n";
-        outFile.close();
-        newMail(false, body, numTask, "uploads/messages.txt");
-    }
-    else if(body == "running_apps")
-    {
-        list_running_apps();
-        newMail(false, body, numTask, "uploads/running_apps.txt");
-    }
-    else if(body.find("close_app") != string::npos)
-    {
-        string app = get_path(body);
-        ofstream outFile("uploads/messages.txt");
-        if(end_task(app))
-        {
-            outFile << "Successfully close the application\n";
-        }
-        else
-        {
-            outFile << "Failed when closing the application\n";
-        }
-        outFile.close();
-        newMail(false, body, numTask, "uploads/messages.txt");
-    }
-    else if(body.find("find_path") != string::npos)
-    {
-        string app = get_path(body);
-        find_app_path(app);
-        newMail(false, body, numTask, "uploads/app_found_paths.txt");
+        int j = lps[i - 1];
+        while(j > 0 && s[i] != s[j]) 
+            j = lps[j - 1];
+        if(s[i] == s[j]) j++;
+        lps[i] = j;
     }
 }
 
-void autoGetMail(bool isClientLISTEN = false){
-    string userPass = "ai23socket@gmail.com:nhrr llaa ggzb yzbj";
-
-    int orderNow = -2;
-    vector<string> allMAIL;
-    vector<string> allTASK;
-
-    getID(userPass, isClientLISTEN);
-    readIDMail(orderNow); // get init order
-    
-    string timeLISTEN = getCurrentDateTime();
-    if (isClientLISTEN){
-        cout << "CLIENT Start listen at: " << timeLISTEN << "\n";
-    } else cout << "SERVER Start listen at: " << timeLISTEN << "\n"; 
-
-    bool waiting = true;
-    while(true){
-        if (!getID(userPass, isClientLISTEN)) break;
-        if (readIDMail(orderNow)){
-            cout << "* New email has been found!\n";
-            if (getNewestMail(orderNow, userPass))
-            {
-                readLatestMail(timeLISTEN, isClientLISTEN, allMAIL, allTASK);
-                waiting = true;
-
-                // Get new order
-                getID(userPass, isClientLISTEN);
-                readIDMail(orderNow);
-            }
-        }
-        if(waiting)
+bool is_substr(string a, string b, int *&lps) // KMP
+{
+    for(char &x : a) x = tolower(x);
+    for(char &x : b) x = tolower(x);
+    int n = a.size(), m = b.size();
+    int j = 0;
+    for(int i = 0; i < n; i++)
+    {
+        while(j > 0 && a[i] != b[j])
+            j = lps[j - 1];
+        if(a[i] == b[j]) j++;
+        if(j == m)
         {
-            cout << "* Waiting for new request...\n";
-            waiting = false;
+            return true;
         }
     }
+    return false;
+}
+// in các đường dẫn tìm được vào "app_found_paths.txt"
+void find_app_path(const string &app_name)
+{
+    const string apps_list = "uploads\\apps_list.txt";
+    int *lps;
+    buildlps(app_name, lps);
+
+    bool found = false;
+    ifstream fin(apps_list);
+    ofstream fout("uploads\\app_found_paths.txt");
+    string line;
+    while(getline(fin, line))
+    {
+        if(is_substr(line, app_name, lps))
+        {
+            fout << line << '\n';
+            found = true;
+        }
+    }
+    if(!found) fout << "Application path cannot be found.";
+    delete[] lps;
+    fin.close();
+    fout.close();
+}
+
+bool run_app(const std::string &path) {
+    // Convert std::string to LPCTSTR
+    LPCSTR applicationName = path.c_str();
+    
+    // Additional information
+    STARTUPINFO si;
+    PROCESS_INFORMATION pi;
+
+    // Set the size of the structures
+    ZeroMemory(&si, sizeof(si));
+    si.cb = sizeof(si);
+    ZeroMemory(&pi, sizeof(pi));
+
+    // Start the program up
+    BOOL success = CreateProcess(
+        applicationName, // Path to the executable
+        NULL,            // Command line arguments (NULL for none)
+        NULL,            // Process handle not inheritable
+        NULL,            // Thread handle not inheritable
+        FALSE,           // Set handle inheritance to FALSE
+        0,               // No creation flags
+        NULL,            // Use parent's environment block
+        NULL,            // Use parent's starting directory
+        &si,            // Pointer to STARTUPINFO structure
+        &pi              // Pointer to PROCESS_INFORMATION structure
+    );
+
+    // Close process and thread handles
+    if (success) {
+        CloseHandle(pi.hProcess);
+        CloseHandle(pi.hThread);
+        return true; // Indicate success
+    }
+    return false; // Indicate failure
+}
+
+void get_screenshot()
+{
+    system("g++ -o take_screenshot.exe take_screenshot.cpp -lgdiplus -lcomdlg32 -lole32 -loleaut32 -luuid -lwinmm -lgdi32 -luser32");
+    system("take_screenshot.exe");
+    return;
+}
+
+bool end_task(const std::string& task_name) 
+{
+    std::string command = "taskkill /IM " + task_name + " /F";
+    int result = system(command.c_str());
+    return (result == 0); // Trả về true nếu lệnh thành công, false nếu không
+}
+
+void list_running_apps()
+{
+    system("tasklist > uploads\\running_apps.txt");
 }
 
 #endif
