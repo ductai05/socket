@@ -415,8 +415,8 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
     {
         ofstream outFile("uploads/messages.txt");
         outFile << "Server is shutting down.";
-        newMail(false, body, numTask, "uploads/messages.txt");
         outFile.close();
+        newMail(false, body, numTask, "uploads/messages.txt");
         shut_down();
     }
     else if(body == "webcam_on")
