@@ -59,7 +59,7 @@ void find_apps_recur(const string& path, ofstream &outFile)
 
 void list_apps()
 {
-    vector<string> paths = {"C:/Program Files (x86)", "C:/Program Files", "C:/Users/kHOA/AppData/Local", "C:/Users/kHOA/AppData/Roaming"};
+    vector<string> paths = {"C:/Program Files (x86)", "C:/Program Files"};
     ofstream outFile("uploads\\apps_list.txt");
     for(string path : paths)
     { 

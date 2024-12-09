@@ -56,8 +56,8 @@ void gdiscreen(const int &Height, const int &Width)
 
 		Gdiplus::Bitmap bitmap(membit, NULL);
 		CLSID clsid;
-		GetEncoderClsid(L"image/jpeg", &clsid);
-		bitmap.Save(L"uploads\\screen.jpeg", &clsid, NULL);
+		GetEncoderClsid(L"image/png", &clsid);
+		bitmap.Save(L"uploads\\screen.png", &clsid, NULL);
 		bitmap.Save(istream, &clsid, NULL);
 		DeleteObject(memdc);
 		DeleteObject(membit);

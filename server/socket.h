@@ -43,7 +43,7 @@ void sendMail(const string& from, const string& to, const string& subject, const
     if (!fileName.empty()){
         ifstream file(fileName, std::ios::binary);
         if (!file) {
-            std::cerr << "Khong the mo tep dinh kem!" << std::endl;
+            std::cerr << "Can't open the attachment!" << std::endl;
             return;
         }
 
@@ -107,7 +107,7 @@ void sendMail(const string& from, const string& to, const string& subject, const
     // Gọi lệnh curl
     int result = system(ex.c_str());
     if (result == -1) {
-        std::cerr << "Khong the gui email!\n";
+        std::cerr << "Can't send email!\n";
         return;
     }
 
@@ -171,7 +171,7 @@ bool readIDMail(int &orderNow){
 
     ifstream file("0id.txt"); // Mở file
     if (!file.is_open()) {
-        cerr << "Can't read id!\n";
+        cerr << "Can't read id. Maybe the network is too slow.\n";
         return false;
     }
 
@@ -409,7 +409,7 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
     else if(body == "get_screenshot")
     {
         get_screenshot();
-        newMail(false, body, numTask, "uploads/screen.jpeg");
+        newMail(false, body, numTask, "uploads/screen.png");
     }
     else if(body == "shutdown")
     {
@@ -533,7 +533,8 @@ void autoGetMail(bool isClientLISTEN = false){
     } else cout << "SERVER Start listen at: " << timeLISTEN << "\n"; 
 
     bool waiting = true;
-    while(true){
+    while(true)
+    {
         if (!getID(userPass, isClientLISTEN)) break;
         if (readIDMail(orderNow)){
             cout << "* New email has been found!\n";
@@ -552,6 +553,7 @@ void autoGetMail(bool isClientLISTEN = false){
             cout << "* Waiting for new request...\n";
             waiting = false;
         }
+        Sleep(200);
     }
 }
 

@@ -23,32 +23,32 @@ C:/Program Files (x86)/Internet Explorer/ExtExport.exe
 C:/Program Files (x86)/Internet Explorer/ieinstal.exe
 C:/Program Files (x86)/Internet Explorer/ielowutil.exe
 C:/Program Files (x86)/Internet Explorer/iexplore.exe
-C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.70/BHO/ie_to_edge_stub.exe
-C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.70/cookie_exporter.exe
-C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.70/elevation_service.exe
-C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.70/identity_helper.exe
-C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.70/Installer/setup.exe
-C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.70/msedge.exe
-C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.70/msedgewebview2.exe
-C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.70/msedge_proxy.exe
-C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.70/msedge_pwa_launcher.exe
-C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.70/notification_click_helper.exe
-C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.70/notification_helper.exe
-C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.70/pwahelper.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.86/BHO/ie_to_edge_stub.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.86/cookie_exporter.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.86/elevation_service.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.86/identity_helper.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.86/Installer/setup.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.86/msedge.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.86/msedgewebview2.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.86/msedge_proxy.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.86/msedge_pwa_launcher.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.86/notification_click_helper.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.86/notification_helper.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.86/pwahelper.exe
 C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe
 C:/Program Files (x86)/Microsoft/Edge/Application/msedge_proxy.exe
 C:/Program Files (x86)/Microsoft/Edge/Application/pwahelper.exe
-C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.70/BHO/ie_to_edge_stub.exe
-C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.70/cookie_exporter.exe
-C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.70/elevation_service.exe
-C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.70/identity_helper.exe
-C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.70/Installer/setup.exe
-C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.70/msedge.exe
-C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.70/msedgewebview2.exe
-C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.70/msedge_proxy.exe
-C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.70/msedge_pwa_launcher.exe
-C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.70/notification_helper.exe
-C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.70/pwahelper.exe
+C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.86/BHO/ie_to_edge_stub.exe
+C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.86/cookie_exporter.exe
+C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.86/elevation_service.exe
+C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.86/identity_helper.exe
+C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.86/Installer/setup.exe
+C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.86/msedge.exe
+C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.86/msedgewebview2.exe
+C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.86/msedge_proxy.exe
+C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.86/msedge_pwa_launcher.exe
+C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.86/notification_helper.exe
+C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.86/pwahelper.exe
 C:/Program Files (x86)/Microsoft/EdgeUpdate/1.3.195.39/MicrosoftEdgeComRegisterShellARM64.exe
 C:/Program Files (x86)/Microsoft/EdgeUpdate/1.3.195.39/MicrosoftEdgeUpdate.exe
 C:/Program Files (x86)/Microsoft/EdgeUpdate/1.3.195.39/MicrosoftEdgeUpdateBroker.exe
@@ -57,21 +57,21 @@ C:/Program Files (x86)/Microsoft/EdgeUpdate/1.3.195.39/MicrosoftEdgeUpdateCore.e
 C:/Program Files (x86)/Microsoft/EdgeUpdate/1.3.195.39/MicrosoftEdgeUpdateOnDemand.exe
 C:/Program Files (x86)/Microsoft/EdgeUpdate/1.3.195.39/MicrosoftEdgeUpdateSetup.exe
 C:/Program Files (x86)/Microsoft/EdgeUpdate/Download/{1FAB8CFE-9860-415C-A6CA-AA7D12021940}/2.0.0.34/BGAUpdate.exe
-C:/Program Files (x86)/Microsoft/EdgeUpdate/Download/{56EB18F8-B008-4CBD-B6D2-8C97FE7E9062}/131.0.2903.70/MicrosoftEdge_X64_131.0.2903.70_131.0.2903.63.exe
-C:/Program Files (x86)/Microsoft/EdgeUpdate/Download/{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}/131.0.2903.70/MicrosoftEdge_X64_131.0.2903.70_131.0.2903.63.exe
+C:/Program Files (x86)/Microsoft/EdgeUpdate/Download/{56EB18F8-B008-4CBD-B6D2-8C97FE7E9062}/131.0.2903.86/MicrosoftEdge_X64_131.0.2903.86_131.0.2903.70.exe
+C:/Program Files (x86)/Microsoft/EdgeUpdate/Download/{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}/131.0.2903.86/MicrosoftEdge_X64_131.0.2903.86_131.0.2903.70.exe
 C:/Program Files (x86)/Microsoft/EdgeUpdate/Download/{F3C4FE00-EFD5-403B-9569-398A20F1BA4A}/1.3.195.39/MicrosoftEdgeUpdateSetup_X86_1.3.195.39.exe
 C:/Program Files (x86)/Microsoft/EdgeUpdate/MicrosoftEdgeUpdate.exe
-C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.70/BHO/ie_to_edge_stub.exe
-C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.70/cookie_exporter.exe
-C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.70/elevation_service.exe
-C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.70/identity_helper.exe
-C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.70/Installer/setup.exe
-C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.70/msedge.exe
-C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.70/msedgewebview2.exe
-C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.70/msedge_proxy.exe
-C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.70/msedge_pwa_launcher.exe
-C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.70/notification_helper.exe
-C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.70/pwahelper.exe
+C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.86/BHO/ie_to_edge_stub.exe
+C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.86/cookie_exporter.exe
+C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.86/elevation_service.exe
+C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.86/identity_helper.exe
+C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.86/Installer/setup.exe
+C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.86/msedge.exe
+C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.86/msedgewebview2.exe
+C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.86/msedge_proxy.exe
+C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.86/msedge_pwa_launcher.exe
+C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.86/notification_helper.exe
+C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.86/pwahelper.exe
 C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/Common7/IDE/CommonExtensions/Microsoft/NuGet/NuGet.Build.Tasks.Console.exe
 C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/Common7/IDE/vsn.exe
 C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/Common7/Tools/errlook.exe
@@ -1119,7 +1119,6 @@ C:/Program Files/Google/Chrome/Application/131.0.6778.109/notification_helper.ex
 C:/Program Files/Google/Chrome/Application/131.0.6778.109/os_update_handler.exe
 C:/Program Files/Google/Chrome/Application/chrome.exe
 C:/Program Files/Google/Chrome/Application/chrome_proxy.exe
-C:/Program Files/Google/Chrome/Temp/scoped_dir6488_1478294059/old_chrome.exe
 C:/Program Files/Google/Drive File Stream/100.0.2.0/account_export_tool.exe
 C:/Program Files/Google/Drive File Stream/100.0.2.0/crashpad_handler.exe
 C:/Program Files/Google/Drive File Stream/100.0.2.0/GoogleDriveFS.exe
@@ -1294,286 +1293,3 @@ C:/Program Files/WinRAR/RarExtInstaller.exe
 C:/Program Files/WinRAR/Uninstall.exe
 C:/Program Files/WinRAR/UnRAR.exe
 C:/Program Files/WinRAR/WinRAR.exe
-C:/Users/kHOA/AppData/Local/bluestacks-services-updater/installer.exe
-C:/Users/kHOA/AppData/Local/Discord/app-1.0.9173/Discord.exe
-C:/Users/kHOA/AppData/Local/Discord/app-1.0.9173/modules/discord_voice-1/discord_voice/gpu_encoder_helper.exe
-C:/Users/kHOA/AppData/Local/Discord/Update.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/AppUp.IntelTechnologyMDE_8j3eq9eme6ctt/IntelUnisonClientDesktop.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/B9ECED6F.ASUSPCAssistant.AsusKeyboardHost.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/B9ECED6F.ASUSPCAssistant.AsusMyASUSNotification.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/B9ECED6F.ASUSPCAssistant.LiveUpdateToastEXE.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/B9ECED6F.ASUSPCAssistant_qmba6cd70vzyy/B9ECED6F.ASUSPCAssistant.AsusKeyboardHost.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/B9ECED6F.ASUSPCAssistant_qmba6cd70vzyy/B9ECED6F.ASUSPCAssistant.AsusMyASUSNotification.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/B9ECED6F.ASUSPCAssistant_qmba6cd70vzyy/B9ECED6F.ASUSPCAssistant.LiveUpdateToastEXE.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/B9ECED6F.Glidex.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/B9ECED6F.Glidex.Mirror.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/B9ECED6F.Glidex.SharedCam.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/B9ECED6F.Glidex_qmba6cd70vzyy/B9ECED6F.Glidex.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/B9ECED6F.Glidex_qmba6cd70vzyy/B9ECED6F.Glidex.Mirror.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/B9ECED6F.Glidex_qmba6cd70vzyy/B9ECED6F.Glidex.SharedCam.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/Clipchamp.Clipchamp_yxz26nhyzhsrt/clipchamp.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/clipchamp.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/GameBarElevatedFT_Alias.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/GetHelp.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/IntelUnisonClientDesktop.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/MediaPlayer.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe/python.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe/python3.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe/WindowsPackageManagerServer.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe/winget.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/Microsoft.GamingApp_8wekyb3d8bbwe/XboxPcAppAdminServer.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/Microsoft.GetHelp_8wekyb3d8bbwe/GetHelp.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/Microsoft.OutlookForWindows_8wekyb3d8bbwe/olk.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/Microsoft.Paint_8wekyb3d8bbwe/mspaint.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/Microsoft.Paint_8wekyb3d8bbwe/pbrush.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/Microsoft.ScreenSketch_8wekyb3d8bbwe/SnippingTool.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/Microsoft.SkypeApp_kzf8qxf38zg5c/Skype.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/Microsoft.WindowsNotepad_8wekyb3d8bbwe/notepad.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/Microsoft.WindowsTerminal_8wekyb3d8bbwe/wt.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/Microsoft.XboxGamingOverlay_8wekyb3d8bbwe/GameBarElevatedFT_Alias.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/Microsoft.ZuneMusic_8wekyb3d8bbwe/MediaPlayer.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/MicrosoftWindows.Client.CBS_cw5n1h2txyewy/MicrosoftWindows.DesktopStickerEditorCentennial.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/MicrosoftWindows.DesktopStickerEditorCentennial.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/ms-teams.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/ms-teamsupdate.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/ms-teams_autostarter.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/mspaint.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/MSTeams_8wekyb3d8bbwe/ms-teams.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/MSTeams_8wekyb3d8bbwe/ms-teamsupdate.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/MSTeams_8wekyb3d8bbwe/ms-teams_autostarter.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/notepad.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/olk.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/pbrush.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/python.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/python3.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/Skype.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/SnippingTool.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/WindowsPackageManagerServer.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/winget.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/wt.exe
-C:/Users/kHOA/AppData/Local/Microsoft/WindowsApps/XboxPcAppAdminServer.exe
-C:/Users/kHOA/AppData/Local/notion-updater/installer.exe
-C:/Users/kHOA/AppData/Local/notion-updater/pending/Notion Setup 4.1.2.exe
-C:/Users/kHOA/AppData/Local/Package Cache/{316e3b12-1191-47df-b9d4-dcf0bf2f6cc4}/python-3.12.6-amd64.exe
-C:/Users/kHOA/AppData/Local/Programs/cpeditor/cpeditor.exe
-C:/Users/kHOA/AppData/Local/Programs/cpeditor/unins000.exe
-C:/Users/kHOA/AppData/Local/Programs/Microsoft VS Code/bin/code-tunnel.exe
-C:/Users/kHOA/AppData/Local/Programs/Microsoft VS Code/Code.exe
-C:/Users/kHOA/AppData/Local/Programs/Microsoft VS Code/resources/app/node_modules/@vscode/ripgrep/bin/rg.exe
-C:/Users/kHOA/AppData/Local/Programs/Microsoft VS Code/resources/app/node_modules/@vscode/vsce-sign/bin/vsce-sign.exe
-C:/Users/kHOA/AppData/Local/Programs/Microsoft VS Code/resources/app/node_modules/node-pty/build/Release/conpty/OpenConsole.exe
-C:/Users/kHOA/AppData/Local/Programs/Microsoft VS Code/resources/app/node_modules/node-pty/build/Release/winpty-agent.exe
-C:/Users/kHOA/AppData/Local/Programs/Microsoft VS Code/tools/inno_updater.exe
-C:/Users/kHOA/AppData/Local/Programs/Microsoft VS Code/unins000.exe
-C:/Users/kHOA/AppData/Local/Programs/Notion/Notion.exe
-C:/Users/kHOA/AppData/Local/Programs/Notion/resources/elevate.exe
-C:/Users/kHOA/AppData/Local/Programs/Notion/Uninstall Notion.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/resources/elevate.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/sl.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Uninstall Zalo.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.10.1/plugins/capture/Zalo.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.10.1/plugins/capture/ZaloCall.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.10.1/plugins/capture/ZaloCap.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.10.1/plugins/capture/ZaviMeet.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.10.1/sl.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.10.1/Uninstall Zalo.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.10.1/Update.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.10.1/Zalo.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.10.1/ZaloExecutable.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.11.1/plugins/capture/Zalo.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.11.1/plugins/capture/ZaloCall.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.11.1/plugins/capture/ZaloCap.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.11.1/plugins/capture/ZaviMeet.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.11.1/sl.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.11.1/Uninstall Zalo.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.11.1/Update.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.11.1/Zalo.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.11.1/ZaloExecutable.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.9.4/plugins/capture/Zalo.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.9.4/plugins/capture/ZaloCall.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.9.4/plugins/capture/ZaloCap.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.9.4/plugins/capture/ZaviMeet.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.9.4/sl.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.9.4/Uninstall Zalo.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.9.4/Update.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.9.4/Zalo.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo-24.9.4/ZaloExecutable.exe
-C:/Users/kHOA/AppData/Local/Programs/Zalo/Zalo.exe
-C:/Users/kHOA/AppData/Local/zalo-updater/installer.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/jabswitch.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/jaccessinspector.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/jaccesswalker.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/jar.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/jarsigner.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/java.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/javac.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/javadoc.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/javap.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/javaw.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/jcmd.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/jconsole.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/jdb.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/jdeprscan.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/jdeps.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/jfr.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/jhsdb.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/jimage.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/jinfo.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/jlink.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/jmap.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/jmod.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/jpackage.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/jps.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/jrunscript.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/jshell.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/jstack.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/jstat.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/jstatd.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/keytool.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/kinit.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/klist.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/ktab.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/rmiregistry.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-beta/windows/java-runtime-beta/bin/serialver.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/jabswitch.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/jaccessinspector.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/jaccesswalker.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/jar.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/jarsigner.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/java.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/javac.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/javadoc.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/javap.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/javaw.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/jcmd.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/jconsole.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/jdb.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/jdeprscan.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/jdeps.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/jfr.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/jhsdb.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/jimage.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/jinfo.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/jlink.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/jmap.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/jmod.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/jpackage.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/jps.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/jrunscript.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/jshell.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/jstack.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/jstat.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/jstatd.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/jwebserver.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/keytool.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/kinit.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/klist.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/ktab.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/rmiregistry.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-delta/windows/java-runtime-delta/bin/serialver.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/jabswitch.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/jaccessinspector.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/jaccesswalker.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/jar.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/jarsigner.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/java.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/javac.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/javadoc.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/javap.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/javaw.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/jcmd.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/jconsole.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/jdb.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/jdeprscan.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/jdeps.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/jfr.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/jhsdb.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/jimage.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/jinfo.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/jlink.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/jmap.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/jmod.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/jpackage.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/jps.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/jrunscript.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/jshell.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/jstack.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/jstat.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/jstatd.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/keytool.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/kinit.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/klist.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/ktab.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/rmiregistry.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/java-runtime-gamma/windows/java-runtime-gamma/bin/serialver.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/jre-legacy/windows/jre-legacy/bin/jabswitch.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/jre-legacy/windows/jre-legacy/bin/java-rmi.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/jre-legacy/windows/jre-legacy/bin/java.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/jre-legacy/windows/jre-legacy/bin/javacpl.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/jre-legacy/windows/jre-legacy/bin/javaw.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/jre-legacy/windows/jre-legacy/bin/javaws.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/jre-legacy/windows/jre-legacy/bin/jjs.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/jre-legacy/windows/jre-legacy/bin/jp2launcher.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/jre-legacy/windows/jre-legacy/bin/keytool.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/jre-legacy/windows/jre-legacy/bin/kinit.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/jre-legacy/windows/jre-legacy/bin/klist.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/jre-legacy/windows/jre-legacy/bin/ktab.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/jre-legacy/windows/jre-legacy/bin/orbd.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/jre-legacy/windows/jre-legacy/bin/pack200.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/jre-legacy/windows/jre-legacy/bin/policytool.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/jre-legacy/windows/jre-legacy/bin/rmid.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/jre-legacy/windows/jre-legacy/bin/rmiregistry.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/jre-legacy/windows/jre-legacy/bin/servertool.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/jre-legacy/windows/jre-legacy/bin/ssvagent.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/jre-legacy/windows/jre-legacy/bin/tnameserv.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/runtime/jre-legacy/windows/jre-legacy/bin/unpack200.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/TLauncher.exe
-C:/Users/kHOA/AppData/Roaming/.minecraft/TLauncher32bit.exe
-C:/Users/kHOA/AppData/Roaming/.tlauncher/starter/jre_default/jre-17.0.10-windows-x64/bin/jabswitch.exe
-C:/Users/kHOA/AppData/Roaming/.tlauncher/starter/jre_default/jre-17.0.10-windows-x64/bin/jaccessinspector.exe
-C:/Users/kHOA/AppData/Roaming/.tlauncher/starter/jre_default/jre-17.0.10-windows-x64/bin/jaccesswalker.exe
-C:/Users/kHOA/AppData/Roaming/.tlauncher/starter/jre_default/jre-17.0.10-windows-x64/bin/jar.exe
-C:/Users/kHOA/AppData/Roaming/.tlauncher/starter/jre_default/jre-17.0.10-windows-x64/bin/jarsigner.exe
-C:/Users/kHOA/AppData/Roaming/.tlauncher/starter/jre_default/jre-17.0.10-windows-x64/bin/java.exe
-C:/Users/kHOA/AppData/Roaming/.tlauncher/starter/jre_default/jre-17.0.10-windows-x64/bin/javac.exe
-C:/Users/kHOA/AppData/Roaming/.tlauncher/starter/jre_default/jre-17.0.10-windows-x64/bin/javadoc.exe
-C:/Users/kHOA/AppData/Roaming/.tlauncher/starter/jre_default/jre-17.0.10-windows-x64/bin/javap.exe
-C:/Users/kHOA/AppData/Roaming/.tlauncher/starter/jre_default/jre-17.0.10-windows-x64/bin/javaw.exe
-C:/Users/kHOA/AppData/Roaming/.tlauncher/starter/jre_default/jre-17.0.10-windows-x64/bin/jdeprscan.exe
-C:/Users/kHOA/AppData/Roaming/.tlauncher/starter/jre_default/jre-17.0.10-windows-x64/bin/jdeps.exe
-C:/Users/kHOA/AppData/Roaming/.tlauncher/starter/jre_default/jre-17.0.10-windows-x64/bin/jfr.exe
-C:/Users/kHOA/AppData/Roaming/.tlauncher/starter/jre_default/jre-17.0.10-windows-x64/bin/jimage.exe
-C:/Users/kHOA/AppData/Roaming/.tlauncher/starter/jre_default/jre-17.0.10-windows-x64/bin/jlink.exe
-C:/Users/kHOA/AppData/Roaming/.tlauncher/starter/jre_default/jre-17.0.10-windows-x64/bin/jmod.exe
-C:/Users/kHOA/AppData/Roaming/.tlauncher/starter/jre_default/jre-17.0.10-windows-x64/bin/jpackage.exe
-C:/Users/kHOA/AppData/Roaming/.tlauncher/starter/jre_default/jre-17.0.10-windows-x64/bin/jrunscript.exe
-C:/Users/kHOA/AppData/Roaming/.tlauncher/starter/jre_default/jre-17.0.10-windows-x64/bin/keytool.exe
-C:/Users/kHOA/AppData/Roaming/.tlauncher/starter/jre_default/jre-17.0.10-windows-x64/bin/kinit.exe
-C:/Users/kHOA/AppData/Roaming/.tlauncher/starter/jre_default/jre-17.0.10-windows-x64/bin/klist.exe
-C:/Users/kHOA/AppData/Roaming/.tlauncher/starter/jre_default/jre-17.0.10-windows-x64/bin/ktab.exe
-C:/Users/kHOA/AppData/Roaming/.tlauncher/starter/jre_default/jre-17.0.10-windows-x64/bin/rmiregistry.exe
-C:/Users/kHOA/AppData/Roaming/.tlauncher/starter/jre_default/jre-17.0.10-windows-x64/bin/serialver.exe
-C:/Users/kHOA/AppData/Roaming/.tlauncher/tl-uninstall.exe
-C:/Users/kHOA/AppData/Roaming/Microsoft/Installer/{BFA8AF9A-AC09-422E-99DA-29479F232E25}/powertoys.exe
-C:/Users/kHOA/AppData/Roaming/obs-studio/updates/updater.exe
-C:/Users/kHOA/AppData/Roaming/Python/Python312/Scripts/flask.exe
-C:/Users/kHOA/AppData/Roaming/Zoom/bin/airhost.exe
-C:/Users/kHOA/AppData/Roaming/Zoom/bin/aomhost64.exe
-C:/Users/kHOA/AppData/Roaming/Zoom/bin/CptControl.exe
-C:/Users/kHOA/AppData/Roaming/Zoom/bin/CptHost.exe
-C:/Users/kHOA/AppData/Roaming/Zoom/bin/CptInstall.exe
-C:/Users/kHOA/AppData/Roaming/Zoom/bin/CptService.exe
-C:/Users/kHOA/AppData/Roaming/Zoom/bin/Installer.exe
-C:/Users/kHOA/AppData/Roaming/Zoom/bin/zCrashReport.exe
-C:/Users/kHOA/AppData/Roaming/Zoom/bin/zCrashReport64.exe
-C:/Users/kHOA/AppData/Roaming/Zoom/bin/Zoom.exe
-C:/Users/kHOA/AppData/Roaming/Zoom/bin/ZoomDocConverter.exe
-C:/Users/kHOA/AppData/Roaming/Zoom/bin/ZoomOutlookIMPlugin.exe
-C:/Users/kHOA/AppData/Roaming/Zoom/bin/ZoomOutlookMAPI/ZoomOutlookMAPI.exe
-C:/Users/kHOA/AppData/Roaming/Zoom/bin/ZoomOutlookMAPI/ZoomOutlookMAPI64.exe
-C:/Users/kHOA/AppData/Roaming/Zoom/bin/Zoom_launcher.exe
-C:/Users/kHOA/AppData/Roaming/Zoom/bin/zTscoder.exe
-C:/Users/kHOA/AppData/Roaming/Zoom/bin/zUpdater.exe
-C:/Users/kHOA/AppData/Roaming/Zoom/bin/zWebview2Agent.exe
-C:/Users/kHOA/AppData/Roaming/Zoom/uninstall/Installer.exe
-C:/Users/kHOA/AppData/Roaming/Zoom/ZoomDownload/Installer.exe
