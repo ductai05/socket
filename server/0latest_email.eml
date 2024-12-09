@@ -1,20 +1,19 @@
-Return-Path: <ai23socket@gmail.com>
-Received: from 0sendEmail.txt ([115.79.43.32])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-2162b16a589sm33284855ad.173.2024.12.08.22.36.39
-        for <ai23socket@gmail.com>
-        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Sun, 08 Dec 2024 22:36:40 -0800 (PST)
-Message-ID: <67568ff8.170a0220.1ecfd.95d2@mx.google.com>
-Date: Sun, 08 Dec 2024 22:36:40 -0800 (PST)
-From: ai23socket@gmail.com
-To: ai23socket@gmail.com
-Subject: [request_0]: 2024-12-09 13:18:49
 MIME-Version: 1.0
-Content-Type: multipart/mixed; boundary="boundary"
+Date: Mon, 9 Dec 2024 17:28:18 +0700
+Message-ID: <CAFp+ORf8fMVzGjUnmrtGtScVG-KgrgdiYuZSD1erXcHtLJv55g@mail.gmail.com>
+Subject: [request_0]: 2025-12-09 15:23:22
+From: AI23 Socket <ai23socket@gmail.com>
+To: AI23 Socket <ai23socket@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000cf754e0628d3d21e"
 
---boundary
+--000000000000cf754e0628d3d21e
 Content-Type: text/plain; charset="UTF-8"
 
-[task] test_ddt_minwin
+[task] list_apps
 
---boundary--
+--000000000000cf754e0628d3d21e
+Content-Type: text/html; charset="UTF-8"
+
+<div dir="ltr">[task] list_apps</div>
+
+--000000000000cf754e0628d3d21e--

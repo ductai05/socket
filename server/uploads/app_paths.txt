@@ -1,0 +1,1402 @@
+C:/Program Files (x86)/Bonjour/mDNSResponder.exe
+C:/Program Files (x86)/Common Files/Java/Java Update/jaureg.exe
+C:/Program Files (x86)/Common Files/Java/Java Update/jucheck.exe
+C:/Program Files (x86)/Common Files/Java/Java Update/jusched.exe
+C:/Program Files (x86)/Common Files/Microsoft Shared/ink/pipanel.exe
+C:/Program Files (x86)/Common Files/Microsoft Shared/ink/TabTip32.exe
+C:/Program Files (x86)/Common Files/Microsoft Shared/MSInfo/msinfo32.exe
+C:/Program Files (x86)/Common Files/Microsoft Shared/VSTO/10.0/VSTOInstaller.exe
+C:/Program Files (x86)/Common Files/Oracle/Java/java8path/java.exe
+C:/Program Files (x86)/Common Files/Oracle/Java/java8path/javaw.exe
+C:/Program Files (x86)/Common Files/Oracle/Java/java8path/javaws.exe
+C:/Program Files (x86)/Common Files/Oracle/Java/java8path_target_22434031/java.exe
+C:/Program Files (x86)/Common Files/Oracle/Java/java8path_target_22434031/javaw.exe
+C:/Program Files (x86)/Common Files/Oracle/Java/java8path_target_22434031/javaws.exe
+C:/Program Files (x86)/Common Files/Steam/drivers.exe
+C:/Program Files (x86)/Common Files/Steam/secure_desktop_capture.exe
+C:/Program Files (x86)/Common Files/Steam/steamservice.exe
+C:/Program Files (x86)/Common Files/Steam/SteamServiceTmp.exe
+C:/Program Files (x86)/Common Files/Steam/steamxboxutil64.exe
+C:/Program Files (x86)/Google/GoogleUpdater/132.0.6833.0/updater.exe
+C:/Program Files (x86)/Google/Update/GoogleUpdate.exe
+C:/Program Files (x86)/Internet Explorer/ExtExport.exe
+C:/Program Files (x86)/Internet Explorer/ieinstal.exe
+C:/Program Files (x86)/Internet Explorer/ielowutil.exe
+C:/Program Files (x86)/Internet Explorer/iexplore.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.86/BHO/ie_to_edge_stub.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.86/cookie_exporter.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.86/elevation_service.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.86/identity_helper.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.86/Installer/setup.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.86/msedge.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.86/msedgewebview2.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.86/msedge_proxy.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.86/msedge_pwa_launcher.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.86/notification_click_helper.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.86/notification_helper.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/131.0.2903.86/pwahelper.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/msedge_proxy.exe
+C:/Program Files (x86)/Microsoft/Edge/Application/pwahelper.exe
+C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.86/BHO/ie_to_edge_stub.exe
+C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.86/cookie_exporter.exe
+C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.86/elevation_service.exe
+C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.86/identity_helper.exe
+C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.86/Installer/setup.exe
+C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.86/msedge.exe
+C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.86/msedgewebview2.exe
+C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.86/msedge_proxy.exe
+C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.86/msedge_pwa_launcher.exe
+C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.86/notification_helper.exe
+C:/Program Files (x86)/Microsoft/EdgeCore/131.0.2903.86/pwahelper.exe
+C:/Program Files (x86)/Microsoft/EdgeUpdate/1.3.195.39/MicrosoftEdgeComRegisterShellARM64.exe
+C:/Program Files (x86)/Microsoft/EdgeUpdate/1.3.195.39/MicrosoftEdgeUpdate.exe
+C:/Program Files (x86)/Microsoft/EdgeUpdate/1.3.195.39/MicrosoftEdgeUpdateBroker.exe
+C:/Program Files (x86)/Microsoft/EdgeUpdate/1.3.195.39/MicrosoftEdgeUpdateComRegisterShell64.exe
+C:/Program Files (x86)/Microsoft/EdgeUpdate/1.3.195.39/MicrosoftEdgeUpdateCore.exe
+C:/Program Files (x86)/Microsoft/EdgeUpdate/1.3.195.39/MicrosoftEdgeUpdateOnDemand.exe
+C:/Program Files (x86)/Microsoft/EdgeUpdate/1.3.195.39/MicrosoftEdgeUpdateSetup.exe
+C:/Program Files (x86)/Microsoft/EdgeUpdate/Download/{1FAB8CFE-9860-415C-A6CA-AA7D12021940}/2.0.0.34/BGAUpdate.exe
+C:/Program Files (x86)/Microsoft/EdgeUpdate/Download/{56EB18F8-B008-4CBD-B6D2-8C97FE7E9062}/131.0.2903.86/MicrosoftEdge_X64_131.0.2903.86_131.0.2903.70.exe
+C:/Program Files (x86)/Microsoft/EdgeUpdate/Download/{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}/131.0.2903.86/MicrosoftEdge_X64_131.0.2903.86_131.0.2903.70.exe
+C:/Program Files (x86)/Microsoft/EdgeUpdate/Download/{F3C4FE00-EFD5-403B-9569-398A20F1BA4A}/1.3.195.39/MicrosoftEdgeUpdateSetup_X86_1.3.195.39.exe
+C:/Program Files (x86)/Microsoft/EdgeUpdate/MicrosoftEdgeUpdate.exe
+C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.86/BHO/ie_to_edge_stub.exe
+C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.86/cookie_exporter.exe
+C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.86/elevation_service.exe
+C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.86/identity_helper.exe
+C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.86/Installer/setup.exe
+C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.86/msedge.exe
+C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.86/msedgewebview2.exe
+C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.86/msedge_proxy.exe
+C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.86/msedge_pwa_launcher.exe
+C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.86/notification_helper.exe
+C:/Program Files (x86)/Microsoft/EdgeWebView/Application/131.0.2903.86/pwahelper.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/Common7/IDE/CommonExtensions/Microsoft/NuGet/NuGet.Build.Tasks.Console.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/Common7/IDE/vsn.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/Common7/Tools/errlook.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/Common7/Tools/guidgen.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/Common7/Tools/makehm.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/amd64/MSBuild.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/amd64/MSBuildTaskHost.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/amd64/Tracker.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuildTaskHost.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/Roslyn/csc.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/Roslyn/csi.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/Roslyn/vbc.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/Roslyn/VBCSCompiler.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/Tracker.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/Team Tools/Static Analysis Tools/FxCop/FxCopCmd.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Redist/MSVC/14.29.30133/vcredist_x64.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Redist/MSVC/14.29.30133/vcredist_x86.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Redist/MSVC/14.29.30133/vc_redist.x64.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Redist/MSVC/14.29.30133/vc_redist.x86.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Redist/MSVC/v142/vcredist_x64.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Redist/MSVC/v142/vcredist_x86.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Redist/MSVC/v142/vc_redist.x64.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Redist/MSVC/v142/vc_redist.x86.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/bscmake.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/cl.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/cvtres.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/dumpbin.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/editbin.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/lib.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/link.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/ml64.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/mspdbcmf.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/mspdbsrv.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/nmake.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/onecore/pgosweep.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/pgocvt.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/pgomgr.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/pgosweep.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/undname.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/vcperf.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/vctip.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/xdcmake.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x86/bscmake.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x86/cl.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x86/cvtres.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x86/dumpbin.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x86/editbin.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x86/lib.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x86/link.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x86/ml.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x86/mspdbcmf.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x86/mspdbsrv.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x86/nmake.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x86/pgocvt.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x86/pgomgr.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x86/undname.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x86/vctip.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x86/xdcmake.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x64/bscmake.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x64/cl.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x64/cvtres.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x64/dumpbin.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x64/editbin.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x64/ifc.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x64/lib.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x64/link.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x64/ml64.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x64/mspdbcmf.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x64/mspdbsrv.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x64/nmake.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x64/pgocvt.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x64/pgomgr.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x64/undname.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x64/vctip.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x64/xdcmake.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x86/bscmake.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x86/cl.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x86/cvtres.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x86/dumpbin.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x86/editbin.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x86/ifc.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x86/lib.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x86/link.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x86/ml.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x86/mspdbcmf.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x86/mspdbsrv.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x86/nmake.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x86/pgocvt.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x86/pgomgr.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x86/pgosweep.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x86/undname.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x86/vcperf.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x86/vctip.exe
+C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx86/x86/xdcmake.exe
+C:/Program Files (x86)/Microsoft Visual Studio/Installer/Feedback/dump64.exe
+C:/Program Files (x86)/Microsoft Visual Studio/Installer/Feedback/dump64a.exe
+C:/Program Files (x86)/Microsoft Visual Studio/Installer/feedback.exe
+C:/Program Files (x86)/Microsoft Visual Studio/Installer/InstallCleanup.exe
+C:/Program Files (x86)/Microsoft Visual Studio/Installer/Microsoft.VisualStudio.Setup.ToastNotification.exe
+C:/Program Files (x86)/Microsoft Visual Studio/Installer/resources/app/layout/setup.exe
+C:/Program Files (x86)/Microsoft Visual Studio/Installer/resources/app/ServiceHub/Services/Microsoft.VisualStudio.Setup.Service/BackgroundDownload.exe
+C:/Program Files (x86)/Microsoft Visual Studio/Installer/resources/app/ServiceHub/Services/Microsoft.VisualStudio.Setup.Service/CheckHyperVHost.exe
+C:/Program Files (x86)/Microsoft Visual Studio/Installer/resources/app/ServiceHub/Services/Microsoft.VisualStudio.Setup.Service/VSHiveStub.exe
+C:/Program Files (x86)/Microsoft Visual Studio/Installer/resources/app/ServiceHub/Services/Microsoft.VisualStudio.Setup.Service/VSIXAutoUpdate.exe
+C:/Program Files (x86)/Microsoft Visual Studio/Installer/resources/app/ServiceHub/Services/Microsoft.VisualStudio.Setup.Service/VSIXConfigurationUpdater.exe
+C:/Program Files (x86)/Microsoft Visual Studio/Installer/resources/app/ServiceHub/Services/Microsoft.VisualStudio.Setup.Service/VSIXInstaller.exe
+C:/Program Files (x86)/Microsoft Visual Studio/Installer/setup.exe
+C:/Program Files (x86)/Microsoft Visual Studio/Installer/VSInstallerElevationService.exe
+C:/Program Files (x86)/Microsoft Visual Studio/Installer/vswhere.exe
+C:/Program Files (x86)/Microsoft Visual Studio/Installer/vs_installer.exe
+C:/Program Files (x86)/Microsoft Visual Studio/Installer/vs_installer.windows.exe
+C:/Program Files (x86)/Microsoft Visual Studio/Installer/vs_installershell.exe
+C:/Program Files (x86)/Microsoft Visual Studio/Installer/vs_layout.exe
+C:/Program Files (x86)/Radmin VPN/drvinst.exe
+C:/Program Files (x86)/Radmin VPN/Radmin.exe
+C:/Program Files (x86)/Radmin VPN/RvControlSvc.exe
+C:/Program Files (x86)/Radmin VPN/RvFwHelper.exe
+C:/Program Files (x86)/Radmin VPN/RvGuiStarter.exe
+C:/Program Files (x86)/Radmin VPN/RvRvpnGui.exe
+C:/Program Files (x86)/Steam/bin/cef/cef.win7x64/steamwebhelper.exe
+C:/Program Files (x86)/Steam/bin/drivers.exe
+C:/Program Files (x86)/Steam/bin/fossilize-replay.exe
+C:/Program Files (x86)/Steam/bin/fossilize-replay64.exe
+C:/Program Files (x86)/Steam/bin/gldriverquery.exe
+C:/Program Files (x86)/Steam/bin/gldriverquery64.exe
+C:/Program Files (x86)/Steam/bin/secure_desktop_capture.exe
+C:/Program Files (x86)/Steam/bin/steamservice.exe
+C:/Program Files (x86)/Steam/bin/steamxboxutil.exe
+C:/Program Files (x86)/Steam/bin/steamxboxutil64.exe
+C:/Program Files (x86)/Steam/bin/steam_monitor.exe
+C:/Program Files (x86)/Steam/bin/vulkandriverquery.exe
+C:/Program Files (x86)/Steam/bin/vulkandriverquery64.exe
+C:/Program Files (x86)/Steam/bin/x64launcher.exe
+C:/Program Files (x86)/Steam/bin/x86launcher.exe
+C:/Program Files (x86)/Steam/GameOverlayUI.exe
+C:/Program Files (x86)/Steam/steam.exe
+C:/Program Files (x86)/Steam/steamapps/common/Don't Starve Together/bin/dontstarve_dedicated_server_nullrenderer.exe
+C:/Program Files (x86)/Steam/steamapps/common/Don't Starve Together/bin/dontstarve_steam.exe
+C:/Program Files (x86)/Steam/steamapps/common/Don't Starve Together/bin64/dontstarve_dedicated_server_nullrenderer_x64.exe
+C:/Program Files (x86)/Steam/steamapps/common/Don't Starve Together/bin64/dontstarve_steam_x64.exe
+C:/Program Files (x86)/Steam/steamapps/common/Don't Starve Together/DXRedist/DXSETUP.exe
+C:/Program Files (x86)/Steam/steamapps/common/Don't Starve Together/VCRedist/vcredist_x86.exe
+C:/Program Files (x86)/Steam/steamapps/common/Steamworks Shared/_CommonRedist/DirectX/Jun2010/DXSETUP.exe
+C:/Program Files (x86)/Steam/steamapps/common/Steamworks Shared/_CommonRedist/vcredist/2008/vcredist_x64.exe
+C:/Program Files (x86)/Steam/steamapps/common/Steamworks Shared/_CommonRedist/vcredist/2008/vcredist_x86.exe
+C:/Program Files (x86)/Steam/steamapps/common/Steamworks Shared/_CommonRedist/vcredist/2019/VC_redist.x64.exe
+C:/Program Files (x86)/Steam/steamapps/common/Steamworks Shared/_CommonRedist/vcredist/2019/VC_redist.x86.exe
+C:/Program Files (x86)/Steam/steamerrorreporter.exe
+C:/Program Files (x86)/Steam/steamerrorreporter64.exe
+C:/Program Files (x86)/Steam/streaming_client.exe
+C:/Program Files (x86)/Steam/uninstall.exe
+C:/Program Files (x86)/Steam/WriteMiniDump.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/ar.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/arm-wince-ar.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/arm-wince-as.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/arm-wince-dlltool.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/arm-wince-gdb.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/arm-wince-ld.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/arm-wince-nm.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/arm-wince-objcopy.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/arm-wince-objdump.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/arm-wince-pe-stub.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/arm-wince-strip.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/arm-wince-windres.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/as.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/bin2obj.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/chmcmd.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/chmls.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/cmp.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/cp.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/cpp.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/data2inc.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/delp.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/diff.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/dlltool.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/fp.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/fpc.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/fpcmake.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/fpcmkcfg.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/fpcres.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/fpcsubst.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/fpdoc.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/fpmc.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/fppkg.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/fprcp.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/gcc.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/gdate.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/gdb.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/gecho.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/ginstall.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/gmkdir.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/GoRC.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/grep.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/h2pas.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/h2paspp.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/ld.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/make.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/makeskel.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/mv.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/nm.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/objcopy.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/objdump.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/patch.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/plex.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/postw32.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/ppc386.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/ppcrossarm.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/ppcrossx64.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/ppdep.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/ppudump.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/ppufiles.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/ppumove.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/ptop.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/pwd.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/pyacc.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/rm.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/rmcvsdir.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/rstconv.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/strip.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/unitdiff.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/unzip.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/windres.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/x86_64-win64-ar.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/x86_64-win64-as.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/x86_64-win64-ld.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/x86_64-win64-nm.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/x86_64-win64-objcopy.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/x86_64-win64-objdump.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/x86_64-win64-strip.exe
+C:/Program Files (x86)/Themis/FPC/bin/i386-win32/zip.exe
+C:/Program Files (x86)/Themis/GCC/bin/addr2line.exe
+C:/Program Files (x86)/Themis/GCC/bin/ar.exe
+C:/Program Files (x86)/Themis/GCC/bin/as.exe
+C:/Program Files (x86)/Themis/GCC/bin/c++.exe
+C:/Program Files (x86)/Themis/GCC/bin/c++filt.exe
+C:/Program Files (x86)/Themis/GCC/bin/cc.exe
+C:/Program Files (x86)/Themis/GCC/bin/cpp.exe
+C:/Program Files (x86)/Themis/GCC/bin/dlltool.exe
+C:/Program Files (x86)/Themis/GCC/bin/dllwrap.exe
+C:/Program Files (x86)/Themis/GCC/bin/elfedit.exe
+C:/Program Files (x86)/Themis/GCC/bin/g++.exe
+C:/Program Files (x86)/Themis/GCC/bin/gcc-ar.exe
+C:/Program Files (x86)/Themis/GCC/bin/gcc-nm.exe
+C:/Program Files (x86)/Themis/GCC/bin/gcc-ranlib.exe
+C:/Program Files (x86)/Themis/GCC/bin/gcc.exe
+C:/Program Files (x86)/Themis/GCC/bin/gprof.exe
+C:/Program Files (x86)/Themis/GCC/bin/ld.bfd.exe
+C:/Program Files (x86)/Themis/GCC/bin/ld.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw-get.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-addr2line.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-ar.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-as.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-c++.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-c++filt.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-cc.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-dlltool.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-dllwrap.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-elfedit.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-g++.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-gcc-4.8.1.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-gcc-ar.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-gcc-nm.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-gcc-ranlib.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-gcc.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-gprof.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-ld.bfd.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-ld.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-nm.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-objcopy.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-objdump.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-ranlib.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-readelf.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-size.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-strings.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-strip.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-windmc.exe
+C:/Program Files (x86)/Themis/GCC/bin/mingw32-windres.exe
+C:/Program Files (x86)/Themis/GCC/bin/nm.exe
+C:/Program Files (x86)/Themis/GCC/bin/objcopy.exe
+C:/Program Files (x86)/Themis/GCC/bin/objdump.exe
+C:/Program Files (x86)/Themis/GCC/bin/ranlib.exe
+C:/Program Files (x86)/Themis/GCC/bin/readelf.exe
+C:/Program Files (x86)/Themis/GCC/bin/size.exe
+C:/Program Files (x86)/Themis/GCC/bin/strings.exe
+C:/Program Files (x86)/Themis/GCC/bin/strip.exe
+C:/Program Files (x86)/Themis/GCC/bin/windmc.exe
+C:/Program Files (x86)/Themis/GCC/bin/windres.exe
+C:/Program Files (x86)/Themis/GCC/libexec/gcc/mingw32/4.8.1/cc1.exe
+C:/Program Files (x86)/Themis/GCC/libexec/gcc/mingw32/4.8.1/cc1plus.exe
+C:/Program Files (x86)/Themis/GCC/libexec/gcc/mingw32/4.8.1/collect2.exe
+C:/Program Files (x86)/Themis/GCC/libexec/gcc/mingw32/4.8.1/install-tools/fixincl.exe
+C:/Program Files (x86)/Themis/GCC/libexec/gcc/mingw32/4.8.1/lto-wrapper.exe
+C:/Program Files (x86)/Themis/GCC/libexec/gcc/mingw32/4.8.1/lto1.exe
+C:/Program Files (x86)/Themis/GCC/libexec/mingw-get/guimain.exe
+C:/Program Files (x86)/Themis/GCC/libexec/mingw-get/guistub.exe
+C:/Program Files (x86)/Themis/GCC/libexec/mingw-get/lastrites.exe
+C:/Program Files (x86)/Themis/JDK/bin/appletviewer.exe
+C:/Program Files (x86)/Themis/JDK/bin/apt.exe
+C:/Program Files (x86)/Themis/JDK/bin/extcheck.exe
+C:/Program Files (x86)/Themis/JDK/bin/idlj.exe
+C:/Program Files (x86)/Themis/JDK/bin/jar.exe
+C:/Program Files (x86)/Themis/JDK/bin/jarsigner.exe
+C:/Program Files (x86)/Themis/JDK/bin/java-rmi.exe
+C:/Program Files (x86)/Themis/JDK/bin/java.exe
+C:/Program Files (x86)/Themis/JDK/bin/Java2Jar.exe
+C:/Program Files (x86)/Themis/JDK/bin/javac.exe
+C:/Program Files (x86)/Themis/JDK/bin/javadoc.exe
+C:/Program Files (x86)/Themis/JDK/bin/javah.exe
+C:/Program Files (x86)/Themis/JDK/bin/javap.exe
+C:/Program Files (x86)/Themis/JDK/bin/javaw.exe
+C:/Program Files (x86)/Themis/JDK/bin/jcmd.exe
+C:/Program Files (x86)/Themis/JDK/bin/jconsole.exe
+C:/Program Files (x86)/Themis/JDK/bin/jdb.exe
+C:/Program Files (x86)/Themis/JDK/bin/jhat.exe
+C:/Program Files (x86)/Themis/JDK/bin/jinfo.exe
+C:/Program Files (x86)/Themis/JDK/bin/jmap.exe
+C:/Program Files (x86)/Themis/JDK/bin/jps.exe
+C:/Program Files (x86)/Themis/JDK/bin/jrunscript.exe
+C:/Program Files (x86)/Themis/JDK/bin/jsadebugd.exe
+C:/Program Files (x86)/Themis/JDK/bin/jstack.exe
+C:/Program Files (x86)/Themis/JDK/bin/jstat.exe
+C:/Program Files (x86)/Themis/JDK/bin/jstatd.exe
+C:/Program Files (x86)/Themis/JDK/bin/keytool.exe
+C:/Program Files (x86)/Themis/JDK/bin/kinit.exe
+C:/Program Files (x86)/Themis/JDK/bin/klist.exe
+C:/Program Files (x86)/Themis/JDK/bin/ktab.exe
+C:/Program Files (x86)/Themis/JDK/bin/native2ascii.exe
+C:/Program Files (x86)/Themis/JDK/bin/orbd.exe
+C:/Program Files (x86)/Themis/JDK/bin/pack200.exe
+C:/Program Files (x86)/Themis/JDK/bin/policytool.exe
+C:/Program Files (x86)/Themis/JDK/bin/rmic.exe
+C:/Program Files (x86)/Themis/JDK/bin/rmid.exe
+C:/Program Files (x86)/Themis/JDK/bin/rmiregistry.exe
+C:/Program Files (x86)/Themis/JDK/bin/schemagen.exe
+C:/Program Files (x86)/Themis/JDK/bin/serialver.exe
+C:/Program Files (x86)/Themis/JDK/bin/servertool.exe
+C:/Program Files (x86)/Themis/JDK/bin/tnameserv.exe
+C:/Program Files (x86)/Themis/JDK/bin/unpack200.exe
+C:/Program Files (x86)/Themis/JDK/bin/wsgen.exe
+C:/Program Files (x86)/Themis/JDK/bin/wsimport.exe
+C:/Program Files (x86)/Themis/JDK/bin/xjc.exe
+C:/Program Files (x86)/Themis/JDK/jre/bin/java-rmi.exe
+C:/Program Files (x86)/Themis/JDK/jre/bin/java.exe
+C:/Program Files (x86)/Themis/JDK/jre/bin/javaw.exe
+C:/Program Files (x86)/Themis/JDK/jre/bin/keytool.exe
+C:/Program Files (x86)/Themis/JDK/jre/bin/kinit.exe
+C:/Program Files (x86)/Themis/JDK/jre/bin/klist.exe
+C:/Program Files (x86)/Themis/JDK/jre/bin/ktab.exe
+C:/Program Files (x86)/Themis/JDK/jre/bin/orbd.exe
+C:/Program Files (x86)/Themis/JDK/jre/bin/pack200.exe
+C:/Program Files (x86)/Themis/JDK/jre/bin/policytool.exe
+C:/Program Files (x86)/Themis/JDK/jre/bin/rmid.exe
+C:/Program Files (x86)/Themis/JDK/jre/bin/rmiregistry.exe
+C:/Program Files (x86)/Themis/JDK/jre/bin/servertool.exe
+C:/Program Files (x86)/Themis/JDK/jre/bin/tnameserv.exe
+C:/Program Files (x86)/Themis/JDK/jre/bin/unpack200.exe
+C:/Program Files (x86)/Themis/PYTHON/Lib/distutils/command/wininst-10.0-amd64.exe
+C:/Program Files (x86)/Themis/PYTHON/Lib/distutils/command/wininst-10.0.exe
+C:/Program Files (x86)/Themis/PYTHON/Lib/distutils/command/wininst-6.0.exe
+C:/Program Files (x86)/Themis/PYTHON/Lib/distutils/command/wininst-7.1.exe
+C:/Program Files (x86)/Themis/PYTHON/Lib/distutils/command/wininst-8.0.exe
+C:/Program Files (x86)/Themis/PYTHON/Lib/distutils/command/wininst-9.0-amd64.exe
+C:/Program Files (x86)/Themis/PYTHON/Lib/distutils/command/wininst-9.0.exe
+C:/Program Files (x86)/Themis/PYTHON/python.exe
+C:/Program Files (x86)/Themis/PYTHON/pythonw.exe
+C:/Program Files (x86)/Themis/PYTHON/w9xpopen.exe
+C:/Program Files (x86)/Themis/Themis.exe
+C:/Program Files (x86)/Themis/unins000.exe
+C:/Program Files (x86)/Windows Defender/MpCmdRun.exe
+C:/Program Files (x86)/Windows Kits/10/App Certification Kit/aitstatic.exe
+C:/Program Files (x86)/Windows Kits/10/App Certification Kit/appcert.exe
+C:/Program Files (x86)/Windows Kits/10/App Certification Kit/appcertui.exe
+C:/Program Files (x86)/Windows Kits/10/App Certification Kit/makeappx.exe
+C:/Program Files (x86)/Windows Kits/10/App Certification Kit/microsoft.windows.softwarelogo.appxlauncher.exe
+C:/Program Files (x86)/Windows Kits/10/App Certification Kit/microsoft.windows.softwarelogo.taskengine.exe
+C:/Program Files (x86)/Windows Kits/10/App Certification Kit/rmlogotest.exe
+C:/Program Files (x86)/Windows Kits/10/App Certification Kit/signtool.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/AccChecker/AccCheckConsole.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/AccChecker/acccheckui.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/accevent.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/computerhardwareids.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/cppwinrt.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/DeployUtil.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/dxcapsviewer.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/filetypeverifier.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/filtdump.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/filtreg.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/ftquery.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/ifilttst.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/inspect.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/mbidgenerator.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/mftrace.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/MsiCert.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/MsiDb.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/MsiFiler.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/MsiInfo.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/Msimerg.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/MsiMsp.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/MsiTran.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/signtool.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/topoedit.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/tracelog.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/UIAVerify/VisualUIAVerifyNative.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/WiLogUtl.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm/wstraceutil.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/AccChecker/AccCheckConsole.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/AccChecker/acccheckui.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/accevent.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/betest.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/cameraprofiletool.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/cert2spc.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/certmgr.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/computerhardwareids.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/convert-moftoprovider.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/cppwinrt.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/ctrpp.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/DeployUtil.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/dxc.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/dxcapsviewer.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/espexe.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/extidgen.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/filetypeverifier.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/filtdump.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/filtreg.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/ftquery.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/fxc.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/graphedt.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/ifilttst.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/inspect.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/jsconstraintdebug.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/makecat.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/makecert.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/makepri.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/mbidgenerator.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/mc.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/mftrace.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/midl.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/midlc.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/mt.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/muirct.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/oleview.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/pktextract.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/pvk2pfx.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/rc.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/signtool.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/TB3x.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/topoedit.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/tracefmt.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/tracelog.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/tracepdb.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/traceview.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/tracewpp.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/UIAVerify/VisualUIAVerifyNative.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/uuidgen.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/vsdiagview.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/vshadow.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/vssagent.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/vsstrace.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/vstorcontrol.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/vswriter.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/wstracedump.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/wstraceutil.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/wsutil.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/arm64/xpsanalyzer.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/AccChecker/AccCheckConsole.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/AccChecker/acccheckui.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/accevent.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/adpcmencode3.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/betest.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/cameraprofiletool.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/cert2spc.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/certmgr.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/ComparePackage.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/computerhardwareids.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/convert-moftoprovider.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/cppwinrt.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/ctrpp.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/DeployUtil.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/dxc.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/dxcapsviewer.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/espexe.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/extidgen.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/filetypeverifier.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/filtdump.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/filtreg.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/ftquery.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/fxc.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/gamesaveutil.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/genmanifest.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/graphedt.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/ifilttst.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/inspect.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/isxps.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/jsconstraintdebug.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/makeappx.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/makecat.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/makecert.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/makepri.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/mbidgenerator.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/mc.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/mdmerge.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/mftrace.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/midl.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/midlc.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/midlrt.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/mt.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/muirct.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/oleview.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/PackageEditor.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/pktextract.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/pvk2pfx.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/rc.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/regwinmd.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/signtool.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/StoreUploader.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/TB3x.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/topoedit.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/tracefmt.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/tracelog.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/tracepdb.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/traceview.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/tracewpp.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/UIAVerify/VisualUIAVerifyNative.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/uuidgen.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/vsdiagview.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/vshadow.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/vssagent.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/vsstrace.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/vstorcontrol.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/vswriter.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/winmdidl.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/wsdcodegen.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/wsddebug_client.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/wsddebug_host.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/wstracedump.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/wstraceutil.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/wsutil.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/xpsanalyzer.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x64/xpsconverter.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/AccChecker/AccCheckConsole.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/AccChecker/acccheckui.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/accevent.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/adpcmencode3.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/betest.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/cameraprofiletool.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/cert2spc.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/certmgr.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/ComparePackage.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/computerhardwareids.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/convert-moftoprovider.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/cppwinrt.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/ctrpp.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/DeployUtil.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/dxc.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/dxcapsviewer.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/espexe.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/extidgen.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/filetypeverifier.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/filtdump.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/filtreg.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/ftquery.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/fxc.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/gc.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/genmanifest.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/graphedt.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/ifilttst.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/inspect.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/isxps.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/jsconstraintdebug.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/makeappx.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/makecat.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/makecert.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/makepri.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/mbidgenerator.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/mc.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/mdmerge.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/mftrace.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/midl.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/midlc.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/midlrt.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/MsiCert.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/MsiDb.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/MsiFiler.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/MsiInfo.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/Msimerg.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/MsiMsp.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/MsiTran.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/mt.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/muirct.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/oleview.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/PackageEditor.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/pktextract.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/pvk2pfx.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/rc.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/regwinmd.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/signtool.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/StoreUploader.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/TB3x.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/topoedit.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/tracefmt.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/tracelog.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/tracepdb.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/traceview.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/tracewpp.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/UIAVerify/VisualUIAVerifyNative.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/uicc.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/uuidgen.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/vsdiagview.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/vshadow.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/vssagent.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/vsstrace.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/vstorcontrol.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/vswriter.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/WiLogUtl.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/WinAppDeployCmd.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/winmdidl.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/wsdcodegen.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/wsddebug_client.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/wsddebug_host.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/wstracedump.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/wstraceutil.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/wsutil.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/xpsanalyzer.exe
+C:/Program Files (x86)/Windows Kits/10/bin/10.0.19041.0/x86/xpsconverter.exe
+C:/Program Files (x86)/Windows Kits/10/Testing/Runtimes/TAEF/Conduit.Broker.Host.exe
+C:/Program Files (x86)/Windows Kits/10/Testing/Runtimes/TAEF/MinTe/Conduit.Broker.Host.exe
+C:/Program Files (x86)/Windows Kits/10/Testing/Runtimes/TAEF/MinTe/TE.exe
+C:/Program Files (x86)/Windows Kits/10/Testing/Runtimes/TAEF/MinTe/TE.ProcessHost.exe
+C:/Program Files (x86)/Windows Kits/10/Testing/Runtimes/TAEF/MinTe/TE.ProcessHost.UAP.exe
+C:/Program Files (x86)/Windows Kits/10/Testing/Runtimes/TAEF/TE.exe
+C:/Program Files (x86)/Windows Kits/10/Testing/Runtimes/TAEF/TE.ManagedHost.exe
+C:/Program Files (x86)/Windows Kits/10/Testing/Runtimes/TAEF/TE.ProcessHost.exe
+C:/Program Files (x86)/Windows Kits/10/Testing/Runtimes/TAEF/TE.ProcessHost.UAP.exe
+C:/Program Files (x86)/Windows Kits/10/Testing/Runtimes/TAEF/x64/Conduit.Broker.Host.exe
+C:/Program Files (x86)/Windows Kits/10/Testing/Runtimes/TAEF/x64/MinTe/Conduit.Broker.Host.exe
+C:/Program Files (x86)/Windows Kits/10/Testing/Runtimes/TAEF/x64/MinTe/TE.exe
+C:/Program Files (x86)/Windows Kits/10/Testing/Runtimes/TAEF/x64/MinTe/TE.ProcessHost.exe
+C:/Program Files (x86)/Windows Kits/10/Testing/Runtimes/TAEF/x64/MinTe/TE.ProcessHost.UAP.exe
+C:/Program Files (x86)/Windows Kits/10/Testing/Runtimes/TAEF/x64/MinTe/Wex.Services.exe
+C:/Program Files (x86)/Windows Kits/10/Testing/Runtimes/TAEF/x64/TE.exe
+C:/Program Files (x86)/Windows Kits/10/Testing/Runtimes/TAEF/x64/TE.ManagedHost.exe
+C:/Program Files (x86)/Windows Kits/10/Testing/Runtimes/TAEF/x64/TE.ProcessHost.exe
+C:/Program Files (x86)/Windows Kits/10/Testing/Runtimes/TAEF/x64/TE.ProcessHost.UAP.exe
+C:/Program Files (x86)/Windows Kits/10/Testing/Runtimes/TAEF/x64/Wex.Services.exe
+C:/Program Files (x86)/Windows Mail/wab.exe
+C:/Program Files (x86)/Windows Mail/wabmig.exe
+C:/Program Files (x86)/Windows Media Player/setup_wm.exe
+C:/Program Files (x86)/Windows Media Player/wmlaunch.exe
+C:/Program Files (x86)/Windows Media Player/wmpconfig.exe
+C:/Program Files (x86)/Windows Media Player/wmplayer.exe
+C:/Program Files (x86)/Windows Media Player/wmprph.exe
+C:/Program Files (x86)/Windows Media Player/wmpshare.exe
+C:/Program Files (x86)/Windows NT/Accessories/wordpad.exe
+C:/Program Files (x86)/Windows Photo Viewer/ImagingDevices.exe
+C:/Program Files/ASUS/ASUS Platform Defined Recovery/AsusPlatformDefinedRecovery.exe
+C:/Program Files/ASUS/AsusScreenXpert/AsusScreenXpertHostService.exe
+C:/Program Files/ASUS/AsusScreenXpert/AsusScreenXpertUserUI.exe
+C:/Program Files/ASUS/GlideX/GlideXServiceInstaller.exe
+C:/Program Files/Bonjour/mDNSResponder.exe
+C:/Program Files/CCleaner/CCleaner.exe
+C:/Program Files/CCleaner/CCleaner64.exe
+C:/Program Files/CCleaner/CCleanerBugReport.exe
+C:/Program Files/CCleaner/CCleanerCrashDump.exe
+C:/Program Files/CCleaner/CCleanerPerformanceOptimizerService.exe
+C:/Program Files/CCleaner/CCleanerReactivator.exe
+C:/Program Files/CCleaner/CCUpdate.exe
+C:/Program Files/CCleaner/uninst.exe
+C:/Program Files/CCleaner/wa_3rd_party_host_32.exe
+C:/Program Files/CCleaner/wa_3rd_party_host_64.exe
+C:/Program Files/CMake/bin/cmake-gui.exe
+C:/Program Files/CMake/bin/cmake.exe
+C:/Program Files/CMake/bin/cmcldeps.exe
+C:/Program Files/CMake/bin/cpack.exe
+C:/Program Files/CMake/bin/ctest.exe
+C:/Program Files/CodeBlocks/Addr2LineUI.exe
+C:/Program Files/CodeBlocks/CbLauncher.exe
+C:/Program Files/CodeBlocks/cbp2make.exe
+C:/Program Files/CodeBlocks/cb_console_runner.exe
+C:/Program Files/CodeBlocks/cb_share_config.exe
+C:/Program Files/CodeBlocks/codeblocks.exe
+C:/Program Files/CodeBlocks/uninstall.exe
+C:/Program Files/Common Files/microsoft shared/ClickToRun/appvcleaner.exe
+C:/Program Files/Common Files/microsoft shared/ClickToRun/AppVShNotify.exe
+C:/Program Files/Common Files/microsoft shared/ClickToRun/InspectorOfficeGadget.exe
+C:/Program Files/Common Files/microsoft shared/ClickToRun/IntegratedOffice.exe
+C:/Program Files/Common Files/microsoft shared/ClickToRun/MavInject32.exe
+C:/Program Files/Common Files/microsoft shared/ClickToRun/OfficeC2RClient.exe
+C:/Program Files/Common Files/microsoft shared/ClickToRun/OfficeClickToRun.exe
+C:/Program Files/Common Files/microsoft shared/ClickToRun/officesvcmgr.exe
+C:/Program Files/Common Files/microsoft shared/ink/TabTip.exe
+C:/Program Files/Common Files/microsoft shared/MSInfo/msinfo32.exe
+C:/Program Files/Common Files/microsoft shared/VSTO/10.0/VSTOInstaller.exe
+C:/Program Files/Git/bin/bash.exe
+C:/Program Files/Git/bin/git.exe
+C:/Program Files/Git/bin/sh.exe
+C:/Program Files/Git/cmd/git-gui.exe
+C:/Program Files/Git/cmd/git-lfs.exe
+C:/Program Files/Git/cmd/git-receive-pack.exe
+C:/Program Files/Git/cmd/git-upload-pack.exe
+C:/Program Files/Git/cmd/git.exe
+C:/Program Files/Git/cmd/gitk.exe
+C:/Program Files/Git/cmd/scalar.exe
+C:/Program Files/Git/cmd/tig.exe
+C:/Program Files/Git/git-bash.exe
+C:/Program Files/Git/git-cmd.exe
+C:/Program Files/Git/mingw64/bin/adig.exe
+C:/Program Files/Git/mingw64/bin/ahost.exe
+C:/Program Files/Git/mingw64/bin/antiword.exe
+C:/Program Files/Git/mingw64/bin/blocked-file-util.exe
+C:/Program Files/Git/mingw64/bin/brotli.exe
+C:/Program Files/Git/mingw64/bin/bunzip2.exe
+C:/Program Files/Git/mingw64/bin/bzcat.exe
+C:/Program Files/Git/mingw64/bin/bzip2.exe
+C:/Program Files/Git/mingw64/bin/bzip2recover.exe
+C:/Program Files/Git/mingw64/bin/connect.exe
+C:/Program Files/Git/mingw64/bin/create-shortcut.exe
+C:/Program Files/Git/mingw64/bin/curl.exe
+C:/Program Files/Git/mingw64/bin/edit_test.exe
+C:/Program Files/Git/mingw64/bin/edit_test_dll.exe
+C:/Program Files/Git/mingw64/bin/envsubst.exe
+C:/Program Files/Git/mingw64/bin/gettext.exe
+C:/Program Files/Git/mingw64/bin/git-askpass.exe
+C:/Program Files/Git/mingw64/bin/git-askyesno.exe
+C:/Program Files/Git/mingw64/bin/git-credential-helper-selector.exe
+C:/Program Files/Git/mingw64/bin/git-credential-manager.exe
+C:/Program Files/Git/mingw64/bin/git-lfs.exe
+C:/Program Files/Git/mingw64/bin/git-receive-pack.exe
+C:/Program Files/Git/mingw64/bin/git-upload-archive.exe
+C:/Program Files/Git/mingw64/bin/git-upload-pack.exe
+C:/Program Files/Git/mingw64/bin/git.exe
+C:/Program Files/Git/mingw64/bin/lzmadec.exe
+C:/Program Files/Git/mingw64/bin/lzmainfo.exe
+C:/Program Files/Git/mingw64/bin/odt2txt.exe
+C:/Program Files/Git/mingw64/bin/openssl.exe
+C:/Program Files/Git/mingw64/bin/p11-kit.exe
+C:/Program Files/Git/mingw64/bin/pdftotext.exe
+C:/Program Files/Git/mingw64/bin/pkcs1-conv.exe
+C:/Program Files/Git/mingw64/bin/proxy-lookup.exe
+C:/Program Files/Git/mingw64/bin/psl.exe
+C:/Program Files/Git/mingw64/bin/scalar.exe
+C:/Program Files/Git/mingw64/bin/sexp-conv.exe
+C:/Program Files/Git/mingw64/bin/tclsh.exe
+C:/Program Files/Git/mingw64/bin/tclsh86.exe
+C:/Program Files/Git/mingw64/bin/trust.exe
+C:/Program Files/Git/mingw64/bin/unxz.exe
+C:/Program Files/Git/mingw64/bin/WhoUses.exe
+C:/Program Files/Git/mingw64/bin/wintoast.exe
+C:/Program Files/Git/mingw64/bin/wish.exe
+C:/Program Files/Git/mingw64/bin/wish86.exe
+C:/Program Files/Git/mingw64/bin/x86_64-w64-mingw32-agrep.exe
+C:/Program Files/Git/mingw64/bin/xmlwf.exe
+C:/Program Files/Git/mingw64/bin/xz.exe
+C:/Program Files/Git/mingw64/bin/xzcat.exe
+C:/Program Files/Git/mingw64/bin/xzdec.exe
+C:/Program Files/Git/mingw64/libexec/git-core/git-credential-wincred.exe
+C:/Program Files/Git/mingw64/libexec/git-core/git-daemon.exe
+C:/Program Files/Git/mingw64/libexec/git-core/git-http-backend.exe
+C:/Program Files/Git/mingw64/libexec/git-core/git-http-fetch.exe
+C:/Program Files/Git/mingw64/libexec/git-core/git-http-push.exe
+C:/Program Files/Git/mingw64/libexec/git-core/git-imap-send.exe
+C:/Program Files/Git/mingw64/libexec/git-core/git-remote-ftp.exe
+C:/Program Files/Git/mingw64/libexec/git-core/git-remote-ftps.exe
+C:/Program Files/Git/mingw64/libexec/git-core/git-remote-http.exe
+C:/Program Files/Git/mingw64/libexec/git-core/git-remote-https.exe
+C:/Program Files/Git/mingw64/libexec/git-core/git-sh-i18n--envsubst.exe
+C:/Program Files/Git/mingw64/libexec/git-core/git.exe
+C:/Program Files/Git/mingw64/libexec/git-core/headless-git.exe
+C:/Program Files/Git/mingw64/libexec/git-core/scalar.exe
+C:/Program Files/Git/mingw64/libexec/p11-kit/p11-kit-remote.exe
+C:/Program Files/Git/mingw64/libexec/p11-kit/p11-kit-server.exe
+C:/Program Files/Git/mingw64/share/git/compat-bash.exe
+C:/Program Files/Git/mingw64/share/git/edit-git-bash.exe
+C:/Program Files/Git/mingw64/share/git/git-wrapper.exe
+C:/Program Files/Git/unins001.exe
+C:/Program Files/Git/usr/bin/arch.exe
+C:/Program Files/Git/usr/bin/awk.exe
+C:/Program Files/Git/usr/bin/b2sum.exe
+C:/Program Files/Git/usr/bin/base32.exe
+C:/Program Files/Git/usr/bin/base64.exe
+C:/Program Files/Git/usr/bin/basename.exe
+C:/Program Files/Git/usr/bin/basenc.exe
+C:/Program Files/Git/usr/bin/bash.exe
+C:/Program Files/Git/usr/bin/bunzip2.exe
+C:/Program Files/Git/usr/bin/bzcat.exe
+C:/Program Files/Git/usr/bin/bzip2.exe
+C:/Program Files/Git/usr/bin/bzip2recover.exe
+C:/Program Files/Git/usr/bin/captoinfo.exe
+C:/Program Files/Git/usr/bin/cat.exe
+C:/Program Files/Git/usr/bin/chattr.exe
+C:/Program Files/Git/usr/bin/chcon.exe
+C:/Program Files/Git/usr/bin/chgrp.exe
+C:/Program Files/Git/usr/bin/chmod.exe
+C:/Program Files/Git/usr/bin/chown.exe
+C:/Program Files/Git/usr/bin/chroot.exe
+C:/Program Files/Git/usr/bin/cksum.exe
+C:/Program Files/Git/usr/bin/clear.exe
+C:/Program Files/Git/usr/bin/cmp.exe
+C:/Program Files/Git/usr/bin/column.exe
+C:/Program Files/Git/usr/bin/comm.exe
+C:/Program Files/Git/usr/bin/cp.exe
+C:/Program Files/Git/usr/bin/csplit.exe
+C:/Program Files/Git/usr/bin/cut.exe
+C:/Program Files/Git/usr/bin/cygcheck.exe
+C:/Program Files/Git/usr/bin/cygpath.exe
+C:/Program Files/Git/usr/bin/cygwin-console-helper.exe
+C:/Program Files/Git/usr/bin/d2u.exe
+C:/Program Files/Git/usr/bin/dash.exe
+C:/Program Files/Git/usr/bin/date.exe
+C:/Program Files/Git/usr/bin/dd.exe
+C:/Program Files/Git/usr/bin/df.exe
+C:/Program Files/Git/usr/bin/diff.exe
+C:/Program Files/Git/usr/bin/diff3.exe
+C:/Program Files/Git/usr/bin/dir.exe
+C:/Program Files/Git/usr/bin/dircolors.exe
+C:/Program Files/Git/usr/bin/dirmngr-client.exe
+C:/Program Files/Git/usr/bin/dirmngr.exe
+C:/Program Files/Git/usr/bin/dirname.exe
+C:/Program Files/Git/usr/bin/dos2unix.exe
+C:/Program Files/Git/usr/bin/du.exe
+C:/Program Files/Git/usr/bin/dumpsexp.exe
+C:/Program Files/Git/usr/bin/echo.exe
+C:/Program Files/Git/usr/bin/env.exe
+C:/Program Files/Git/usr/bin/ex.exe
+C:/Program Files/Git/usr/bin/expand.exe
+C:/Program Files/Git/usr/bin/expr.exe
+C:/Program Files/Git/usr/bin/factor.exe
+C:/Program Files/Git/usr/bin/false.exe
+C:/Program Files/Git/usr/bin/file.exe
+C:/Program Files/Git/usr/bin/find.exe
+C:/Program Files/Git/usr/bin/fmt.exe
+C:/Program Files/Git/usr/bin/fold.exe
+C:/Program Files/Git/usr/bin/funzip.exe
+C:/Program Files/Git/usr/bin/gawk-5.0.0.exe
+C:/Program Files/Git/usr/bin/gawk.exe
+C:/Program Files/Git/usr/bin/gencat.exe
+C:/Program Files/Git/usr/bin/getconf.exe
+C:/Program Files/Git/usr/bin/getfacl.exe
+C:/Program Files/Git/usr/bin/getopt.exe
+C:/Program Files/Git/usr/bin/gkill.exe
+C:/Program Files/Git/usr/bin/gmondump.exe
+C:/Program Files/Git/usr/bin/gpg-agent.exe
+C:/Program Files/Git/usr/bin/gpg-card.exe
+C:/Program Files/Git/usr/bin/gpg-connect-agent.exe
+C:/Program Files/Git/usr/bin/gpg-error.exe
+C:/Program Files/Git/usr/bin/gpg-wks-client.exe
+C:/Program Files/Git/usr/bin/gpg-wks-server.exe
+C:/Program Files/Git/usr/bin/gpg.exe
+C:/Program Files/Git/usr/bin/gpgconf.exe
+C:/Program Files/Git/usr/bin/gpgparsemail.exe
+C:/Program Files/Git/usr/bin/gpgscm.exe
+C:/Program Files/Git/usr/bin/gpgsm.exe
+C:/Program Files/Git/usr/bin/gpgsplit.exe
+C:/Program Files/Git/usr/bin/gpgtar.exe
+C:/Program Files/Git/usr/bin/gpgv.exe
+C:/Program Files/Git/usr/bin/grep.exe
+C:/Program Files/Git/usr/bin/groups.exe
+C:/Program Files/Git/usr/bin/gzip.exe
+C:/Program Files/Git/usr/bin/head.exe
+C:/Program Files/Git/usr/bin/hmac256.exe
+C:/Program Files/Git/usr/bin/hostid.exe
+C:/Program Files/Git/usr/bin/hostname.exe
+C:/Program Files/Git/usr/bin/iconv.exe
+C:/Program Files/Git/usr/bin/id.exe
+C:/Program Files/Git/usr/bin/infocmp.exe
+C:/Program Files/Git/usr/bin/infotocap.exe
+C:/Program Files/Git/usr/bin/install.exe
+C:/Program Files/Git/usr/bin/join.exe
+C:/Program Files/Git/usr/bin/kbxutil.exe
+C:/Program Files/Git/usr/bin/kill.exe
+C:/Program Files/Git/usr/bin/ldd.exe
+C:/Program Files/Git/usr/bin/ldh.exe
+C:/Program Files/Git/usr/bin/less.exe
+C:/Program Files/Git/usr/bin/lessecho.exe
+C:/Program Files/Git/usr/bin/lesskey.exe
+C:/Program Files/Git/usr/bin/link.exe
+C:/Program Files/Git/usr/bin/ln.exe
+C:/Program Files/Git/usr/bin/locale.exe
+C:/Program Files/Git/usr/bin/locate.exe
+C:/Program Files/Git/usr/bin/logname.exe
+C:/Program Files/Git/usr/bin/ls.exe
+C:/Program Files/Git/usr/bin/lsattr.exe
+C:/Program Files/Git/usr/bin/mac2unix.exe
+C:/Program Files/Git/usr/bin/md5sum.exe
+C:/Program Files/Git/usr/bin/minidumper.exe
+C:/Program Files/Git/usr/bin/mintty.exe
+C:/Program Files/Git/usr/bin/mkdir.exe
+C:/Program Files/Git/usr/bin/mkfifo.exe
+C:/Program Files/Git/usr/bin/mkgroup.exe
+C:/Program Files/Git/usr/bin/mknod.exe
+C:/Program Files/Git/usr/bin/mkpasswd.exe
+C:/Program Files/Git/usr/bin/mktemp.exe
+C:/Program Files/Git/usr/bin/mount.exe
+C:/Program Files/Git/usr/bin/mpicalc.exe
+C:/Program Files/Git/usr/bin/mv.exe
+C:/Program Files/Git/usr/bin/nano.exe
+C:/Program Files/Git/usr/bin/nettle-hash.exe
+C:/Program Files/Git/usr/bin/nettle-lfib-stream.exe
+C:/Program Files/Git/usr/bin/nettle-pbkdf2.exe
+C:/Program Files/Git/usr/bin/nice.exe
+C:/Program Files/Git/usr/bin/nl.exe
+C:/Program Files/Git/usr/bin/nohup.exe
+C:/Program Files/Git/usr/bin/nproc.exe
+C:/Program Files/Git/usr/bin/numfmt.exe
+C:/Program Files/Git/usr/bin/od.exe
+C:/Program Files/Git/usr/bin/openssl.exe
+C:/Program Files/Git/usr/bin/p11-kit.exe
+C:/Program Files/Git/usr/bin/passwd.exe
+C:/Program Files/Git/usr/bin/paste.exe
+C:/Program Files/Git/usr/bin/patch.exe
+C:/Program Files/Git/usr/bin/pathchk.exe
+C:/Program Files/Git/usr/bin/perl.exe
+C:/Program Files/Git/usr/bin/perl5.38.2.exe
+C:/Program Files/Git/usr/bin/pinentry-w32.exe
+C:/Program Files/Git/usr/bin/pinentry.exe
+C:/Program Files/Git/usr/bin/pinky.exe
+C:/Program Files/Git/usr/bin/pkcs1-conv.exe
+C:/Program Files/Git/usr/bin/pldd.exe
+C:/Program Files/Git/usr/bin/pluginviewer.exe
+C:/Program Files/Git/usr/bin/pr.exe
+C:/Program Files/Git/usr/bin/printenv.exe
+C:/Program Files/Git/usr/bin/printf.exe
+C:/Program Files/Git/usr/bin/profiler.exe
+C:/Program Files/Git/usr/bin/ps.exe
+C:/Program Files/Git/usr/bin/psl.exe
+C:/Program Files/Git/usr/bin/ptx.exe
+C:/Program Files/Git/usr/bin/pwd.exe
+C:/Program Files/Git/usr/bin/readlink.exe
+C:/Program Files/Git/usr/bin/realpath.exe
+C:/Program Files/Git/usr/bin/rebase.exe
+C:/Program Files/Git/usr/bin/regtool.exe
+C:/Program Files/Git/usr/bin/reset.exe
+C:/Program Files/Git/usr/bin/rm.exe
+C:/Program Files/Git/usr/bin/rmdir.exe
+C:/Program Files/Git/usr/bin/rnano.exe
+C:/Program Files/Git/usr/bin/runcon.exe
+C:/Program Files/Git/usr/bin/rview.exe
+C:/Program Files/Git/usr/bin/rvim.exe
+C:/Program Files/Git/usr/bin/scp.exe
+C:/Program Files/Git/usr/bin/sdiff.exe
+C:/Program Files/Git/usr/bin/sed.exe
+C:/Program Files/Git/usr/bin/seq.exe
+C:/Program Files/Git/usr/bin/setfacl.exe
+C:/Program Files/Git/usr/bin/setmetamode.exe
+C:/Program Files/Git/usr/bin/sexp-conv.exe
+C:/Program Files/Git/usr/bin/sftp.exe
+C:/Program Files/Git/usr/bin/sh.exe
+C:/Program Files/Git/usr/bin/sha1sum.exe
+C:/Program Files/Git/usr/bin/sha224sum.exe
+C:/Program Files/Git/usr/bin/sha256sum.exe
+C:/Program Files/Git/usr/bin/sha384sum.exe
+C:/Program Files/Git/usr/bin/sha512sum.exe
+C:/Program Files/Git/usr/bin/shred.exe
+C:/Program Files/Git/usr/bin/shuf.exe
+C:/Program Files/Git/usr/bin/sleep.exe
+C:/Program Files/Git/usr/bin/sort.exe
+C:/Program Files/Git/usr/bin/split.exe
+C:/Program Files/Git/usr/bin/ssh-add.exe
+C:/Program Files/Git/usr/bin/ssh-agent.exe
+C:/Program Files/Git/usr/bin/ssh-keygen.exe
+C:/Program Files/Git/usr/bin/ssh-keyscan.exe
+C:/Program Files/Git/usr/bin/ssh-pageant.exe
+C:/Program Files/Git/usr/bin/ssh.exe
+C:/Program Files/Git/usr/bin/sshd.exe
+C:/Program Files/Git/usr/bin/ssp.exe
+C:/Program Files/Git/usr/bin/stat.exe
+C:/Program Files/Git/usr/bin/stdbuf.exe
+C:/Program Files/Git/usr/bin/strace.exe
+C:/Program Files/Git/usr/bin/stty.exe
+C:/Program Files/Git/usr/bin/sum.exe
+C:/Program Files/Git/usr/bin/sync.exe
+C:/Program Files/Git/usr/bin/tabs.exe
+C:/Program Files/Git/usr/bin/tac.exe
+C:/Program Files/Git/usr/bin/tail.exe
+C:/Program Files/Git/usr/bin/tar.exe
+C:/Program Files/Git/usr/bin/tee.exe
+C:/Program Files/Git/usr/bin/test.exe
+C:/Program Files/Git/usr/bin/tic.exe
+C:/Program Files/Git/usr/bin/tig.exe
+C:/Program Files/Git/usr/bin/timeout.exe
+C:/Program Files/Git/usr/bin/toe.exe
+C:/Program Files/Git/usr/bin/touch.exe
+C:/Program Files/Git/usr/bin/tput.exe
+C:/Program Files/Git/usr/bin/tr.exe
+C:/Program Files/Git/usr/bin/true.exe
+C:/Program Files/Git/usr/bin/truncate.exe
+C:/Program Files/Git/usr/bin/trust.exe
+C:/Program Files/Git/usr/bin/tset.exe
+C:/Program Files/Git/usr/bin/tsort.exe
+C:/Program Files/Git/usr/bin/tty.exe
+C:/Program Files/Git/usr/bin/tzset.exe
+C:/Program Files/Git/usr/bin/u2d.exe
+C:/Program Files/Git/usr/bin/umount.exe
+C:/Program Files/Git/usr/bin/uname.exe
+C:/Program Files/Git/usr/bin/unexpand.exe
+C:/Program Files/Git/usr/bin/uniq.exe
+C:/Program Files/Git/usr/bin/unix2dos.exe
+C:/Program Files/Git/usr/bin/unix2mac.exe
+C:/Program Files/Git/usr/bin/unlink.exe
+C:/Program Files/Git/usr/bin/unzip.exe
+C:/Program Files/Git/usr/bin/unzipsfx.exe
+C:/Program Files/Git/usr/bin/users.exe
+C:/Program Files/Git/usr/bin/vdir.exe
+C:/Program Files/Git/usr/bin/view.exe
+C:/Program Files/Git/usr/bin/vim.exe
+C:/Program Files/Git/usr/bin/vimdiff.exe
+C:/Program Files/Git/usr/bin/watchgnupg.exe
+C:/Program Files/Git/usr/bin/wc.exe
+C:/Program Files/Git/usr/bin/which.exe
+C:/Program Files/Git/usr/bin/who.exe
+C:/Program Files/Git/usr/bin/whoami.exe
+C:/Program Files/Git/usr/bin/winpty-agent.exe
+C:/Program Files/Git/usr/bin/winpty-debugserver.exe
+C:/Program Files/Git/usr/bin/winpty.exe
+C:/Program Files/Git/usr/bin/xargs.exe
+C:/Program Files/Git/usr/bin/xxd.exe
+C:/Program Files/Git/usr/bin/yat2m.exe
+C:/Program Files/Git/usr/bin/yes.exe
+C:/Program Files/Git/usr/bin/zipinfo.exe
+C:/Program Files/Git/usr/bin/[.exe
+C:/Program Files/Git/usr/lib/awk/grcat.exe
+C:/Program Files/Git/usr/lib/awk/pwcat.exe
+C:/Program Files/Git/usr/lib/gnupg/gpg-auth.exe
+C:/Program Files/Git/usr/lib/gnupg/gpg-check-pattern.exe
+C:/Program Files/Git/usr/lib/gnupg/gpg-pair-tool.exe
+C:/Program Files/Git/usr/lib/gnupg/gpg-preset-passphrase.exe
+C:/Program Files/Git/usr/lib/gnupg/gpg-protect-tool.exe
+C:/Program Files/Git/usr/lib/gnupg/keyboxd.exe
+C:/Program Files/Git/usr/lib/gnupg/scdaemon.exe
+C:/Program Files/Git/usr/lib/ssh/sftp-server.exe
+C:/Program Files/Git/usr/lib/ssh/ssh-keysign.exe
+C:/Program Files/Git/usr/lib/ssh/ssh-pkcs11-helper.exe
+C:/Program Files/Git/usr/lib/ssh/ssh-sk-helper.exe
+C:/Program Files/Git/usr/lib/tar/rmt.exe
+C:/Program Files/Git/usr/libexec/frcode.exe
+C:/Program Files/Git/usr/libexec/getprocaddr32.exe
+C:/Program Files/Git/usr/libexec/getprocaddr64.exe
+C:/Program Files/Git/usr/libexec/p11-kit/p11-kit-remote.exe
+C:/Program Files/Git/usr/libexec/p11-kit/p11-kit-server.exe
+C:/Program Files/Google/Chrome/Application/131.0.6778.109/chrome_pwa_launcher.exe
+C:/Program Files/Google/Chrome/Application/131.0.6778.109/elevation_service.exe
+C:/Program Files/Google/Chrome/Application/131.0.6778.109/Installer/chrmstp.exe
+C:/Program Files/Google/Chrome/Application/131.0.6778.109/Installer/setup.exe
+C:/Program Files/Google/Chrome/Application/131.0.6778.109/notification_helper.exe
+C:/Program Files/Google/Chrome/Application/131.0.6778.109/os_update_handler.exe
+C:/Program Files/Google/Chrome/Application/chrome.exe
+C:/Program Files/Google/Chrome/Application/chrome_proxy.exe
+C:/Program Files/Google/Drive File Stream/100.0.2.0/account_export_tool.exe
+C:/Program Files/Google/Drive File Stream/100.0.2.0/crashpad_handler.exe
+C:/Program Files/Google/Drive File Stream/100.0.2.0/GoogleDriveFS.exe
+C:/Program Files/Google/Drive File Stream/100.0.2.0/switchblade_host.exe
+C:/Program Files/Google/Drive File Stream/100.0.2.0/uninstall.exe
+C:/Program Files/Internet Explorer/ExtExport.exe
+C:/Program Files/Internet Explorer/iediagcmd.exe
+C:/Program Files/Internet Explorer/ieinstal.exe
+C:/Program Files/Internet Explorer/ielowutil.exe
+C:/Program Files/Internet Explorer/iexplore.exe
+C:/Program Files/Java/jre-1.8/bin/jabswitch.exe
+C:/Program Files/Java/jre-1.8/bin/java-rmi.exe
+C:/Program Files/Java/jre-1.8/bin/java.exe
+C:/Program Files/Java/jre-1.8/bin/javacpl.exe
+C:/Program Files/Java/jre-1.8/bin/javaw.exe
+C:/Program Files/Java/jre-1.8/bin/javaws.exe
+C:/Program Files/Java/jre-1.8/bin/jjs.exe
+C:/Program Files/Java/jre-1.8/bin/jp2launcher.exe
+C:/Program Files/Java/jre-1.8/bin/keytool.exe
+C:/Program Files/Java/jre-1.8/bin/kinit.exe
+C:/Program Files/Java/jre-1.8/bin/klist.exe
+C:/Program Files/Java/jre-1.8/bin/ktab.exe
+C:/Program Files/Java/jre-1.8/bin/orbd.exe
+C:/Program Files/Java/jre-1.8/bin/pack200.exe
+C:/Program Files/Java/jre-1.8/bin/policytool.exe
+C:/Program Files/Java/jre-1.8/bin/rmid.exe
+C:/Program Files/Java/jre-1.8/bin/rmiregistry.exe
+C:/Program Files/Java/jre-1.8/bin/servertool.exe
+C:/Program Files/Java/jre-1.8/bin/ssvagent.exe
+C:/Program Files/Java/jre-1.8/bin/tnameserv.exe
+C:/Program Files/Java/jre-1.8/bin/unpack200.exe
+C:/Program Files/Microsoft Office/root/Client/AppVDllSurrogate.exe
+C:/Program Files/Microsoft Office/root/Client/AppVDllSurrogate32.exe
+C:/Program Files/Microsoft Office/root/Client/AppVDllSurrogate64.exe
+C:/Program Files/Microsoft Office/root/Client/AppVLP.exe
+C:/Program Files/Microsoft Office/root/Integration/Integrator.exe
+C:/Program Files/Microsoft Office/root/Office16/ADDINS/Microsoft Power Query for Excel Integrated/bin/Microsoft.Mashup.Container.Loader.exe
+C:/Program Files/Microsoft Office/root/Office16/ADDINS/Microsoft Power Query for Excel Integrated/bin/Microsoft.Mashup.Container.NetFX45.exe
+C:/Program Files/Microsoft Office/root/Office16/AppSharingHookController64.exe
+C:/Program Files/Microsoft Office/root/Office16/excelcnv.exe
+C:/Program Files/Microsoft Office/root/Office16/lync.exe
+C:/Program Files/Microsoft Office/root/Office16/lync99.exe
+C:/Program Files/Microsoft Office/root/Office16/lynchtmlconv.exe
+C:/Program Files/Microsoft Office/root/Office16/misc.exe
+C:/Program Files/Microsoft Office/root/Office16/msoadfsb.exe
+C:/Program Files/Microsoft Office/root/Office16/msoasb.exe
+C:/Program Files/Microsoft Office/root/Office16/msoev.exe
+C:/Program Files/Microsoft Office/root/Office16/OcPubMgr.exe
+C:/Program Files/Microsoft Office/root/Office16/officeappguardwin32.exe
+C:/Program Files/Microsoft Office/root/Office16/OfficeScrBroker.exe
+C:/Program Files/Microsoft Office/root/Office16/OfficeScrSanBroker.exe
+C:/Program Files/Microsoft Office/root/Office16/PerfBoost.exe
+C:/Program Files/Microsoft Office/root/Office16/protocolhandler.exe
+C:/Program Files/Microsoft Office/root/Office16/SDXHelper.exe
+C:/Program Files/Microsoft Office/root/Office16/SDXHelperBgt.exe
+C:/Program Files/Microsoft Office/root/Office16/UcMapi.exe
+C:/Program Files/Microsoft Office/root/Office16/Wordconv.exe
+C:/Program Files/Microsoft Office/root/vfs/ProgramFilesCommonX64/Microsoft Shared/OFFICE16/AI/ai.exe
+C:/Program Files/Microsoft Office/root/vfs/ProgramFilesCommonX64/Microsoft Shared/OFFICE16/AI/aimgr.exe
+C:/Program Files/Microsoft Office/root/vfs/ProgramFilesCommonX64/Microsoft Shared/OFFICE16/model3dtranscoderwin32.exe
+C:/Program Files/Microsoft Office/root/vfs/ProgramFilesCommonX64/Microsoft Shared/OFFICE16/OLicenseHeartbeat.exe
+C:/Program Files/Microsoft Office/root/vfs/ProgramFilesCommonX64/Microsoft Shared/OFFICE16/operfmon.exe
+C:/Program Files/Microsoft Office/root/vfs/ProgramFilesCommonX64/Microsoft Shared/Smart Tag/SmartTagInstall.exe
+C:/Program Files/Microsoft Office/root/vfs/ProgramFilesCommonX86/Microsoft Shared/EQUATION/eqnedt32.exe
+C:/Program Files/Microsoft Office/root/vfs/ProgramFilesCommonX86/Microsoft Shared/OFFICE16/AI/ai.exe
+C:/Program Files/Microsoft Office/root/vfs/ProgramFilesCommonX86/Microsoft Shared/OFFICE16/AI/aimgr.exe
+C:/Program Files/Microsoft Office/root/vfs/ProgramFilesX64/Microsoft Analysis Services/AS OLEDB/140/SQLDumper.exe
+C:/Program Files/Microsoft Office/root/vfs/ProgramFilesX86/Microsoft Analysis Services/AS OLEDB/140/SQLDumper.exe
+C:/Program Files/Microsoft Office/root/vfs/ProgramFilesX86/Microsoft Office/Office16/AppSharingHookController.exe
+C:/Program Files/Microsoft Office/root/vfs/ProgramFilesX86/Microsoft Office/Office16/DCF/Common.DBConnection.exe
+C:/Program Files/Microsoft Office/root/vfs/ProgramFilesX86/Microsoft Office/Office16/DCF/Common.DBConnection64.exe
+C:/Program Files/Microsoft Office/root/vfs/ProgramFilesX86/Microsoft Office/Office16/DCF/Common.ShowHelp.exe
+C:/Program Files/Microsoft Office/root/vfs/ProgramFilesX86/Microsoft Office/Office16/DCF/filecompare.exe
+C:/Program Files/Microsoft Office/root/vfs/Windows/Installer/{90160000-000F-0000-1000-0000000FF1CE}/accicons.exe
+C:/Program Files/Microsoft Office/root/vfs/Windows/Installer/{90160000-000F-0000-1000-0000000FF1CE}/dbcicons.exe
+C:/Program Files/Microsoft Office/root/vfs/Windows/Installer/{90160000-000F-0000-1000-0000000FF1CE}/grv_icons.exe
+C:/Program Files/Microsoft Office/root/vfs/Windows/Installer/{90160000-000F-0000-1000-0000000FF1CE}/joticon.exe
+C:/Program Files/Microsoft Office/root/vfs/Windows/Installer/{90160000-000F-0000-1000-0000000FF1CE}/lyncicon.exe
+C:/Program Files/Microsoft Office/root/vfs/Windows/Installer/{90160000-000F-0000-1000-0000000FF1CE}/misc.exe
+C:/Program Files/Microsoft Office/root/vfs/Windows/Installer/{90160000-000F-0000-1000-0000000FF1CE}/osmclienticon.exe
+C:/Program Files/Microsoft Office/root/vfs/Windows/Installer/{90160000-000F-0000-1000-0000000FF1CE}/outicon.exe
+C:/Program Files/Microsoft Office/root/vfs/Windows/Installer/{90160000-000F-0000-1000-0000000FF1CE}/pj11icon.exe
+C:/Program Files/Microsoft Office/root/vfs/Windows/Installer/{90160000-000F-0000-1000-0000000FF1CE}/pptico.exe
+C:/Program Files/Microsoft Office/root/vfs/Windows/Installer/{90160000-000F-0000-1000-0000000FF1CE}/pubs.exe
+C:/Program Files/Microsoft Office/root/vfs/Windows/Installer/{90160000-000F-0000-1000-0000000FF1CE}/sscicons.exe
+C:/Program Files/Microsoft Office/root/vfs/Windows/Installer/{90160000-000F-0000-1000-0000000FF1CE}/visicon.exe
+C:/Program Files/Microsoft Office/root/vfs/Windows/Installer/{90160000-000F-0000-1000-0000000FF1CE}/wordicon.exe
+C:/Program Files/Microsoft Office/root/vfs/Windows/Installer/{90160000-000F-0000-1000-0000000FF1CE}/xlicons.exe
+C:/Program Files/Microsoft Office/root/vfs/Windows/Installer/{90160000-001F-0409-1000-0000000FF1CE}/misc.exe
+C:/Program Files/Microsoft Office/root/vfs/Windows/Installer/{90160000-001F-040C-1000-0000000FF1CE}/misc.exe
+C:/Program Files/Microsoft Office/root/vfs/Windows/Installer/{90160000-001F-0C0A-1000-0000000FF1CE}/misc.exe
+C:/Program Files/Microsoft Office/root/vfs/Windows/Installer/{90160000-006E-0409-1000-0000000FF1CE}/misc.exe
+C:/Program Files/Microsoft Office 15/ClientX64/IntegratedOffice.exe
+C:/Program Files/Microsoft Office 15/ClientX64/OfficeClickToRun.exe
+C:/Program Files/Microsoft OneDrive/24.221.1103.0003/FileCoAuth.exe
+C:/Program Files/Microsoft OneDrive/24.221.1103.0003/FileSyncConfig.exe
+C:/Program Files/Microsoft OneDrive/24.221.1103.0003/FileSyncHelper.exe
+C:/Program Files/Microsoft OneDrive/24.221.1103.0003/Microsoft.SharePoint.exe
+C:/Program Files/Microsoft OneDrive/24.221.1103.0003/Microsoft.SharePoint.NativeMessagingClient.exe
+C:/Program Files/Microsoft OneDrive/24.221.1103.0003/OneDriveFileLauncher.exe
+C:/Program Files/Microsoft OneDrive/24.221.1103.0003/OneDriveLauncher.exe
+C:/Program Files/Microsoft OneDrive/24.221.1103.0003/OneDriveSetup.exe
+C:/Program Files/Microsoft OneDrive/24.221.1103.0003/OneDriveUpdaterService.exe
+C:/Program Files/Microsoft OneDrive/OneDrive.exe
+C:/Program Files/Microsoft OneDrive/OneDriveStandaloneUpdater.exe
+C:/Program Files/Microsoft Update Health Tools/expediteupdater.exe
+C:/Program Files/Microsoft Update Health Tools/uhssvc.exe
+C:/Program Files/nodejs/node.exe
+C:/Program Files/obs-studio/bin/64bit/obs-amf-test.exe
+C:/Program Files/obs-studio/bin/64bit/obs-ffmpeg-mux.exe
+C:/Program Files/obs-studio/bin/64bit/obs-nvenc-test.exe
+C:/Program Files/obs-studio/bin/64bit/obs-qsv-test.exe
+C:/Program Files/obs-studio/bin/64bit/obs64.exe
+C:/Program Files/obs-studio/data/obs-plugins/win-capture/get-graphics-offsets32.exe
+C:/Program Files/obs-studio/data/obs-plugins/win-capture/get-graphics-offsets64.exe
+C:/Program Files/obs-studio/data/obs-plugins/win-capture/inject-helper32.exe
+C:/Program Files/obs-studio/data/obs-plugins/win-capture/inject-helper64.exe
+C:/Program Files/obs-studio/obs-plugins/64bit/obs-browser-page.exe
+C:/Program Files/obs-studio/uninstall.exe
+C:/Program Files/R/R-4.4.1/bin/R.exe
+C:/Program Files/R/R-4.4.1/bin/Rscript.exe
+C:/Program Files/R/R-4.4.1/bin/x64/open.exe
+C:/Program Files/R/R-4.4.1/bin/x64/R.exe
+C:/Program Files/R/R-4.4.1/bin/x64/Rcmd.exe
+C:/Program Files/R/R-4.4.1/bin/x64/Rfe.exe
+C:/Program Files/R/R-4.4.1/bin/x64/Rgui.exe
+C:/Program Files/R/R-4.4.1/bin/x64/Rscript.exe
+C:/Program Files/R/R-4.4.1/bin/x64/RSetReg.exe
+C:/Program Files/R/R-4.4.1/bin/x64/Rterm.exe
+C:/Program Files/R/R-4.4.1/Tcl/bin/tclsh86.exe
+C:/Program Files/R/R-4.4.1/Tcl/bin/wish86.exe
+C:/Program Files/R/R-4.4.1/unins000.exe
+C:/Program Files/R/R-4.4.2/bin/R.exe
+C:/Program Files/R/R-4.4.2/bin/Rscript.exe
+C:/Program Files/R/R-4.4.2/bin/x64/open.exe
+C:/Program Files/R/R-4.4.2/bin/x64/R.exe
+C:/Program Files/R/R-4.4.2/bin/x64/Rcmd.exe
+C:/Program Files/R/R-4.4.2/bin/x64/Rfe.exe
+C:/Program Files/R/R-4.4.2/bin/x64/Rgui.exe
+C:/Program Files/R/R-4.4.2/bin/x64/Rscript.exe
+C:/Program Files/R/R-4.4.2/bin/x64/RSetReg.exe
+C:/Program Files/R/R-4.4.2/bin/x64/Rterm.exe
+C:/Program Files/R/R-4.4.2/Tcl/bin/tclsh86.exe
+C:/Program Files/R/R-4.4.2/Tcl/bin/wish86.exe
+C:/Program Files/R/R-4.4.2/unins000.exe
+C:/Program Files/VideoLAN/VLC/uninstall.exe
+C:/Program Files/VideoLAN/VLC/vlc-cache-gen.exe
+C:/Program Files/VideoLAN/VLC/vlc.exe
+C:/Program Files/VS Revo Group/Revo Uninstaller/RevoUnin.exe
+C:/Program Files/VS Revo Group/Revo Uninstaller/unins000.exe
+C:/Program Files/Windows Defender/ConfigSecurityPolicy.exe
+C:/Program Files/Windows Defender/MpCmdRun.exe
+C:/Program Files/Windows Defender/MpCopyAccelerator.exe
+C:/Program Files/Windows Defender/MpDlpCmd.exe
+C:/Program Files/Windows Defender/MsMpEng.exe
+C:/Program Files/Windows Defender/NisSrv.exe
+C:/Program Files/Windows Defender/Offline/OfflineScannerShell.exe
+C:/Program Files/Windows Mail/wab.exe
+C:/Program Files/Windows Mail/wabmig.exe
+C:/Program Files/Windows Media Player/setup_wm.exe
+C:/Program Files/Windows Media Player/wmlaunch.exe
+C:/Program Files/Windows Media Player/wmpconfig.exe
+C:/Program Files/Windows Media Player/wmplayer.exe
+C:/Program Files/Windows Media Player/wmpnetwk.exe
+C:/Program Files/Windows Media Player/wmpnscfg.exe
+C:/Program Files/Windows Media Player/wmprph.exe
+C:/Program Files/Windows Media Player/wmpshare.exe
+C:/Program Files/Windows NT/Accessories/wordpad.exe
+C:/Program Files/Windows Photo Viewer/ImagingDevices.exe
+C:/Program Files/WinRAR/Rar.exe
+C:/Program Files/WinRAR/RarExtInstaller.exe
+C:/Program Files/WinRAR/Uninstall.exe
+C:/Program Files/WinRAR/UnRAR.exe
+C:/Program Files/WinRAR/WinRAR.exe
+C:\Users\kHOA\AppData\Local/bluestacks-services-updater/installer.exe
+C:\Users\kHOA\AppData\Local/Discord/app-1.0.9173/Discord.exe
+C:\Users\kHOA\AppData\Local/Discord/app-1.0.9173/modules/discord_voice-1/discord_voice/gpu_encoder_helper.exe
+C:\Users\kHOA\AppData\Local/Discord/Update.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/AppUp.IntelTechnologyMDE_8j3eq9eme6ctt/IntelUnisonClientDesktop.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/B9ECED6F.ASUSPCAssistant.AsusKeyboardHost.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/B9ECED6F.ASUSPCAssistant.AsusMyASUSNotification.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/B9ECED6F.ASUSPCAssistant.LiveUpdateToastEXE.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/B9ECED6F.ASUSPCAssistant_qmba6cd70vzyy/B9ECED6F.ASUSPCAssistant.AsusKeyboardHost.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/B9ECED6F.ASUSPCAssistant_qmba6cd70vzyy/B9ECED6F.ASUSPCAssistant.AsusMyASUSNotification.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/B9ECED6F.ASUSPCAssistant_qmba6cd70vzyy/B9ECED6F.ASUSPCAssistant.LiveUpdateToastEXE.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/B9ECED6F.Glidex.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/B9ECED6F.Glidex.Mirror.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/B9ECED6F.Glidex.SharedCam.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/B9ECED6F.Glidex_qmba6cd70vzyy/B9ECED6F.Glidex.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/B9ECED6F.Glidex_qmba6cd70vzyy/B9ECED6F.Glidex.Mirror.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/B9ECED6F.Glidex_qmba6cd70vzyy/B9ECED6F.Glidex.SharedCam.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/Clipchamp.Clipchamp_yxz26nhyzhsrt/clipchamp.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/clipchamp.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/GameBarElevatedFT_Alias.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/GetHelp.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/IntelUnisonClientDesktop.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/MediaPlayer.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe/python.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe/python3.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe/WindowsPackageManagerServer.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe/winget.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/Microsoft.GamingApp_8wekyb3d8bbwe/XboxPcAppAdminServer.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/Microsoft.GetHelp_8wekyb3d8bbwe/GetHelp.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/Microsoft.OutlookForWindows_8wekyb3d8bbwe/olk.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/Microsoft.Paint_8wekyb3d8bbwe/mspaint.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/Microsoft.Paint_8wekyb3d8bbwe/pbrush.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/Microsoft.ScreenSketch_8wekyb3d8bbwe/SnippingTool.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/Microsoft.SkypeApp_kzf8qxf38zg5c/Skype.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/Microsoft.WindowsNotepad_8wekyb3d8bbwe/notepad.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/Microsoft.WindowsTerminal_8wekyb3d8bbwe/wt.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/Microsoft.XboxGamingOverlay_8wekyb3d8bbwe/GameBarElevatedFT_Alias.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/Microsoft.ZuneMusic_8wekyb3d8bbwe/MediaPlayer.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/MicrosoftWindows.Client.CBS_cw5n1h2txyewy/MicrosoftWindows.DesktopStickerEditorCentennial.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/MicrosoftWindows.DesktopStickerEditorCentennial.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/ms-teams.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/ms-teamsupdate.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/ms-teams_autostarter.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/mspaint.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/MSTeams_8wekyb3d8bbwe/ms-teams.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/MSTeams_8wekyb3d8bbwe/ms-teamsupdate.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/MSTeams_8wekyb3d8bbwe/ms-teams_autostarter.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/notepad.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/olk.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/pbrush.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/python.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/python3.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/Skype.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/SnippingTool.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/WindowsPackageManagerServer.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/winget.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/wt.exe
+C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/XboxPcAppAdminServer.exe
+C:\Users\kHOA\AppData\Local/notion-updater/installer.exe
+C:\Users\kHOA\AppData\Local/notion-updater/pending/Notion Setup 4.1.2.exe
+C:\Users\kHOA\AppData\Local/Package Cache/{316e3b12-1191-47df-b9d4-dcf0bf2f6cc4}/python-3.12.6-amd64.exe
+C:\Users\kHOA\AppData\Local/Programs/cpeditor/cpeditor.exe
+C:\Users\kHOA\AppData\Local/Programs/cpeditor/unins000.exe
+C:\Users\kHOA\AppData\Local/Programs/Microsoft VS Code/bin/code-tunnel.exe
+C:\Users\kHOA\AppData\Local/Programs/Microsoft VS Code/Code.exe
+C:\Users\kHOA\AppData\Local/Programs/Microsoft VS Code/resources/app/node_modules/@vscode/ripgrep/bin/rg.exe
+C:\Users\kHOA\AppData\Local/Programs/Microsoft VS Code/resources/app/node_modules/@vscode/vsce-sign/bin/vsce-sign.exe
+C:\Users\kHOA\AppData\Local/Programs/Microsoft VS Code/resources/app/node_modules/node-pty/build/Release/conpty/OpenConsole.exe
+C:\Users\kHOA\AppData\Local/Programs/Microsoft VS Code/resources/app/node_modules/node-pty/build/Release/winpty-agent.exe
+C:\Users\kHOA\AppData\Local/Programs/Microsoft VS Code/tools/inno_updater.exe
+C:\Users\kHOA\AppData\Local/Programs/Microsoft VS Code/unins000.exe
+C:\Users\kHOA\AppData\Local/Programs/Notion/Notion.exe
+C:\Users\kHOA\AppData\Local/Programs/Notion/resources/elevate.exe
+C:\Users\kHOA\AppData\Local/Programs/Notion/Uninstall Notion.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/resources/elevate.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/sl.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Uninstall Zalo.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.10.1/plugins/capture/Zalo.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.10.1/plugins/capture/ZaloCall.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.10.1/plugins/capture/ZaloCap.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.10.1/plugins/capture/ZaviMeet.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.10.1/sl.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.10.1/Uninstall Zalo.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.10.1/Update.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.10.1/Zalo.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.10.1/ZaloExecutable.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.11.1/plugins/capture/Zalo.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.11.1/plugins/capture/ZaloCall.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.11.1/plugins/capture/ZaloCap.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.11.1/plugins/capture/ZaviMeet.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.11.1/sl.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.11.1/Uninstall Zalo.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.11.1/Update.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.11.1/Zalo.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.11.1/ZaloExecutable.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.9.4/plugins/capture/Zalo.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.9.4/plugins/capture/ZaloCall.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.9.4/plugins/capture/ZaloCap.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.9.4/plugins/capture/ZaviMeet.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.9.4/sl.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.9.4/Uninstall Zalo.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.9.4/Update.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.9.4/Zalo.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.9.4/ZaloExecutable.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo.exe
+C:\Users\kHOA\AppData\Local/Temp/CP Editor-AtKPur/sol.exe
+C:\Users\kHOA\AppData\Local/zalo-updater/installer.exe

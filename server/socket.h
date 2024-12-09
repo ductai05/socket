@@ -4,7 +4,8 @@
 
 //----------------------------SEND MAIL-----------------------------------------
 
-string getCurrentDateTime() {
+string getCurrentDateTime() 
+{
     std::time_t t = std::time(nullptr);
     std::tm* now = std::localtime(&t);
 
@@ -386,6 +387,16 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
     // numTask, body
     if(body == "list_apps")
     {
+        ofstream outFile("uploads/apps_list.txt");
+        ifstream inFile("uploads/app_paths.txt");
+        string line;
+        while(getline(inFile, line))
+        {
+            size_t lastSlash = line.find_last_of("/");
+            outFile << line.substr(lastSlash + 1) << '\n';
+        }
+        outFile.close();
+        inFile.close();
         newMail(false, body, numTask, "uploads/apps_list.txt");
     }
     else if(body == "list_services")
@@ -399,8 +410,7 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
         outFile << "webcam_off: Turn off the camera\n";
         outFile << "get_file \"<path>\": Get file from server\n";
         outFile << "list_file \"<path>\": Get all the files in the path\n";
-        outFile << "find_path \"<app name>\": Find all related path when knowing the app name\n";
-        outFile << "run_app \"<path>\": Run app using the path\n";
+        outFile << "run_app \"<app.exe>\": Run an app\n";
         outFile << "running_apps: List running apps\n";
         outFile << "close_app \"<app.exe>\": Close an app\n";
         outFile.close();
@@ -508,12 +518,6 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
         }
         outFile.close();
         newMail(false, body, numTask, "uploads/messages.txt");
-    }
-    else if(body.find("find_path") != string::npos)
-    {
-        string app = get_path(body);
-        find_app_path(app);
-        newMail(false, body, numTask, "uploads/app_found_paths.txt");
     }
 }
 

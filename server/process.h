@@ -5,8 +5,7 @@ namespace fs = std::filesystem;
 // Các hàm xây dựng
 void list_apps();  // tìm file .exe và viết vào file "app_list.txt"
 void list_files(const string &path); // in ra các file trong thư mục path
-void find_app_path(const string &app_name); // tìm các đường dẫn có tên là app_name
-bool run_app(const std::string &path); // chạy app khi biết đường dẫn file .exe
+bool run_app(string path); // chạy app khi biết đường dẫn file .exe
 void get_screenshot(); // chụp màn hình rồi lưu thành screen.jpeg
 void shut_down(); // tắt máy
 bool camera_switch(bool cam_status); // 0/1 -> tắt/bật cam
@@ -60,7 +59,11 @@ void find_apps_recur(const string& path, ofstream &outFile)
 void list_apps()
 {
     vector<string> paths = {"C:/Program Files (x86)", "C:/Program Files"};
-    ofstream outFile("uploads\\apps_list.txt");
+    const char* appDataPath = std::getenv("LOCALAPPDATA"); // Lấy biến môi trường APPDATA
+    if (appDataPath)
+        paths.push_back(string(appDataPath));
+
+    ofstream outFile("uploads\\app_paths.txt");
     for(string path : paths)
     { 
         if (!fs::exists(path) || !fs::is_directory(path)) 
@@ -97,68 +100,27 @@ void list_files(const string &path)
     outFile.close();
 }
 
-void buildlps(const string &s, int *&lps)
+bool run_app(string app) 
 {
-    int n = s.size();
-    lps = new int[n];
-    for(int i = 0; i < n; i++)
-        lps[i] = 0;
-    for(int i = 1; i < n; i++)
-    {
-        int j = lps[i - 1];
-        while(j > 0 && s[i] != s[j]) 
-            j = lps[j - 1];
-        if(s[i] == s[j]) j++;
-        lps[i] = j;
-    }
-}
-
-bool is_substr(string a, string b, int *&lps) // KMP
-{
-    for(char &x : a) x = tolower(x);
-    for(char &x : b) x = tolower(x);
-    int n = a.size(), m = b.size();
-    int j = 0;
-    for(int i = 0; i < n; i++)
-    {
-        while(j > 0 && a[i] != b[j])
-            j = lps[j - 1];
-        if(a[i] == b[j]) j++;
-        if(j == m)
-        {
-            return true;
-        }
-    }
-    return false;
-}
-// in các đường dẫn tìm được vào "app_found_paths.txt"
-void find_app_path(const string &app_name)
-{
-    const string apps_list = "uploads\\apps_list.txt";
-    int *lps;
-    buildlps(app_name, lps);
-
-    bool found = false;
-    ifstream fin(apps_list);
-    ofstream fout("uploads\\app_found_paths.txt");
+    // Tìm đường dẫn tương ứng
+    ifstream inFile("uploads/app_paths.txt");
     string line;
-    while(getline(fin, line))
+    for(char &ch : app) ch = tolower(ch);
+    while(getline(inFile, line))
     {
-        if(is_substr(line, app_name, lps))
+        size_t lastSlash = line.find_last_of("/");
+        string name = line.substr(lastSlash + 1);
+        for(char &ch : name) ch = tolower(ch);
+        if(name == app)
         {
-            fout << line << '\n';
-            found = true;
+            app = line;
+            break;
         }
     }
-    if(!found) fout << "Application path cannot be found.";
-    delete[] lps;
-    fin.close();
-    fout.close();
-}
+    cerr << app;
+    inFile.close();
 
-bool run_app(const std::string &path) {
-    // Convert std::string to LPCTSTR
-    LPCSTR applicationName = path.c_str();
+    LPCSTR applicationName = app.c_str();
     
     // Additional information
     STARTUPINFO si;
@@ -194,8 +156,12 @@ bool run_app(const std::string &path) {
 
 void get_screenshot()
 {
-    system("g++ -o take_screenshot.exe take_screenshot.cpp -lgdiplus -lcomdlg32 -lole32 -loleaut32 -luuid -lwinmm -lgdi32 -luser32");
-    system("take_screenshot.exe");
+    int result = system("take_screenshot.exe");
+    if(result != 0)
+    {
+        system("g++ -o take_screenshot.exe take_screenshot.cpp -lgdiplus -lcomdlg32 -lole32 -loleaut32 -luuid -lwinmm -lgdi32 -luser32");
+        system("take_screenshot.exe");
+    }
     return;
 }
 

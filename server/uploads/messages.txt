@@ -1,1 +1,1 @@
-Successfully turned off the camera
+Failed when running the application
