@@ -1111,12 +1111,6 @@ C:/Program Files/Git/usr/libexec/getprocaddr32.exe
 C:/Program Files/Git/usr/libexec/getprocaddr64.exe
 C:/Program Files/Git/usr/libexec/p11-kit/p11-kit-remote.exe
 C:/Program Files/Git/usr/libexec/p11-kit/p11-kit-server.exe
-C:/Program Files/Google/Chrome/Application/131.0.6778.109/chrome_pwa_launcher.exe
-C:/Program Files/Google/Chrome/Application/131.0.6778.109/elevation_service.exe
-C:/Program Files/Google/Chrome/Application/131.0.6778.109/Installer/chrmstp.exe
-C:/Program Files/Google/Chrome/Application/131.0.6778.109/Installer/setup.exe
-C:/Program Files/Google/Chrome/Application/131.0.6778.109/notification_helper.exe
-C:/Program Files/Google/Chrome/Application/131.0.6778.109/os_update_handler.exe
 C:/Program Files/Google/Chrome/Application/131.0.6778.140/chrome_pwa_launcher.exe
 C:/Program Files/Google/Chrome/Application/131.0.6778.140/elevation_service.exe
 C:/Program Files/Google/Chrome/Application/131.0.6778.140/Installer/chrmstp.exe
@@ -1125,8 +1119,6 @@ C:/Program Files/Google/Chrome/Application/131.0.6778.140/notification_helper.ex
 C:/Program Files/Google/Chrome/Application/131.0.6778.140/os_update_handler.exe
 C:/Program Files/Google/Chrome/Application/chrome.exe
 C:/Program Files/Google/Chrome/Application/chrome_proxy.exe
-C:/Program Files/Google/Chrome/Application/new_chrome.exe
-C:/Program Files/Google/Chrome/Application/new_chrome_proxy.exe
 C:/Program Files/Google/Drive File Stream/100.0.2.0/account_export_tool.exe
 C:/Program Files/Google/Drive File Stream/100.0.2.0/crashpad_handler.exe
 C:/Program Files/Google/Drive File Stream/100.0.2.0/GoogleDriveFS.exe
@@ -1360,7 +1352,7 @@ C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/winget.exe
 C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/wt.exe
 C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/XboxPcAppAdminServer.exe
 C:\Users\kHOA\AppData\Local/notion-updater/installer.exe
-C:\Users\kHOA\AppData\Local/notion-updater/pending/Notion Setup 4.1.2.exe
+C:\Users\kHOA\AppData\Local/notion-updater/pending/Notion Setup 4.2.0.exe
 C:\Users\kHOA\AppData\Local/Package Cache/{316e3b12-1191-47df-b9d4-dcf0bf2f6cc4}/python-3.12.6-amd64.exe
 C:\Users\kHOA\AppData\Local/Programs/cpeditor/cpeditor.exe
 C:\Users\kHOA\AppData\Local/Programs/cpeditor/unins000.exe

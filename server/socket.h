@@ -402,16 +402,16 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
     else if(body == "list_services")
     {
         ofstream outFile("uploads/messages.txt");
-        outFile << "list_apps: List the server applications directory\n";
-        outFile << "list_services: List all services\n";
-        outFile << "get_screenshot: Take screenshots of the server\n";
-        outFile << "shutdown: Shutdown the server\n";
-        outFile << "webcam_on: Turn on the camera\n";
-        outFile << "webcam_off: Turn off the camera\n";
-        outFile << "get_file \"<path>\": Get file from server\n";
-        outFile << "list_file \"<path>\": Get all the files in the path\n";
+        outFile << "list_apps: Lists server programs and applications\n";
+        outFile << "list_services: Lists all services\n";
+        outFile << "get_screenshot: Take a screenshot of the server\n";
+        outFile << "shutdown: Stop and shutdown the server\n";
+        outFile << "webcam_on: Turn on the server's camera\n";
+        outFile << "webcam_off: Turn off the server's camera\n";
+        outFile << "get_file \"<path>\": Get a file from the server\n";
+        outFile << "list_file \"<folder path>\": Lists all the files in the folder\n";
         outFile << "run_app \"<app.exe>\": Run an app\n";
-        outFile << "running_apps: List running apps\n";
+        outFile << "running_apps: List all running apps\n";
         outFile << "close_app \"<app.exe>\": Close an app\n";
         outFile.close();
         newMail(false, body, numTask, string("uploads")+"/"+"messages.txt");

@@ -30,10 +30,10 @@ void start_server()
     auto end = chrono::high_resolution_clock::now();
     chrono::duration<double> elapsed = end - start;
     cout << "Server started successfully after: " << elapsed.count() << " second(s)" << '\n';
+    autoGetMail(false);
 }
 
 int main()
 {    
     start_server();
-    autoGetMail(false);
 }

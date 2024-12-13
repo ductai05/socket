@@ -6,7 +6,7 @@ namespace fs = std::filesystem;
 void list_apps();  // tìm file .exe và viết vào file "app_list.txt"
 void list_files(const string &path); // in ra các file trong thư mục path
 bool run_app(string path); // chạy app khi biết đường dẫn file .exe
-void get_screenshot(); // chụp màn hình rồi lưu thành screen.jpeg
+void get_screenshot(); // chụp màn hình rồi lưu thành screen.png
 void shut_down(); // tắt máy
 bool camera_switch(bool cam_status); // 0/1 -> tắt/bật cam
 bool end_task(const std::string& task_name); // kill một chương trình
