@@ -1117,8 +1117,16 @@ C:/Program Files/Google/Chrome/Application/131.0.6778.109/Installer/chrmstp.exe
 C:/Program Files/Google/Chrome/Application/131.0.6778.109/Installer/setup.exe
 C:/Program Files/Google/Chrome/Application/131.0.6778.109/notification_helper.exe
 C:/Program Files/Google/Chrome/Application/131.0.6778.109/os_update_handler.exe
+C:/Program Files/Google/Chrome/Application/131.0.6778.140/chrome_pwa_launcher.exe
+C:/Program Files/Google/Chrome/Application/131.0.6778.140/elevation_service.exe
+C:/Program Files/Google/Chrome/Application/131.0.6778.140/Installer/chrmstp.exe
+C:/Program Files/Google/Chrome/Application/131.0.6778.140/Installer/setup.exe
+C:/Program Files/Google/Chrome/Application/131.0.6778.140/notification_helper.exe
+C:/Program Files/Google/Chrome/Application/131.0.6778.140/os_update_handler.exe
 C:/Program Files/Google/Chrome/Application/chrome.exe
 C:/Program Files/Google/Chrome/Application/chrome_proxy.exe
+C:/Program Files/Google/Chrome/Application/new_chrome.exe
+C:/Program Files/Google/Chrome/Application/new_chrome_proxy.exe
 C:/Program Files/Google/Drive File Stream/100.0.2.0/account_export_tool.exe
 C:/Program Files/Google/Drive File Stream/100.0.2.0/crashpad_handler.exe
 C:/Program Files/Google/Drive File Stream/100.0.2.0/GoogleDriveFS.exe
@@ -1294,8 +1302,8 @@ C:/Program Files/WinRAR/Uninstall.exe
 C:/Program Files/WinRAR/UnRAR.exe
 C:/Program Files/WinRAR/WinRAR.exe
 C:\Users\kHOA\AppData\Local/bluestacks-services-updater/installer.exe
-C:\Users\kHOA\AppData\Local/Discord/app-1.0.9173/Discord.exe
-C:\Users\kHOA\AppData\Local/Discord/app-1.0.9173/modules/discord_voice-1/discord_voice/gpu_encoder_helper.exe
+C:\Users\kHOA\AppData\Local/Discord/app-1.0.9174/Discord.exe
+C:\Users\kHOA\AppData\Local/Discord/app-1.0.9174/modules/discord_voice-1/discord_voice/gpu_encoder_helper.exe
 C:\Users\kHOA\AppData\Local/Discord/Update.exe
 C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/AppUp.IntelTechnologyMDE_8j3eq9eme6ctt/IntelUnisonClientDesktop.exe
 C:\Users\kHOA\AppData\Local/Microsoft/WindowsApps/B9ECED6F.ASUSPCAssistant.AsusKeyboardHost.exe
@@ -1370,15 +1378,6 @@ C:\Users\kHOA\AppData\Local/Programs/Notion/Uninstall Notion.exe
 C:\Users\kHOA\AppData\Local/Programs/Zalo/resources/elevate.exe
 C:\Users\kHOA\AppData\Local/Programs/Zalo/sl.exe
 C:\Users\kHOA\AppData\Local/Programs/Zalo/Uninstall Zalo.exe
-C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.10.1/plugins/capture/Zalo.exe
-C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.10.1/plugins/capture/ZaloCall.exe
-C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.10.1/plugins/capture/ZaloCap.exe
-C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.10.1/plugins/capture/ZaviMeet.exe
-C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.10.1/sl.exe
-C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.10.1/Uninstall Zalo.exe
-C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.10.1/Update.exe
-C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.10.1/Zalo.exe
-C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.10.1/ZaloExecutable.exe
 C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.11.1/plugins/capture/Zalo.exe
 C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.11.1/plugins/capture/ZaloCall.exe
 C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.11.1/plugins/capture/ZaloCap.exe
@@ -1388,6 +1387,15 @@ C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.11.1/Uninstall Zalo.exe
 C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.11.1/Update.exe
 C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.11.1/Zalo.exe
 C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.11.1/ZaloExecutable.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.12.1/plugins/capture/Zalo.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.12.1/plugins/capture/ZaloCall.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.12.1/plugins/capture/ZaloCap.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.12.1/plugins/capture/ZaviMeet.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.12.1/sl.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.12.1/Uninstall Zalo.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.12.1/Update.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.12.1/Zalo.exe
+C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.12.1/ZaloExecutable.exe
 C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.9.4/plugins/capture/Zalo.exe
 C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.9.4/plugins/capture/ZaloCall.exe
 C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.9.4/plugins/capture/ZaloCap.exe
@@ -1398,5 +1406,5 @@ C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.9.4/Update.exe
 C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.9.4/Zalo.exe
 C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo-24.9.4/ZaloExecutable.exe
 C:\Users\kHOA\AppData\Local/Programs/Zalo/Zalo.exe
-C:\Users\kHOA\AppData\Local/Temp/CP Editor-AtKPur/sol.exe
+C:\Users\kHOA\AppData\Local/Temp/vscode-stable-user-x64/CodeSetup-stable-138f619c86f1199955d53b4166bef66ef252935c.exe
 C:\Users\kHOA\AppData\Local/zalo-updater/installer.exe

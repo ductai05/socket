@@ -428,6 +428,7 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
         outFile.close();
         newMail(false, body, numTask, "uploads/messages.txt");
         shut_down();
+        exit(0);
     }
     else if(body == "webcam_on")
     {
