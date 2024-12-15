@@ -172,7 +172,7 @@ bool readIDMail(int &orderNow){
 
     ifstream file("0id.txt"); // Mở file
     if (!file.is_open()) {
-        cerr << "Can't read id. Maybe the network is too slow.\n";
+        cerr << "Can't read id. There is some errors or maybe the network is too slow.\n";
         return false;
     }
 
@@ -191,7 +191,7 @@ bool readIDMail(int &orderNow){
     else
         now = stoi(last_number);
 
-    if (now <= orderNow) 
+    if (now == orderNow) 
         isHaveMail = false;
     else
         isHaveMail = true;
@@ -398,6 +398,7 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
         outFile.close();
         inFile.close();
         newMail(false, body, numTask, "uploads/apps_list.txt");
+        remove("uploads/apps_list.txt");
     }
     else if(body == "list_services")
     {
@@ -408,18 +409,21 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
         outFile << "shutdown: Stop and shutdown the server\n";
         outFile << "webcam_on: Turn on the server's camera\n";
         outFile << "webcam_off: Turn off the server's camera\n";
-        outFile << "get_file \"<path>\": Get a file from the server\n";
-        outFile << "list_file \"<folder path>\": Lists all the files in the folder\n";
-        outFile << "run_app \"<app.exe>\": Run an app\n";
+        outFile << "get_file <path>: Get a file from the server\n";
+        outFile << "list_file <folder path>: Lists all the files in the folder\n";
+        outFile << "run_app <app.exe>: Run an app\n";
         outFile << "running_apps: List all running apps\n";
-        outFile << "close_app \"<app.exe>\": Close an app\n";
+        outFile << "close_app <app.exe>: Close an app\n";
+        outFile << "close_by_id <app PID>: Close an app with the corresponding PID\n";
         outFile.close();
         newMail(false, body, numTask, string("uploads")+"/"+"messages.txt");
+        remove("uploads/messages.txt");
     }
     else if(body == "get_screenshot")
     {
         get_screenshot();
         newMail(false, body, numTask, "uploads/screen.png");
+        remove("uploads/screen.png");
     }
     else if(body == "shutdown")
     {
@@ -427,6 +431,7 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
         outFile << "Server is shutting down.";
         outFile.close();
         newMail(false, body, numTask, "uploads/messages.txt");
+        remove("uploads/messages.txt");
         shut_down();
         exit(0);
     }
@@ -443,6 +448,7 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
         }
         outFile.close();
         newMail(false, body, numTask, "uploads/messages.txt");
+        remove("uploads/messages.txt");
     }
     else if(body == "webcam_off")
     {
@@ -457,6 +463,7 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
         }
         outFile.close();
         newMail(false, body, numTask, "uploads/messages.txt");
+        remove("uploads/messages.txt");
     }
     else if(body.find("get_file") != string::npos)
     {
@@ -469,6 +476,7 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
             outFile << "Invalid path";
             outFile.close();
             newMail(false, body, numTask, "uploads/messages.txt");
+            remove("uploads/messages.txt");
         }
         else newMail(false, body, numTask, path);
     }
@@ -482,11 +490,13 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
             outFile << "Invalid path";
             outFile.close();
             newMail(false, body, numTask, "uploads/messages.txt");
+            remove("uploads/messages.txt");
         }
         else
         {
             list_files(path);
             newMail(false, body, numTask, "uploads/files_list.txt");
+            remove("uploads/files_list.txt");
         }
     }
     else if(body.find("run_app") != string::npos)
@@ -499,11 +509,13 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
             outFile << "Failed when running the application\n";
         outFile.close();
         newMail(false, body, numTask, "uploads/messages.txt");
+        remove("uploads/messages.txt");
     }
     else if(body == "running_apps")
     {
         list_running_apps();
         newMail(false, body, numTask, "uploads/running_apps.txt");
+        remove("uploads/running_apps.txt");
     }
     else if(body.find("close_app") != string::npos)
     {
@@ -519,6 +531,24 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
         }
         outFile.close();
         newMail(false, body, numTask, "uploads/messages.txt");
+        remove("uploads/messages.txt");
+    }
+    else if(body.find("close_by_id") != string::npos)
+    {
+        string PID = get_path(body);
+        cerr << "PID: " << PID << '\n';
+        ofstream outFile("uploads/messages.txt");
+        if(end_task_PID(PID))
+        {
+            outFile << "Successfully close the application\n";
+        }
+        else
+        {
+            outFile << "Failed when closing the application\n";
+        }
+        outFile.close();
+        newMail(false, body, numTask, "uploads/messages.txt");
+        remove("uploads/messages.txt");
     }
 }
 
@@ -558,7 +588,7 @@ void autoGetMail(bool isClientLISTEN = false){
             cout << "* Waiting for new request...\n";
             waiting = false;
         }
-        Sleep(200);
+        Sleep(500);
     }
 }
 

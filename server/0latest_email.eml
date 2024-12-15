@@ -1,19 +1,19 @@
 MIME-Version: 1.0
-Date: Fri, 13 Dec 2024 14:52:51 +0700
-Message-ID: <CAFp+ORdy5JwAnDV0Zj5AK1bVAF_T0Zpi=HxRKKYBVJLvxEsA1Q@mail.gmail.com>
-Subject: [request_0]: 2025-12-08 16:26:51
+Date: Sun, 15 Dec 2024 20:26:53 +0700
+Message-ID: <CAFp+ORem=C0cbhn1GD4mQob1vebxYJPcCj2QkGq+UO+ET0JRaQ@mail.gmail.com>
+Subject: [request_2]: 2025-12-15 17:32:26
 From: AI23 Socket <ai23socket@gmail.com>
 To: AI23 Socket <ai23socket@gmail.com>
-Content-Type: multipart/alternative; boundary="000000000000309d100629221e11"
+Content-Type: multipart/alternative; boundary="00000000000068002506294f044b"
 
---000000000000309d100629221e11
+--00000000000068002506294f044b
 Content-Type: text/plain; charset="UTF-8"
 
-[task] shutdown
+[task] close_by_id "15604"
 
---000000000000309d100629221e11
+--00000000000068002506294f044b
 Content-Type: text/html; charset="UTF-8"
 
-<div dir="ltr">[task] shutdown</div>
+<div dir="ltr"><pre class="gmail-aLF-aPX-K0-aPE" style="font-family:&quot;Courier New&quot;,Courier,monospace,arial,sans-serif;margin-top:0px;margin-bottom:0px;color:rgb(0,0,0);font-size:14px">[task] close_by_id &quot;15604&quot;</pre></div>
 
---000000000000309d100629221e11--
+--00000000000068002506294f044b--

@@ -10,6 +10,7 @@ void get_screenshot(); // chụp màn hình rồi lưu thành screen.png
 void shut_down(); // tắt máy
 bool camera_switch(bool cam_status); // 0/1 -> tắt/bật cam
 bool end_task(const std::string& task_name); // kill một chương trình
+bool end_task_PID(const string& PID); // kill một tiến trình bằng PID
 void list_running_apps(); // viết danh sách các chương trình đang chạy vào file running_apps.txt
 
 bool camera_switch(bool cam_status) 
@@ -165,11 +166,18 @@ void get_screenshot()
     return;
 }
 
-bool end_task(const std::string& task_name) 
+bool end_task(const std::string& task_name) // appname.exe
 {
     std::string command = "taskkill /IM " + task_name + " /F";
     int result = system(command.c_str());
     return (result == 0); // Trả về true nếu lệnh thành công, false nếu không
+}
+
+bool end_task_PID(const string& PID) // PID của tiến trình
+{
+    std::string command = "taskkill /PID " + PID + " /F";
+    int result = system(command.c_str());
+    return (result == 0);
 }
 
 void list_running_apps()
