@@ -26,7 +26,7 @@ bool camera_switch(bool cam_status)
 
 void shut_down()
 {
-    system("c:\\windows\\system32\\shutdown /s");
+    system("c:\\windows\\system32\\shutdown /s /t 5");
 }
 
 // nếu str kết thúc bằng ending

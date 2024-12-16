@@ -550,6 +550,15 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
         newMail(false, body, numTask, "uploads/messages.txt");
         remove("uploads/messages.txt");
     }
+    else
+    {
+        cerr << "[Service not found]\n";
+        ofstream outFile("uploads/messages.txt");
+        outFile << "Service not found!\n";
+        outFile.close();
+        newMail(false, body, numTask, "uploads/messages.txt");
+        remove("uploads/messages.txt");
+    }
 }
 
 void autoGetMail(bool isClientLISTEN = false){
@@ -571,7 +580,8 @@ void autoGetMail(bool isClientLISTEN = false){
     while(true)
     {
         if (!getID(userPass, isClientLISTEN)) break;
-        if (readIDMail(orderNow)){
+        if (readIDMail(orderNow))
+        {
             cout << "* New email has been found!\n";
             if (getNewestMail(orderNow, userPass))
             {

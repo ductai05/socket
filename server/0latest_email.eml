@@ -1,19 +1,20 @@
+Return-Path: <ai23socket@gmail.com>
+Received: from 0sendEmail.txt ([14.161.2.192])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-218a1e5ce02sm35051265ad.184.2024.12.15.21.51.31
+        for <ai23socket@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sun, 15 Dec 2024 21:51:38 -0800 (PST)
+Message-ID: <675fbfea.170a0220.12967f.8f7a@mx.google.com>
+Date: Sun, 15 Dec 2024 21:51:38 -0800 (PST)
+From: ai23socket@gmail.com
+To: ai23socket@gmail.com
+Subject: [request_8]: 2024-12-16 12:51:58
 MIME-Version: 1.0
-Date: Sun, 15 Dec 2024 20:26:53 +0700
-Message-ID: <CAFp+ORem=C0cbhn1GD4mQob1vebxYJPcCj2QkGq+UO+ET0JRaQ@mail.gmail.com>
-Subject: [request_2]: 2025-12-15 17:32:26
-From: AI23 Socket <ai23socket@gmail.com>
-To: AI23 Socket <ai23socket@gmail.com>
-Content-Type: multipart/alternative; boundary="00000000000068002506294f044b"
+Content-Type: multipart/mixed; boundary="boundary"
 
---00000000000068002506294f044b
+--boundary
 Content-Type: text/plain; charset="UTF-8"
 
-[task] close_by_id "15604"
+[task] list_services
 
---00000000000068002506294f044b
-Content-Type: text/html; charset="UTF-8"
-
-<div dir="ltr"><pre class="gmail-aLF-aPX-K0-aPE" style="font-family:&quot;Courier New&quot;,Courier,monospace,arial,sans-serif;margin-top:0px;margin-bottom:0px;color:rgb(0,0,0);font-size:14px">[task] close_by_id &quot;15604&quot;</pre></div>
-
---00000000000068002506294f044b--
+--boundary--
