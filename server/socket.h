@@ -172,7 +172,7 @@ bool readIDMail(int &orderNow){
 
     ifstream file("0id.txt"); // Mở file
     if (!file.is_open()) {
-        cerr << "Can't read id. There is some errors or maybe the network is too slow.\n";
+        cerr << "Can't read id. There are some errors or maybe the network is too slow.\n";
         return false;
     }
 
