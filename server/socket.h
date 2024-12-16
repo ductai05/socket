@@ -574,7 +574,7 @@ void autoGetMail(bool isClientLISTEN = false){
     string timeLISTEN = getCurrentDateTime();
     if (isClientLISTEN){
         cout << "CLIENT Start listen at: " << timeLISTEN << "\n";
-    } else cout << "SERVER Start listen at: " << timeLISTEN << "\n"; 
+    } else cout << "SERVER Start listen at: " << timeLISTEN << "\n";
 
     bool waiting = true;
     while(true)
