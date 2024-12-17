@@ -403,18 +403,18 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
     else if(body == "list_services")
     {
         ofstream outFile("uploads/messages.txt");
-        outFile << "list_apps: Lists server programs and applications\n";
-        outFile << "list_services: Lists all services\n";
-        outFile << "get_screenshot: Take a screenshot of the server\n";
+        outFile << "Show all apps: Lists server programs and applications\n";
+        outFile << "lists services: Lists all services\n";
+        outFile << "take screenshot: Take a screenshot of the server\n";
         outFile << "shutdown: Stop and shutdown the server\n";
-        outFile << "webcam_on: Turn on the server's camera\n";
-        outFile << "webcam_off: Turn off the server's camera\n";
-        outFile << "get_file <path>: Get a file from the server\n";
-        outFile << "list_file <folder path>: Lists all the files in the folder\n";
-        outFile << "run_app <app.exe>: Run an app\n";
-        outFile << "running_apps: List all running apps\n";
-        outFile << "close_app <app.exe>: Close an app\n";
-        outFile << "close_by_id <app PID>: Close an app with the corresponding PID\n";
+        outFile << "webcam on: Turn on the server's camera\n";
+        outFile << "webcam off: Turn off the server's camera\n";
+        outFile << "get file <path>: Get a file from the server\n";
+        outFile << "list file <folder path>: Lists all the files in the folder\n";
+        outFile << "run app <app.exe>: Run an app\n";
+        outFile << "list running apps: List all running apps\n";
+        outFile << "close app <app.exe>: Close an app\n";
+        outFile << "close app by PID <app PID>: Close an app with the corresponding PID\n";
         outFile.close();
         newMail(false, body, numTask, string("uploads")+"/"+"messages.txt");
         remove("uploads/messages.txt");
