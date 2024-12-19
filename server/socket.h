@@ -4,10 +4,10 @@
 
 //----------------------------SEND MAIL-----------------------------------------
 
-string getCurrentDateTime() 
+string getCurrentDateTime()
 {
     std::time_t t = std::time(nullptr);
-    std::tm* now = std::localtime(&t);
+    std::tm *now = std::localtime(&t);
 
     std::ostringstream oss;
     oss << std::put_time(now, "%Y-%m-%d %H:%M:%S");
@@ -15,35 +15,41 @@ string getCurrentDateTime()
 }
 
 // Hàm mã hóa Base64
-string base64_encode(const std::string& in) {
-    static const char* base64_chars = 
+string base64_encode(const std::string &in)
+{
+    static const char *base64_chars =
         "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         "abcdefghijklmnopqrstuvwxyz"
         "0123456789+/";
-    
     std::string out;
-    int val = 0, valb = -6;
-    for (unsigned char c : in) {
+    int val = 0, valb = 0; // Initialize valb to 0
+    for (unsigned char c : in)
+    {
+
         val = (val << 8) + c;
         valb += 8;
-        while (valb >= 0) {
-            out.push_back(base64_chars[(val >> valb) & 0x3F]);
+        while (valb >= 6) {
+            out.push_back(base64_chars[(val >> (valb - 6)) & 0x3F]);
             valb -= 6;
         }
     }
-    while (valb >= 0) {
-        out.push_back(base64_chars[(val >> valb) & 0x3F]);
-        valb -= 6;
+    if (valb > 0)
+    {
+        out.push_back(base64_chars[(val << (6 - valb)) & 0x3F]); // Shift the remaining bits to the left
     }
-    while (out.size() % 4) out.push_back('=');
+    while (out.size() % 4)
+        out.push_back('=');
     return out;
 }
 
-void sendMail(const string& from, const string& to, const string& subject, const string& body, const string& userPass, const string& fileName) {
+void sendMail(const string &from, const string &to, const string &subject, const string &body, const string &userPass, const string &fileName)
+{
     string encodedFileContent;
-    if (!fileName.empty()){
+    if (!fileName.empty())
+    {
         ifstream file(fileName, std::ios::binary);
-        if (!file) {
+        if (!file)
+        {
             std::cerr << "Can't open the attachment!" << std::endl;
             return;
         }
@@ -60,7 +66,8 @@ void sendMail(const string& from, const string& to, const string& subject, const
 
     // Tạo tệp email
     ofstream emailFile("0sendEmail.txt");
-    if (!emailFile) {
+    if (!emailFile)
+    {
         std::cerr << "Khong the mo tep de ghi noi dung mail!" << std::endl;
         return;
     }
@@ -73,15 +80,19 @@ void sendMail(const string& from, const string& to, const string& subject, const
     emailFile << "Content-Type: multipart/mixed; boundary=\"boundary\"\n\n";
     emailFile << "--boundary\n";
     emailFile << "Content-Type: text/plain; charset=\"UTF-8\"\n\n";
-    if (encodedFileContent.empty()){
+    if (encodedFileContent.empty())
+    {
         emailFile << body << "\n\n";
-    } else {
+    }
+    else
+    {
         // co tep dinh kem:
         emailFile << body << "\n\n"; //" " << encodedFileContent << "\n\n";
     }
-      
+
     // Thêm tệp đính kèm
-    if (!fileName.empty() && (1 == 1)) {
+    if (!fileName.empty() && (1 == 1))
+    {
         emailFile << "--boundary\n";
         emailFile << "Content-Type: application/octet-stream; name=\"" << fileName << "\"\n";
 
@@ -92,7 +103,7 @@ void sendMail(const string& from, const string& to, const string& subject, const
 
         emailFile << "Content-Disposition: attachment; filename=\"" << name << "\"\n";
         emailFile << "Content-Transfer-Encoding: base64\n\n";
-        emailFile << encodedFileContent << "\n";  // Nội dung mã hóa Base64 của tệp đính kèm
+        emailFile << encodedFileContent << "\n"; // Nội dung mã hóa Base64 của tệp đính kèm
     }
 
     emailFile << "--boundary--\n";
@@ -100,14 +111,18 @@ void sendMail(const string& from, const string& to, const string& subject, const
 
     // Tạo lệnh curl
     std::string ex = "curl --url \"smtp://smtp.gmail.com:587\" --ssl-reqd "
-                     "--mail-from \"" + from + "\" "
-                     "--mail-rcpt \"" + to + "\" "
-                     "--user \"" + userPass + "\" "
-                     "--upload-file \"0sendEmail.txt\"";
+                     "--mail-from \"" +
+                     from + "\" "
+                            "--mail-rcpt \"" +
+                     to + "\" "
+                          "--user \"" +
+                     userPass + "\" "
+                                "--upload-file \"0sendEmail.txt\"";
 
     // Gọi lệnh curl
     int result = system(ex.c_str());
-    if (result == -1) {
+    if (result == -1)
+    {
         std::cerr << "Can't send email!\n";
         return;
     }
@@ -116,46 +131,55 @@ void sendMail(const string& from, const string& to, const string& subject, const
     remove("0sendEmail.txt");
 }
 
-// bool client == true -> request; client == false -> response 
+// bool client == true -> request; client == false -> response
 // string task = list app / camera / screenshot....
 // client request -> fileContent = ""; server response -> fileContent = "abc.txt/png"
 
-void newMail(bool client, string task, string numTask, string fileContent){
+void newMail(bool client, string task, string numTask, string fileContent)
+{
     string daytime = getCurrentDateTime();
     string typeOfSend;
-    if (client) typeOfSend = "[request_" + numTask + "]: ";
-    else typeOfSend = "[response_" + numTask + "]: ";
-    string from = "ai23socket@gmail.com"; //from = "ductaidt05@gmail.com";
-    string to = "ai23socket@gmail.com"; //to = "ductaidt05@gmail.com";
+    if (client)
+        typeOfSend = "[request_" + numTask + "]: ";
+    else
+        typeOfSend = "[response_" + numTask + "]: ";
+    string from = "ai23socket@gmail.com"; // from = "ductaidt05@gmail.com";
+    string to = "ai23socket@gmail.com";   // to = "ductaidt05@gmail.com";
     string subject = typeOfSend + daytime;
     string body = (client ? "[task] " : "[rep] ") + task;
     string userPass = "ai23socket@gmail.com:nhrr llaa ggzb yzbj";
-    //userPass = "ductaidt05@gmail.com:bveh frje cysx mjot";
+    // userPass = "ductaidt05@gmail.com:bveh frje cysx mjot";
     sendMail(from, to, subject, body, userPass, fileContent);
 }
 
 //----------------------------AUTO GET MAIL--------------------------------------
 
-bool getID(string userPass, bool isClientLISTEN){
+bool getID(string userPass, bool isClientLISTEN)
+{
     remove("0id.txt");
-    string ex = "curl -s -# -v imaps://imap.gmail.com/INBOX --ssl-reqd --connect-timeout 20 --max-time 15 -u \"" 
-    + userPass +"\" -X \"UID SEARCH ALL\" -o 0id.txt > nul 2>&1";
+    string ex = "curl -s -# -v imaps://imap.gmail.com/INBOX --ssl-reqd --connect-timeout 20 --max-time 15 -u \"" + userPass + "\" -X \"UID SEARCH ALL\" -o 0id.txt > nul 2>&1";
     int result = system(ex.c_str());
-    if (result == -1) {
-        if (isClientLISTEN) cout << "\nCLIENT getID: FAIL; ";
-        else cout << "\nSERVER getID: FAIL; ";
+    if (result == -1)
+    {
+        if (isClientLISTEN)
+            cout << "\nCLIENT getID: FAIL; ";
+        else
+            cout << "\nSERVER getID: FAIL; ";
         return false;
-    } else {
+    }
+    else
+    {
         return true;
     }
 }
 
-bool compareTimeStrings(const std::string& timeStr1, const std::string& timeStr2) {
+bool compareTimeStrings(const std::string &timeStr1, const std::string &timeStr2)
+{
     std::tm tm1 = {}, tm2 = {};
 
     std::istringstream ss1(timeStr1);
     std::istringstream ss2(timeStr2);
-    
+
     ss1 >> std::get_time(&tm1, "%Y-%m-%d %H:%M:%S");
     ss2 >> std::get_time(&tm2, "%Y-%m-%d %H:%M:%S");
 
@@ -165,33 +189,36 @@ bool compareTimeStrings(const std::string& timeStr1, const std::string& timeStr2
     return time1 > time2;
 }
 
-bool readIDMail(int &orderNow){
+bool readIDMail(int &orderNow)
+{
     int now = -3;
     ifstream idFile("0id.txt");
     bool isHaveMail = false;
 
     ifstream file("0id.txt"); // Mở file
-    if (!file.is_open()) {
+    if (!file.is_open())
+    {
         cerr << "Can't read id. There are some errors or maybe the network is too slow.\n";
         return false;
     }
 
     string line, number, last_number;
-    if (getline(file, line)) { // Đọc dòng đầu tiên
+    if (getline(file, line))
+    { // Đọc dòng đầu tiên
         istringstream iss(line);
 
-        while (iss >> number) { // Tách từng số
+        while (iss >> number)
+        {                         // Tách từng số
             last_number = number; // Cập nhật số cuối cùng
         }
-
     }
     file.close(); // Đóng file
-    if(last_number == "SEARCH")
+    if (last_number == "SEARCH")
         return false;
     else
         now = stoi(last_number);
 
-    if (now == orderNow) 
+    if (now == orderNow)
         isHaveMail = false;
     else
         isHaveMail = true;
@@ -199,27 +226,29 @@ bool readIDMail(int &orderNow){
     return isHaveMail;
 }
 
-bool getNewestMail(int orderNow, string userPass){
-    string ex = "curl -v imaps://imap.gmail.com/INBOX/;UID=" + to_string(orderNow) 
-        + " --ssl-reqd --connect-timeout 20  --max-time 15 -u \"" + userPass + "\" -o 0latest_email.eml > nul 2>&1";
+bool getNewestMail(int orderNow, string userPass)
+{
+    string ex = "curl -v imaps://imap.gmail.com/INBOX/;UID=" + to_string(orderNow) + " --ssl-reqd --connect-timeout 20  --max-time 15 -u \"" + userPass + "\" -o 0latest_email.eml > nul 2>&1";
 
     int result = system(ex.c_str());
-    if (result == -1) 
+    if (result == -1)
     {
         cout << "Can't get newest mail.\n";
         return false;
-    } 
+    }
     return true;
 }
 
-bool extractInfo(const string &subject, string &responseType, string &numTask, string &time) {
+bool extractInfo(const string &subject, string &responseType, string &numTask, string &time)
+{
     regex pattern(R"(\[(response|request)_(\d+)\]: (\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}))");
     smatch matches;
 
-    if (regex_search(subject, matches, pattern)) {
+    if (regex_search(subject, matches, pattern))
+    {
         responseType = matches[1]; // 'response' or 'request'
-        numTask = matches[2];        // numtask
-        time = matches[3];      // time
+        numTask = matches[2];      // numtask
+        time = matches[3];         // time
         return true;
     }
 
@@ -228,28 +257,21 @@ bool extractInfo(const string &subject, string &responseType, string &numTask, s
 
 // Map for base64
 map<char, int> base64_map = {
-    {'A', 0}, {'B', 1}, {'C', 2}, {'D', 3}, {'E', 4}, {'F', 5},
-    {'G', 6}, {'H', 7}, {'I', 8}, {'J', 9}, {'K', 10}, {'L', 11},
-    {'M', 12}, {'N', 13}, {'O', 14}, {'P', 15}, {'Q', 16}, {'R', 17},
-    {'S', 18}, {'T', 19}, {'U', 20}, {'V', 21}, {'W', 22}, {'X', 23},
-    {'Y', 24}, {'Z', 25}, {'a', 26}, {'b', 27}, {'c', 28}, {'d', 29},
-    {'e', 30}, {'f', 31}, {'g', 32}, {'h', 33}, {'i', 34}, {'j', 35},
-    {'k', 36}, {'l', 37}, {'m', 38}, {'n', 39}, {'o', 40}, {'p', 41},
-    {'q', 42}, {'r', 43}, {'s', 44}, {'t', 45}, {'u', 46}, {'v', 47},
-    {'w', 48}, {'x', 49}, {'y', 50}, {'z', 51}, {'0', 52}, {'1', 53},
-    {'2', 54}, {'3', 55}, {'4', 56}, {'5', 57}, {'6', 58}, {'7', 59},
-    {'8', 60}, {'9', 61}, {'+', 62}, {'/', 63}, {'=', -1}
-};
+    {'A', 0}, {'B', 1}, {'C', 2}, {'D', 3}, {'E', 4}, {'F', 5}, {'G', 6}, {'H', 7}, {'I', 8}, {'J', 9}, {'K', 10}, {'L', 11}, {'M', 12}, {'N', 13}, {'O', 14}, {'P', 15}, {'Q', 16}, {'R', 17}, {'S', 18}, {'T', 19}, {'U', 20}, {'V', 21}, {'W', 22}, {'X', 23}, {'Y', 24}, {'Z', 25}, {'a', 26}, {'b', 27}, {'c', 28}, {'d', 29}, {'e', 30}, {'f', 31}, {'g', 32}, {'h', 33}, {'i', 34}, {'j', 35}, {'k', 36}, {'l', 37}, {'m', 38}, {'n', 39}, {'o', 40}, {'p', 41}, {'q', 42}, {'r', 43}, {'s', 44}, {'t', 45}, {'u', 46}, {'v', 47}, {'w', 48}, {'x', 49}, {'y', 50}, {'z', 51}, {'0', 52}, {'1', 53}, {'2', 54}, {'3', 55}, {'4', 56}, {'5', 57}, {'6', 58}, {'7', 59}, {'8', 60}, {'9', 61}, {'+', 62}, {'/', 63}, {'=', -1}};
 
 // Ham giai ma base64
-vector<unsigned char> base64_decode(const std::string &in) {
+vector<unsigned char> base64_decode(const std::string &in)
+{
     vector<unsigned char> out;
     int val = 0, valb = -8;
-    for (unsigned char c : in) {
-        if (base64_map.find(c) == base64_map.end()) continue; // Skip ki tu ko phai base64
+    for (unsigned char c : in)
+    {
+        if (base64_map.find(c) == base64_map.end())
+            continue; // Skip ki tu ko phai base64
         val = (val << 6) + base64_map[c];
         valb += 6;
-        if (valb >= 0) {
+        if (valb >= 0)
+        {
             out.push_back((val >> valb) & 0xFF);
             valb -= 8;
         }
@@ -257,126 +279,149 @@ vector<unsigned char> base64_decode(const std::string &in) {
     return out;
 }
 
-void saveFile(const std::string &filename, const std::vector<unsigned char> &data) {
+void saveFile(const std::string &filename, const std::vector<unsigned char> &data)
+{
     string directory = "attachment";
-    string command = "mkdir " + directory;
+    string command = "mkdir " + directory + " > nul 2>&1";
     system(command.c_str());
     string fullPath = directory + "/" + filename;
 
     ofstream out(fullPath, std::ios::binary);
-    out.write(reinterpret_cast<const char*>(data.data()), data.size());
+    out.write(reinterpret_cast<const char *>(data.data()), data.size());
     out.close();
 }
 
-string get_path(const string& command)
+string get_path(const string &command)
 {
     size_t start = command.find('"');
     size_t end = command.find('"', start + 1);
-    
-    if (start != std::string::npos && end != std::string::npos) 
+
+    if (start != std::string::npos && end != std::string::npos)
         return command.substr(start + 1, end - start - 1);
-    
+
     return ""; // Trả về chuỗi rỗng nếu không tìm thấy
 }
 
-void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string> &MAIL, vector<string> &TASK){
+void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string> &MAIL, vector<string> &TASK)
+{
     bool check = false;
     string fileName = "0latest_email.eml";
 
     int k = 0;
-    while(!ifstream(fileName).good()){
-        Sleep(1000); k++;
-        if (k == 20) return;
+    while (!ifstream(fileName).good())
+    {
+        Sleep(1000);
+        k++;
+        if (k == 20)
+            return;
     } // dam bao latest_email.eml da duoc tao
 
-    ifstream inFile(fileName); string line;
+    ifstream inFile(fileName);
+    string line;
     string subject, body, responseType, numTask, time;
     string fileAttachmentName;
-    
+
     // getSubject
-    while(getline(inFile, line)){                       
-        if (line.find("Subject:") != string::npos) {
+    while (getline(inFile, line))
+    {
+        if (line.find("Subject:") != string::npos)
+        {
             subject = line.substr(line.find(":") + 1);
             subject.erase(0, subject.find_first_not_of(" \t"));
             subject.erase(subject.find_last_not_of(" \t") + 1);
-            break; 
+            break;
         }
-    } 
+    }
 
-    if ((subject.find("[request_") || !isClientLISTEN) && (subject.find("[response_") || isClientLISTEN)){
+    if ((subject.find("[request_") || !isClientLISTEN) && (subject.find("[response_") || isClientLISTEN))
+    {
         regex pattern(R"(\[(response|request)_(\d+)\]: (\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}))");
         smatch matches;
 
-        if (regex_search(subject, matches, pattern)) {
+        if (regex_search(subject, matches, pattern))
+        {
             responseType = matches[1]; // 'response' or 'request'
             numTask = matches[2];      // numtask
             time = matches[3];         // time
-            if (find(MAIL.begin(), MAIL.end(), subject) == MAIL.end() 
-            && find(TASK.begin(), TASK.end(), numTask) == TASK.end() 
-            && compareTimeStrings(time, timeLISTEN)
-                ){
+            if (find(MAIL.begin(), MAIL.end(), subject) == MAIL.end() && find(TASK.begin(), TASK.end(), numTask) == TASK.end() && compareTimeStrings(time, timeLISTEN))
+            {
                 check = true;
                 MAIL.push_back(subject);
                 TASK.push_back(numTask);
             }
         }
-        if (check) {
+        if (check)
+        {
             cout << "[SUCCESSFULL] Type: " + responseType + ", NumTask: " + numTask + ", Timestamp: " + time << "\n";
         }
-        else {
+        else
+        {
             cout << "subject: " << subject << "\n[INVALID] Type: " + responseType + ", NumTask: " + numTask + ", Timestamp: " + time << "\n";
             inFile.close();
             return;
         }
-    } else {
+    }
+    else
+    {
         cout << "[newest mail: not acceptable responseType]\n";
         return;
     }
 
     // getBody
-    if (isClientLISTEN){
-        while(getline(inFile, line)){
-            if (line.find("[rep]") != string::npos) {
+    if (isClientLISTEN)
+    {
+        while (getline(inFile, line))
+        {
+            if (line.find("[rep]") != string::npos)
+            {
                 body = line.substr(line.find("]") + 1);
                 body.erase(0, body.find_first_not_of(" \t"));
                 body.erase(body.find_last_not_of(" \t") + 1);
-                break; 
+                break;
             }
         }
         cout << line << "\n";
-    } else {
-        while(getline(inFile, line)){
-            if (line.find("[task]") != string::npos) {
+    }
+    else
+    {
+        while (getline(inFile, line))
+        {
+            if (line.find("[task]") != string::npos)
+            {
                 body = line.substr(line.find("]") + 1);
                 body.erase(0, body.find_first_not_of(" \t"));
                 body.erase(body.find_last_not_of(" \t") + 1);
-                break; 
+                break;
             }
         }
         cout << line << "\n";
     }
 
     // getFileAttachmentName
-    while(getline(inFile, line)){
-        if (line.find("filename=\"") != string::npos) {
+    while (getline(inFile, line))
+    {
+        if (line.find("filename=\"") != string::npos)
+        {
             fileAttachmentName = line.substr(line.find("\"") + 1);
             fileAttachmentName = fileAttachmentName.substr(0, fileAttachmentName.size() - 1);
 
-            getline(inFile, line); 
-            //getline(inFile, line); // skip 1 lines
-            break; 
+            getline(inFile, line);
+            // getline(inFile, line); // skip 1 lines
+            break;
         }
     }
     cout << fileAttachmentName << "\n";
 
-    // get base64 
+    // get base64
     string base64_data;
     int i = 1;
-    while (getline(inFile, line)) {
-        if (line == "--boundary--") break;
+    while (getline(inFile, line))
+    {
+        if (line == "--boundary--")
+            break;
         base64_data += line;
     }
-    
+
     // Giai ma base64
     vector<unsigned char> decoded_data = base64_decode(base64_data);
 
@@ -385,12 +430,12 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
     inFile.close();
 
     // numTask, body
-    if(body == "list_apps")
+    if (body == "list_apps")
     {
         ofstream outFile("uploads/apps_list.txt");
         ifstream inFile("uploads/app_paths.txt");
         string line;
-        while(getline(inFile, line))
+        while (getline(inFile, line))
         {
             size_t lastSlash = line.find_last_of("/");
             outFile << line.substr(lastSlash + 1) << '\n';
@@ -400,7 +445,7 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
         newMail(false, body, numTask, "uploads/apps_list.txt");
         remove("uploads/apps_list.txt");
     }
-    else if(body == "list_services")
+    else if (body == "list_services")
     {
         ofstream outFile("uploads/messages.txt");
         outFile << "Show all apps: Lists server programs and applications\n";
@@ -416,16 +461,16 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
         outFile << "close app <app.exe>: Close an app\n";
         outFile << "close app by PID <app PID>: Close an app with the corresponding PID\n";
         outFile.close();
-        newMail(false, body, numTask, string("uploads")+"/"+"messages.txt");
+        newMail(false, body, numTask, string("uploads") + "/" + "messages.txt");
         remove("uploads/messages.txt");
     }
-    else if(body == "get_screenshot")
+    else if (body == "get_screenshot")
     {
         get_screenshot();
         newMail(false, body, numTask, "uploads/screen.png");
         remove("uploads/screen.png");
     }
-    else if(body == "shutdown")
+    else if (body == "shutdown")
     {
         ofstream outFile("uploads/messages.txt");
         outFile << "Server is shutting down.";
@@ -435,10 +480,10 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
         shut_down();
         exit(0);
     }
-    else if(body == "webcam_on")
+    else if (body == "webcam_on")
     {
         ofstream outFile("uploads/messages.txt");
-        if(camera_switch(1))
+        if (camera_switch(1))
         {
             outFile << "Successfully turned on the camera";
         }
@@ -450,10 +495,10 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
         newMail(false, body, numTask, "uploads/messages.txt");
         remove("uploads/messages.txt");
     }
-    else if(body == "webcam_off")
+    else if (body == "webcam_off")
     {
         ofstream outFile("uploads/messages.txt");
-        if(camera_switch(0))
+        if (camera_switch(0))
         {
             outFile << "Successfully turned off the camera";
         }
@@ -465,26 +510,27 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
         newMail(false, body, numTask, "uploads/messages.txt");
         remove("uploads/messages.txt");
     }
-    else if(body.find("get_file") != string::npos)
+    else if (body.find("get_file") != string::npos)
     {
         string path = get_path(body);
         DWORD fileAttr = GetFileAttributesA(path.c_str());
-        if (!(fileAttr != INVALID_FILE_ATTRIBUTES)) 
+        if (!(fileAttr != INVALID_FILE_ATTRIBUTES))
         {
-            
+
             ofstream outFile("uploads/messages.txt");
             outFile << "Invalid path";
             outFile.close();
             newMail(false, body, numTask, "uploads/messages.txt");
             remove("uploads/messages.txt");
         }
-        else newMail(false, body, numTask, path);
+        else
+            newMail(false, body, numTask, path);
     }
-    else if(body.find("list_file") != string::npos)
+    else if (body.find("list_file") != string::npos)
     {
         string path = get_path(body);
         DWORD fileAttr = GetFileAttributesA(path.c_str());
-        if (!(fileAttr != INVALID_FILE_ATTRIBUTES)) 
+        if (!(fileAttr != INVALID_FILE_ATTRIBUTES))
         {
             ofstream outFile("uploads/messages.txt");
             outFile << "Invalid path";
@@ -499,11 +545,11 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
             remove("uploads/files_list.txt");
         }
     }
-    else if(body.find("run_app") != string::npos)
+    else if (body.find("run_app") != string::npos)
     {
         ofstream outFile("uploads/messages.txt");
         string path = get_path(body);
-        if(run_app(path))
+        if (run_app(path))
             outFile << "Successfully run the application\n";
         else
             outFile << "Failed when running the application\n";
@@ -511,17 +557,17 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
         newMail(false, body, numTask, "uploads/messages.txt");
         remove("uploads/messages.txt");
     }
-    else if(body == "running_apps")
+    else if (body == "running_apps")
     {
         list_running_apps();
         newMail(false, body, numTask, "uploads/running_apps.txt");
         remove("uploads/running_apps.txt");
     }
-    else if(body.find("close_app") != string::npos)
+    else if (body.find("close_app") != string::npos)
     {
         string app = get_path(body);
         ofstream outFile("uploads/messages.txt");
-        if(end_task(app))
+        if (end_task(app))
         {
             outFile << "Successfully close the application\n";
         }
@@ -533,12 +579,12 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
         newMail(false, body, numTask, "uploads/messages.txt");
         remove("uploads/messages.txt");
     }
-    else if(body.find("close_by_id") != string::npos)
+    else if (body.find("close_by_id") != string::npos)
     {
         string PID = get_path(body);
         cerr << "PID: " << PID << '\n';
         ofstream outFile("uploads/messages.txt");
-        if(end_task_PID(PID))
+        if (end_task_PID(PID))
         {
             outFile << "Successfully close the application\n";
         }
@@ -561,7 +607,8 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
     }
 }
 
-void autoGetMail(bool isClientLISTEN = false){
+void autoGetMail(bool isClientLISTEN = false)
+{
     string userPass = "ai23socket@gmail.com:nhrr llaa ggzb yzbj";
 
     int orderNow = -2;
@@ -570,16 +617,20 @@ void autoGetMail(bool isClientLISTEN = false){
 
     getID(userPass, isClientLISTEN);
     readIDMail(orderNow); // get init order
-    
+
     string timeLISTEN = getCurrentDateTime();
-    if (isClientLISTEN){
+    if (isClientLISTEN)
+    {
         cout << "CLIENT Start listen at: " << timeLISTEN << "\n";
-    } else cout << "SERVER Start listen at: " << timeLISTEN << "\n";
+    }
+    else
+        cout << "SERVER Start listen at: " << timeLISTEN << "\n";
 
     bool waiting = true;
-    while(true)
+    while (true)
     {
-        if (!getID(userPass, isClientLISTEN)) break;
+        if (!getID(userPass, isClientLISTEN))
+            break;
         if (readIDMail(orderNow))
         {
             cout << "* New email has been found!\n";
@@ -593,7 +644,7 @@ void autoGetMail(bool isClientLISTEN = false){
                 readIDMail(orderNow);
             }
         }
-        if(waiting)
+        if (waiting)
         {
             cout << "* Waiting for new request...\n";
             waiting = false;
