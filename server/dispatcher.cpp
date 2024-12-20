@@ -102,9 +102,6 @@ void checkIP(map<string, bool> &serversIP, const string &ip, int port) {
 
 void getServersList(map<string, bool> &serversIP) 
 {
-    // serversIP["192.168.1.120"] = true;
-    // serversIP["192.168.1.149"] = true;
-    // return;
 
     auto start = chrono::high_resolution_clock::now();
     cout << "Detecting online servers...\n";
@@ -115,12 +112,34 @@ void getServersList(map<string, bool> &serversIP)
         return;
     }
 
+    char hostname[256];
+    gethostname(hostname, sizeof(hostname));
+    struct addrinfo hints, *res;
+    memset(&hints, 0, sizeof(hints));
+    hints.ai_family = AF_INET;
+    hints.ai_socktype = SOCK_STREAM;
+
+    string privateIp;
+    if (getaddrinfo(hostname, NULL, &hints, &res) == 0)
+    {
+        char ipStr[INET_ADDRSTRLEN];
+        struct sockaddr_in *ipv4 = (struct sockaddr_in *)res->ai_addr;
+        inet_ntop(AF_INET, &ipv4->sin_addr, ipStr, sizeof(ipStr));
+        privateIp = ipStr;
+        privateIp.erase(privateIp.find_last_of(".") + 1, privateIp.size());
+        freeaddrinfo(res);
+    }
+    else
+    {
+        cerr << "Could not get IP address\n";
+    }
+
     const int startIP = 1;
     const int endIP = 245;
     vector<thread> threads;
 
     for (int i = startIP; i <= endIP; ++i) {
-        string ip = "192.168.1." + to_string(i);
+        string ip = privateIp + to_string(i);
         threads.emplace_back(ref(checkIP), ref(serversIP), ip, PORT); // Sử dụng ref
     }
 
