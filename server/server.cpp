@@ -26,13 +26,13 @@ using namespace std;
 
 #define PORT 65535
 
-void handle_request(const string &numTask, const string &body, SOCKET &socket, SOCKET &server_fd)
+void handle_request(const string &numTask, const string &request, SOCKET &socket, SOCKET &server_fd)
 {
-    if(numTask == "" && body == "")
+    if(numTask == "" && request == "")
     {
         return;
     }
-    if (body == "list_apps")
+    if (request == "list_apps")
     {
         ofstream outFile("uploads/apps_list.txt");
         ifstream inFile("uploads/app_paths.txt");
@@ -44,16 +44,16 @@ void handle_request(const string &numTask, const string &body, SOCKET &socket, S
         }
         outFile.close();
         inFile.close();
-        newMail(false, body, numTask, "uploads/apps_list.txt");
+        newMail(false, request, numTask, "uploads/apps_list.txt");
         remove("uploads/apps_list.txt");
     }
-    else if (body == "get_screenshot")
+    else if (request == "get_screenshot")
     {
         get_screenshot();
-        newMail(false, body, numTask, "uploads/screen.png");
+        newMail(false, request, numTask, "uploads/screen.png");
         remove("uploads/screen.png");
     }
-    else if (body == "shutdown")
+    else if (request == "shutdown")
     {
         // gửi response và đóng socket
         const char *response = "SUCCESS";
@@ -66,7 +66,7 @@ void handle_request(const string &numTask, const string &body, SOCKET &socket, S
         shut_down();
         exit(0);
     }
-    else if (body == "webcam_on")
+    else if (request == "webcam_on")
     {
         ofstream outFile("uploads/messages.txt");
         if (camera_switch(1))
@@ -78,10 +78,10 @@ void handle_request(const string &numTask, const string &body, SOCKET &socket, S
             outFile << "Failed when turning on the camera";
         }
         outFile.close();
-        newMail(false, body, numTask, "uploads/messages.txt");
+        newMail(false, request, numTask, "uploads/messages.txt");
         remove("uploads/messages.txt");
     }
-    else if (body == "webcam_off")
+    else if (request == "webcam_off")
     {
         ofstream outFile("uploads/messages.txt");
         if (camera_switch(0))
@@ -93,12 +93,12 @@ void handle_request(const string &numTask, const string &body, SOCKET &socket, S
             outFile << "Failed when turning off the camera";
         }
         outFile.close();
-        newMail(false, body, numTask, "uploads/messages.txt");
+        newMail(false, request, numTask, "uploads/messages.txt");
         remove("uploads/messages.txt");
     }
-    else if (body.find("get_file") != string::npos)
+    else if (request.find("get_file") != string::npos)
     {
-        string path = get_path(body);
+        string path = get_path(request);
         DWORD fileAttr = GetFileAttributesA(path.c_str());
         if (!(fileAttr != INVALID_FILE_ATTRIBUTES))
         {
@@ -106,52 +106,52 @@ void handle_request(const string &numTask, const string &body, SOCKET &socket, S
             ofstream outFile("uploads/messages.txt");
             outFile << "Invalid path";
             outFile.close();
-            newMail(false, body, numTask, "uploads/messages.txt");
+            newMail(false, request, numTask, "uploads/messages.txt");
             remove("uploads/messages.txt");
         }
         else
-            newMail(false, body, numTask, path);
+            newMail(false, request, numTask, path);
     }
-    else if (body.find("list_files") != string::npos)
+    else if (request.find("list_files") != string::npos)
     {
-        string path = get_path(body);
+        string path = get_path(request);
         DWORD fileAttr = GetFileAttributesA(path.c_str());
         if (!(fileAttr != INVALID_FILE_ATTRIBUTES))
         {
             ofstream outFile("uploads/messages.txt");
             outFile << "Invalid path";
             outFile.close();
-            newMail(false, body, numTask, "uploads/messages.txt");
+            newMail(false, request, numTask, "uploads/messages.txt");
             remove("uploads/messages.txt");
         }
         else
         {
             list_files(path);
-            newMail(false, body, numTask, "uploads/files_list.txt");
+            newMail(false, request, numTask, "uploads/files_list.txt");
             remove("uploads/files_list.txt");
         }
     }
-    else if (body.find("run_app") != string::npos)
+    else if (request.find("run_app") != string::npos)
     {
         ofstream outFile("uploads/messages.txt");
-        string path = get_path(body);
+        string path = get_path(request);
         if (run_app(path))
             outFile << "Successfully run the application\n";
         else
             outFile << "Failed when running the application\n";
         outFile.close();
-        newMail(false, body, numTask, "uploads/messages.txt");
+        newMail(false, request, numTask, "uploads/messages.txt");
         remove("uploads/messages.txt");
     }
-    else if (body == "running_apps")
+    else if (request == "running_apps")
     {
         list_running_apps();
-        newMail(false, body, numTask, "uploads/running_apps.txt");
+        newMail(false, request, numTask, "uploads/running_apps.txt");
         remove("uploads/running_apps.txt");
     }
-    else if (body.find("close_app") != string::npos)
+    else if (request.find("close_app") != string::npos)
     {
-        string app = get_path(body);
+        string app = get_path(request);
         ofstream outFile("uploads/messages.txt");
         if (end_task(app))
         {
@@ -162,12 +162,12 @@ void handle_request(const string &numTask, const string &body, SOCKET &socket, S
             outFile << "Failed when closing the application.\n";
         }
         outFile.close();
-        newMail(false, body, numTask, "uploads/messages.txt");
+        newMail(false, request, numTask, "uploads/messages.txt");
         remove("uploads/messages.txt");
     }
-    else if (body.find("close_by_id") != string::npos)
+    else if (request.find("close_by_id") != string::npos)
     {
-        string PID = get_path(body);
+        string PID = get_path(request);
         ofstream outFile("uploads/messages.txt");
         if (end_task_PID(PID))
         {
@@ -178,12 +178,12 @@ void handle_request(const string &numTask, const string &body, SOCKET &socket, S
             outFile << "Failed when closing the application.\n";
         }
         outFile.close();
-        newMail(false, body, numTask, "uploads/messages.txt");
+        newMail(false, request, numTask, "uploads/messages.txt");
         remove("uploads/messages.txt");
     }
-    else if(body.find("delete_file") != string::npos)
+    else if(request.find("delete_file") != string::npos)
     {
-        string path = get_path(body);
+        string path = get_path(request);
         ofstream outFile("uploads/messages.txt");
         if(remove(path.c_str()) == 0)
         {
@@ -194,7 +194,7 @@ void handle_request(const string &numTask, const string &body, SOCKET &socket, S
             outFile << "Failed when deleting the file.\n";
         }
         outFile.close();
-        newMail(false, body, numTask, "uploads/messages.txt");
+        newMail(false, request, numTask, "uploads/messages.txt");
         remove("uploads/messages.txt");
     }
     else
@@ -203,7 +203,7 @@ void handle_request(const string &numTask, const string &body, SOCKET &socket, S
         ofstream outFile("uploads/messages.txt");
         outFile << "Service not found!\n";
         outFile.close();
-        newMail(false, body, numTask, "uploads/messages.txt");
+        newMail(false, request, numTask, "uploads/messages.txt");
         remove("uploads/messages.txt");
     }
     const char *response = "SUCCESS";
@@ -292,12 +292,12 @@ void createSocket(bool logIP = true)
 
     recv(new_socket, buffer, sizeof(buffer), 0);
     stringstream ss(buffer);
-    string numTask, body;
+    string numTask, request;
     ss >> numTask;
-    getline(ss, body);
+    getline(ss, request);
     
     // Xử lý yêu cầu
-    handle_request(numTask, body, new_socket, server_fd);
+    handle_request(numTask, request, new_socket, server_fd);
     
     closesocket(server_fd);
     WSACleanup();

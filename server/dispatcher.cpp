@@ -27,9 +27,9 @@ using namespace std;
 
 #define PORT 65535
 
-string sendTask(const string &serverIP, const string &numTask, const string &body)
+string sendTask(const string &serverIP, const string &numTask, const string &request)
 {
-    string message = numTask + " " + body;
+    string message = numTask + " " + request;
     WSADATA wsaData;
     SOCKET sock;
     struct sockaddr_in serv_addr;
@@ -102,6 +102,10 @@ void checkIP(map<string, bool> &serversIP, const string &ip, int port) {
 
 void getServersList(map<string, bool> &serversIP) 
 {
+    serversIP["192.168.1.120"] = true;
+    serversIP["192.168.1.149"] = true;
+    return;
+
     auto start = chrono::high_resolution_clock::now();
     cout << "Detecting servers IP...\n";
     WSADATA wsaData;
@@ -142,14 +146,14 @@ void getServersList(map<string, bool> &serversIP)
     WSACleanup();
 }
 
-void handleRequest(map<string, bool> &serversIP, string &currentIP, const string &numTask, const string &body)
+void handleRequest(map<string, bool> &serversIP, string &currentIP, const string &numTask, const string &request)
 {
-    if (body == "INVALID")
+    if (request == "INVALID")
     {
         ofstream outFile("messages.txt");
         outFile << "Invalid request.";
         outFile.close();
-        newMail(false, body, numTask, "messages.txt");
+        newMail(false, request, numTask, "messages.txt");
         remove("messages.txt");
     }
     else if (currentIP == "")
@@ -157,10 +161,10 @@ void handleRequest(map<string, bool> &serversIP, string &currentIP, const string
         ofstream outFile("messages.txt");
         outFile << "No servers available.";
         outFile.close();
-        newMail(false, body, numTask, "messages.txt");
+        newMail(false, request, numTask, "messages.txt");
         remove("messages.txt");
     }
-    else if (body == "servers_IP")
+    else if (request == "servers_IP")
     {
         ofstream outFile("servers_IP.txt");
         int cnt = 1;
@@ -175,13 +179,13 @@ void handleRequest(map<string, bool> &serversIP, string &currentIP, const string
             cnt++;
         }
         outFile.close();
-        newMail(false, body, numTask, "servers_IP.txt");
+        newMail(false, request, numTask, "servers_IP.txt");
         remove("servers_IP.txt");
     }
-    else if (body.find("change_server") != string::npos)
+    else if (request.find("change_server") != string::npos)
     {
         ofstream outFile("messages.txt");
-        string newIP = get_path(body);
+        string newIP = get_path(request);
         if (serversIP.count(newIP) == 0 || serversIP[newIP] == false)
         {
             outFile << "Failed when changing server.";
@@ -192,13 +196,13 @@ void handleRequest(map<string, bool> &serversIP, string &currentIP, const string
             outFile << "Successfully changed server.";
         }
         outFile.close();
-        newMail(false, body, numTask, "messages.txt");
+        newMail(false, request, numTask, "messages.txt");
         remove("messages.txt");
     }
-    else if (body == "shutdown")
+    else if (request == "shutdown")
     {
         ofstream outFile("messages.txt");
-        sendTask(currentIP, numTask, body);
+        sendTask(currentIP, numTask, request);
         serversIP[currentIP] = false;
         outFile << "Shutting down current server.";
 
@@ -218,16 +222,16 @@ void handleRequest(map<string, bool> &serversIP, string &currentIP, const string
         if (!changed)
             outFile << "No more server available.";
         outFile.close();
-        newMail(false, body, numTask, "messages.txt");
+        newMail(false, request, numTask, "messages.txt");
         remove("messages.txt");
     }
     else
     {
-        sendTask(currentIP, numTask, body);
+        sendTask(currentIP, numTask, request);
     }
 }
 
-void autoGetMail(map<string, bool> &serversIP, bool isClientLISTEN = false)
+void autoGetMail(map<string, bool> &serversIP)
 {
     string currentIP = serversIP.begin()->first;
     string userPass = "ai23socket@gmail.com:nhrr llaa ggzb yzbj";
@@ -236,7 +240,7 @@ void autoGetMail(map<string, bool> &serversIP, bool isClientLISTEN = false)
     vector<string> allMAIL;
     vector<string> allTASK;
 
-    getID(userPass, isClientLISTEN);
+    getID(userPass, false);
     readIDMail(orderNow); // get init order
 
     string timeLISTEN = getCurrentDateTime();
@@ -245,20 +249,20 @@ void autoGetMail(map<string, bool> &serversIP, bool isClientLISTEN = false)
     bool waiting = true;
     while (true)
     {
-        if (!getID(userPass, isClientLISTEN))
+        if (!getID(userPass, false))
             break;
         if (readIDMail(orderNow))
         {
             cout << "* New email has been found!\n";
             if (getNewestMail(orderNow, userPass))
             {
-                string numTask, body;
-                tie(numTask, body) = readLatestMail(timeLISTEN, isClientLISTEN, allMAIL, allTASK);
-                handleRequest(serversIP, currentIP, numTask, body);
+                string numTask, request;
+                tie(numTask, request) = readLatestMail(timeLISTEN, false, allMAIL, allTASK);
+                handleRequest(serversIP, currentIP, numTask, request);
                 waiting = true;
 
                 // Get new order
-                getID(userPass, isClientLISTEN);
+                getID(userPass, false);
                 readIDMail(orderNow);
             }
         }
