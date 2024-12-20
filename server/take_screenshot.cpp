@@ -37,13 +37,11 @@ int GetEncoderClsid(const WCHAR *format, CLSID *pClsid)
     return 0;
 }
 
-void gdiscreen(const int &Height, const int &Width, int targetHeight, int targetWidth)
+void takeScreenshot(const int &Height, const int &Width, int targetHeight, int targetWidth)
 {
-	
     GdiplusStartupInput gdiplusStartupInput;
     ULONG_PTR gdiplusToken;
     GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
-
 	{
         HDC scrdc, memdc;
         HBITMAP membit;
@@ -78,6 +76,6 @@ void gdiscreen(const int &Height, const int &Width, int targetHeight, int target
 int main()
 {
 	const int height = 1880, width = 2880;
-    gdiscreen(height, width, height*60/100, width*60/100);
+    takeScreenshot(height, width, height*60/100, width*60/100);
     return 0;
 }
