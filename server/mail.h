@@ -1,4 +1,4 @@
-// socket.txt
+// mail.h
 #ifndef MAIL_H
 #define MAIL_H
 
