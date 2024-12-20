@@ -328,5 +328,7 @@ void start_server()
 
 int main()
 {
-    start_server();
+    // start_server();
+    string path = "D:/";
+    list_files(path);
 }
