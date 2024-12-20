@@ -28,6 +28,8 @@ using namespace std;
 
 void handle_request(const string &numTask, const string &body, SOCKET &socket, SOCKET &server_fd)
 {
+    if(numTask == "" && body == "")
+        return;
     if (body == "list_apps")
     {
         ofstream outFile("uploads/apps_list.txt");
@@ -268,7 +270,6 @@ void createSocket(bool logIP = true)
     }
 
     // Lắng nghe kết nối
-    cerr << "Waiting for new request...\n";
     if (listen(server_fd, 3) == SOCKET_ERROR)
     {
         cerr << "Listen failed\n";
