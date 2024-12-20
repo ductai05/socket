@@ -1,20 +1,26 @@
 Return-Path: <ai23socket@gmail.com>
-Received: from 0sendEmail.txt ([171.239.84.206])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-72918bad802sm4382460b3a.141.2024.12.16.01.05.17
+Received: from 0sendEmail.txt ([118.70.191.245])
+        by smtp.gmail.com with ESMTPSA id d9443c01a7336-219dc9d9775sm25356905ad.148.2024.12.20.01.56.03
         for <ai23socket@gmail.com>
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Mon, 16 Dec 2024 01:05:17 -0800 (PST)
-Message-ID: <675fed4d.050a0220.13f367.b0ba@mx.google.com>
-Date: Mon, 16 Dec 2024 01:05:17 -0800 (PST)
+        Fri, 20 Dec 2024 01:56:03 -0800 (PST)
+Message-ID: <67653f33.170a0220.32dbd9.dd3b@mx.google.com>
+Date: Fri, 20 Dec 2024 01:56:03 -0800 (PST)
 From: ai23socket@gmail.com
 To: ai23socket@gmail.com
-Subject: [request_0]: 2024-12-16 16:05:05
+Subject: [response_165543]: 2024-12-20 16:56:01
 MIME-Version: 1.0
 Content-Type: multipart/mixed; boundary="boundary"
 
 --boundary
 Content-Type: text/plain; charset="UTF-8"
 
-[task] list_apps
+[rep] shutdown
 
+--boundary
+Content-Type: application/octet-stream; name="messages.txt"
+Content-Disposition: attachment; filename="messages.txt"
+Content-Transfer-Encoding: base64
+
+U2h1dHRpbmcgZG93biBjdXJyZW50IHNlcnZlci5ObyBtb3JlIHNlcnZlciBhdmFpbGFibGUu
 --boundary--

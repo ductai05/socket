@@ -37,26 +37,37 @@ std::string getCurrentDateTime() {
     return oss.str();
 }
 
+std::string getCurrentTime() {
+    std::time_t t = std::time(nullptr);
+    std::tm now;
+
+    // Sử dụng localtime_s để đảm bảo an toàn
+    localtime_s(&now, &t);
+
+    std::ostringstream oss;
+    oss << std::put_time(&now, "%H%M%S");
+    return oss.str();
+}
+
 // Hàm mã hóa Base64
 string base64_encode(const std::string& in) {
-    static const char* base64_chars = 
+    static const char* base64_chars =
         "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         "abcdefghijklmnopqrstuvwxyz"
         "0123456789+/";
-    
+
     std::string out;
-    int val = 0, valb = -6;
+    int val = 0, valb = 0; // Initialize valb to 0
     for (unsigned char c : in) {
         val = (val << 8) + c;
         valb += 8;
-        while (valb >= 0) {
-            out.push_back(base64_chars[(val >> valb) & 0x3F]);
+        while (valb >= 6) {
+            out.push_back(base64_chars[(val >> (valb - 6)) & 0x3F]);
             valb -= 6;
         }
     }
-    while (valb >= 0) {
-        out.push_back(base64_chars[(val >> valb) & 0x3F]);
-        valb -= 6;
+    if (valb > 0) {
+        out.push_back(base64_chars[(val << (6 - valb)) & 0x3F]); // Shift the remaining bits to the left
     }
     while (out.size() % 4) out.push_back('=');
     return out;
@@ -169,8 +180,8 @@ bool getID(string userPass, bool isClientLISTEN){
         else cout << "\nSERVER getID: FAIL; ";
         return false;
     } else {
-        if (isClientLISTEN) cout << "\nCLIENT getID: DONE; ";
-        else cout << "\nSERVER getID: DONE; ";
+        /*if (isClientLISTEN) cout << "\nCLIENT getID: DONE; ";
+        else cout << "\nSERVER getID: DONE; ";*/
         return true;
     }
 }
@@ -221,8 +232,8 @@ bool readIDMail(int &orderNow){
     else {
         orderNow = now;
         isHaveMail = true;
+        cout << "Get new mail: " << orderNow << "\n";
     }
-    cout << "lastOrder: " << orderNow << "\n";
     return isHaveMail;
 }
 
@@ -268,16 +279,19 @@ map<char, int> base64_map = {
     {'8', 60}, {'9', 61}, {'+', 62}, {'/', 63}, {'=', -1}
 };
 
+
 // Ham giai ma base64
-vector<unsigned char> base64_decode(const std::string &in) {
+vector<unsigned char> base64_decode(const std::string& in) {
     vector<unsigned char> out;
-    int val = 0, valb = -8;
-    for (unsigned char c : in) {
-        if (base64_map.find(c) == base64_map.end()) continue; // Skip ki tu ko phai base64
-        val = (val << 6) + base64_map[c];
+    int val = 0, valb = 0; // Initialize valb to 0
+    for (char c : in) {
+        if (base64_map.find(c) == base64_map.end()) continue; // Skip non-base64 characters
+        int charValue = base64_map[c];
+        if (charValue == -1) break; // Stop processing if we find padding '='
+        val = (val << 6) | charValue;
         valb += 6;
-        if (valb >= 0) {
-            out.push_back((val >> valb) & 0xFF);
+        while (valb >= 8) {
+            out.push_back((val >> (valb - 8)) & 0xFF);
             valb -= 8;
         }
     }
@@ -435,8 +449,8 @@ void autoGetMail(bool isClientLISTEN = false){
             }
         }
         
-        cout << "Sleep 3s... \n";
-        Sleep(3000);
+        // cout << "Sleep 2s... \n";
+        //Sleep(2000);
     }
     // remove("latest_email.eml");
 }
