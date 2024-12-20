@@ -29,7 +29,9 @@ using namespace std;
 void handle_request(const string &numTask, const string &body, SOCKET &socket, SOCKET &server_fd)
 {
     if(numTask == "" && body == "")
+    {
         return;
+    }
     if (body == "list_apps")
     {
         ofstream outFile("uploads/apps_list.txt");

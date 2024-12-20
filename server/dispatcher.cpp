@@ -14,6 +14,9 @@
 #include <fstream>
 #include <iostream>
 #include <stdlib.h>
+#include <mutex>
+#include <thread>
+#include <ws2tcpip.h>
 #include <winsock2.h>
 #include <windows.h>
 #include <filesystem>
@@ -24,7 +27,7 @@ using namespace std;
 
 #define PORT 65535
 
-string sendTask(const string& serverIP, const string &numTask, const string &body)
+string sendTask(const string &serverIP, const string &numTask, const string &body)
 {
     string message = numTask + " " + body;
     WSADATA wsaData;
@@ -39,7 +42,8 @@ string sendTask(const string& serverIP, const string &numTask, const string &bod
     }
 
     // Tạo socket
-    if ((sock = socket(AF_INET, SOCK_STREAM, 0)) == INVALID_SOCKET) {
+    if ((sock = socket(AF_INET, SOCK_STREAM, 0)) == INVALID_SOCKET)
+    {
         WSACleanup();
         return "Error";
     }
@@ -49,7 +53,8 @@ string sendTask(const string& serverIP, const string &numTask, const string &bod
     serv_addr.sin_addr.s_addr = inet_addr(serverIP.c_str());
 
     // Kết nối đến server
-    if (connect(sock, (struct sockaddr*)&serv_addr, sizeof(serv_addr)) == SOCKET_ERROR) {
+    if (connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) == SOCKET_ERROR)
+    {
         closesocket(sock);
         WSACleanup();
         return "Error";
@@ -64,32 +69,82 @@ string sendTask(const string& serverIP, const string &numTask, const string &bod
     // Đóng socket
     closesocket(sock);
     WSACleanup();
-    
+
     return buffer;
 }
 
-void getServersList(map<string, bool> &serversIP)
+mutex mtx;
+bool isPortOpen(const string &ip, int port) {
+    SOCKET sock = socket(AF_INET, SOCK_STREAM, 0);
+    if (sock == INVALID_SOCKET) return false;
+
+    sockaddr_in addr;
+    addr.sin_family = AF_INET;
+    addr.sin_port = htons(port);
+    addr.sin_addr.s_addr = inet_addr(ip.c_str());
+
+    // Try to connect
+    bool isOpen = connect(sock, (struct sockaddr *)&addr, sizeof(addr)) != SOCKET_ERROR;
+
+    closesocket(sock);
+    return isOpen;
+}
+
+#define CLOCK std::chrono::high_resolution_clock::time_point 
+
+void checkIP(map<string, bool> &serversIP, const string &ip, int port) {
+    if (isPortOpen(ip, port)) 
+    {
+        lock_guard<mutex> lock(mtx);
+        serversIP[ip] = true;
+    }
+}
+
+void getServersList(map<string, bool> &serversIP) 
 {
-    int n;
-    cout << "Number of servers: ";
-    cin >> n;
-    while(n <= 0)
+    auto start = chrono::high_resolution_clock::now();
+    cout << "Detecting servers IP...\n";
+    WSADATA wsaData;
+    if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) 
     {
-        cout << "Number of servers must be greater than 1!!. Try again: ";
-        cin >> n;
+        cerr << "WSAStartup failed\n";
+        return;
     }
-    for(int i = 1; i <= n; i++)
+
+    const int startIP = 1;
+    const int endIP = 245;
+    vector<thread> threads;
+
+    for (int i = startIP; i <= endIP; ++i) {
+        string ip = "192.168.1." + to_string(i);
+        threads.emplace_back(ref(checkIP), ref(serversIP), ip, PORT); // Sử dụng ref
+    }
+
+    for (auto &thread : threads)
+        thread.join();
+
+    auto end = chrono::high_resolution_clock::now();
+    chrono::duration<double> elapsed = end - start;
+    cout << "Scan completed after " << elapsed.count() << " second(s)" << '\n';
+
+    int cnt = 1;
+    for (const auto &item : serversIP) {
+        cout << "server " << cnt << ": " << item.first << ' ';
+        cout << "[" << (item.second ? "online" : "offline") << "]\n";
+        cnt++;
+    }
+    if(serversIP.size() == 0)
     {
-        string IP;
-        cout << "Server " << i << " IP address: ";
-        cin >> IP;
-        serversIP[IP] = true;
+        cout << "No server found.";
+        WSACleanup();
+        exit(0);
     }
+    WSACleanup();
 }
 
 void handleRequest(map<string, bool> &serversIP, string &currentIP, const string &numTask, const string &body)
 {
-    if(body == "INVALID")
+    if (body == "INVALID")
     {
         ofstream outFile("messages.txt");
         outFile << "Invalid request.";
@@ -97,7 +152,7 @@ void handleRequest(map<string, bool> &serversIP, string &currentIP, const string
         newMail(false, body, numTask, "messages.txt");
         remove("messages.txt");
     }
-    else if(currentIP == "")
+    else if (currentIP == "")
     {
         ofstream outFile("messages.txt");
         outFile << "No servers available.";
@@ -105,15 +160,15 @@ void handleRequest(map<string, bool> &serversIP, string &currentIP, const string
         newMail(false, body, numTask, "messages.txt");
         remove("messages.txt");
     }
-    else if(body == "servers_IP")
+    else if (body == "servers_IP")
     {
         ofstream outFile("servers_IP.txt");
         int cnt = 1;
-        for(const pair<string, bool> &item: serversIP)
+        for (const pair<string, bool> &item : serversIP)
         {
             outFile << "server " << cnt << ": " << item.first << ' ';
             outFile << "[" << (item.second == true ? "online" : "offline") << "] ";
-            if(currentIP == item.first)
+            if (currentIP == item.first)
                 outFile << "[current server]\n";
             else
                 outFile << "\n";
@@ -123,11 +178,11 @@ void handleRequest(map<string, bool> &serversIP, string &currentIP, const string
         newMail(false, body, numTask, "servers_IP.txt");
         remove("servers_IP.txt");
     }
-    else if(body.find("change_server") != string::npos)
+    else if (body.find("change_server") != string::npos)
     {
         ofstream outFile("messages.txt");
         string newIP = get_path(body);
-        if(serversIP.count(newIP) == 0 || serversIP[newIP] == false)
+        if (serversIP.count(newIP) == 0 || serversIP[newIP] == false)
         {
             outFile << "Failed when changing server.";
         }
@@ -146,13 +201,13 @@ void handleRequest(map<string, bool> &serversIP, string &currentIP, const string
         sendTask(currentIP, numTask, body);
         serversIP[currentIP] = false;
         outFile << "Shutting down current server.";
-        
+
         currentIP = "";
         bool changed = 0;
         int cnt = 1;
-        for(const pair<string, bool> &item: serversIP)
+        for (const pair<string, bool> &item : serversIP)
         {
-            if(serversIP[item.first] == true)
+            if (serversIP[item.first] == true)
             {
                 changed = 1;
                 outFile << "Change to server " << cnt << ": " << item.first;
@@ -160,7 +215,8 @@ void handleRequest(map<string, bool> &serversIP, string &currentIP, const string
             }
             cnt++;
         }
-        if(!changed) outFile << "No more server available.";
+        if (!changed)
+            outFile << "No more server available.";
         outFile.close();
         newMail(false, body, numTask, "messages.txt");
         remove("messages.txt");
@@ -215,11 +271,11 @@ void autoGetMail(map<string, bool> &serversIP, bool isClientLISTEN = false)
     }
 }
 
-int main() 
+int main()
 {
     map<string, bool> serversIP; // bool: accessable, string: IP
     getServersList(serversIP);
     autoGetMail(serversIP);
-    
+
     return 0;
 }
