@@ -26,7 +26,7 @@ using namespace std;
 
 #define PORT 65535
 
-void handle_request(const string &numTask, const string &request, SOCKET &socket, SOCKET &server_fd)
+void handleRequest(const string &numTask, const string &request, SOCKET &socket, SOCKET &server_fd)
 {
     if(numTask == "" && request == "")
     {
@@ -298,7 +298,7 @@ void createSocket(bool logIP = true)
     if(request.size() && request[0] == ' ') request.erase(0, 1);
     
     // Xử lý yêu cầu
-    handle_request(numTask, request, new_socket, server_fd);
+    handleRequest(numTask, request, new_socket, server_fd);
     
     closesocket(server_fd);
     WSACleanup();
