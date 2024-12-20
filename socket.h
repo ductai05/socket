@@ -35,28 +35,28 @@ string getCurrentDateTime() {
 
 // Hàm mã hóa Base64
 string base64_encode(const std::string& in) {
-    static const char* base64_chars = 
+    static const char* base64_chars =
         "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         "abcdefghijklmnopqrstuvwxyz"
         "0123456789+/";
-    
+
     std::string out;
-    int val = 0, valb = -6;
+    int val = 0, valb = 0; // Initialize valb to 0
     for (unsigned char c : in) {
         val = (val << 8) + c;
         valb += 8;
-        while (valb >= 0) {
-            out.push_back(base64_chars[(val >> valb) & 0x3F]);
+        while (valb >= 6) {
+            out.push_back(base64_chars[(val >> (valb - 6)) & 0x3F]);
             valb -= 6;
         }
     }
-    while (valb >= 0) {
-        out.push_back(base64_chars[(val >> valb) & 0x3F]);
-        valb -= 6;
+    if (valb > 0) {
+         out.push_back(base64_chars[(val << (6 - valb)) & 0x3F]); // Shift the remaining bits to the left
     }
     while (out.size() % 4) out.push_back('=');
     return out;
 }
+
 
 void sendMail(const string& from, const string& to, const string& subject, const string& body, const string& userPass, const string& fileName) {
     string encodedFileContent;
