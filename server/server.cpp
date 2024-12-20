@@ -22,7 +22,7 @@
 using namespace std;
 
 #include "process.h"
-#include "socket.h"
+#include "mail.h"
 
 #define PORT 65535
 

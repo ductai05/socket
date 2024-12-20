@@ -23,7 +23,7 @@
 #pragma comment(lib, "ws2_32.lib")
 
 using namespace std;
-#include "socket.h"
+#include "mail.h"
 
 #define PORT 65535
 
