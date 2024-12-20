@@ -1,6 +1,6 @@
-// socket.h
-#ifndef SOCKET_H
-#define SOCKET_H
+// mail.h
+#ifndef MAIL_H
+#define MAIL_H
 
 #include <iostream>
 #include <set>
