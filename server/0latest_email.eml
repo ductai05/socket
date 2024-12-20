@@ -1,20 +1,20 @@
 Return-Path: <ai23socket@gmail.com>
 Received: from 0sendEmail.txt ([118.70.191.245])
-        by smtp.gmail.com with ESMTPSA id d9443c01a7336-219dc9f72b8sm21777725ad.191.2024.12.19.22.14.37
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-2f447883b17sm2489202a91.40.2024.12.19.22.26.12
         for <ai23socket@gmail.com>
         (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
-        Thu, 19 Dec 2024 22:14:37 -0800 (PST)
-Message-ID: <67650b4d.170a0220.280b90.cf18@mx.google.com>
-Date: Thu, 19 Dec 2024 22:14:37 -0800 (PST)
+        Thu, 19 Dec 2024 22:26:12 -0800 (PST)
+Message-ID: <67650e04.170a0220.391a4a.e54a@mx.google.com>
+Date: Thu, 19 Dec 2024 22:26:12 -0800 (PST)
 From: ai23socket@gmail.com
 To: ai23socket@gmail.com
-Subject: [request_3]: 2024-12-20 13:14:36
+Subject: [request_3]: 2024-12-20 13:26:11
 MIME-Version: 1.0
 Content-Type: multipart/mixed; boundary="boundary"
 
 --boundary
 Content-Type: text/plain; charset="UTF-8"
 
-[task] list_files "D:/nhac 2024"
+[task] list_files "D:/"
 
 --boundary--

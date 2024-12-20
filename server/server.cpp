@@ -108,7 +108,7 @@ void handle_request(const string &numTask, const string &body, SOCKET &socket, S
         else
             newMail(false, body, numTask, path);
     }
-    else if (body.find("list_file") != string::npos)
+    else if (body.find("list_files") != string::npos)
     {
         string path = get_path(body);
         DWORD fileAttr = GetFileAttributesA(path.c_str());
@@ -268,7 +268,7 @@ void createSocket(bool logIP = true)
     }
 
     // Lắng nghe kết nối
-    cerr << "Waiting for new request...";
+    cerr << "Waiting for new request...\n";
     if (listen(server_fd, 3) == SOCKET_ERROR)
     {
         cerr << "Listen failed\n";
@@ -290,7 +290,8 @@ void createSocket(bool logIP = true)
     recv(new_socket, buffer, sizeof(buffer), 0);
     stringstream ss(buffer);
     string numTask, body;
-    ss >> numTask >> body;
+    ss >> numTask;
+    getline(ss, body);
     
     // Xử lý yêu cầu
     handle_request(numTask, body, new_socket, server_fd);
@@ -328,7 +329,5 @@ void start_server()
 
 int main()
 {
-    // start_server();
-    string path = "D:/";
-    list_files(path);
+    start_server();
 }
