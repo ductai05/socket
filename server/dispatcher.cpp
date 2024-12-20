@@ -135,7 +135,7 @@ void getServersList(map<string, bool> &serversIP)
     }
 
     const int startIP = 1;
-    const int endIP = 245;
+    const int endIP = 254;
     vector<thread> threads;
 
     for (int i = startIP; i <= endIP; ++i) {
