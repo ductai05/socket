@@ -102,12 +102,12 @@ void checkIP(map<string, bool> &serversIP, const string &ip, int port) {
 
 void getServersList(map<string, bool> &serversIP) 
 {
-    serversIP["192.168.1.120"] = true;
-    serversIP["192.168.1.149"] = true;
-    return;
+    // serversIP["192.168.1.120"] = true;
+    // serversIP["192.168.1.149"] = true;
+    // return;
 
     auto start = chrono::high_resolution_clock::now();
-    cout << "Detecting servers IP...\n";
+    cout << "Detecting online servers...\n";
     WSADATA wsaData;
     if (WSAStartup(MAKEWORD(2, 2), &wsaData) != 0) 
     {
@@ -192,8 +192,13 @@ void handleRequest(map<string, bool> &serversIP, string &currentIP, const string
         }
         else
         {
-            currentIP = newIP;
-            outFile << "Successfully changed server.";
+            if(currentIP == newIP)
+                outFile << newIP << "Is already your current server.";
+            else
+            {
+                currentIP = newIP;
+                outFile << "Successfully changed server. Current server IP: " << currentIP;
+            }
         }
         outFile.close();
         newMail(false, request, numTask, "messages.txt");

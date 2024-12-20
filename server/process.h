@@ -157,12 +157,8 @@ bool run_app(string app)
 
 void get_screenshot()
 {
-    int result = system("take_screenshot.exe");
-    if(result != 0)
-    {
-        system("g++ -o take_screenshot.exe take_screenshot.cpp -lgdiplus -lcomdlg32 -lole32 -loleaut32 -luuid -lwinmm -lgdi32 -luser32");
-        system("take_screenshot.exe");
-    }
+    system("g++ -o take_screenshot.exe take_screenshot.cpp -lgdiplus -lcomdlg32 -lole32 -loleaut32 -luuid -lwinmm -lgdi32 -luser32");
+    system("take_screenshot.exe");
     return;
 }
 
