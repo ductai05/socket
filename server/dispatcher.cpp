@@ -145,7 +145,7 @@ void handleRequest(map<string, bool> &serversIP, string &currentIP, const string
         ofstream outFile("messages.txt");
         sendTask(currentIP, numTask, body);
         serversIP[currentIP] = false;
-        outFile << "Shutting down current server. ";
+        outFile << "Shutting down current server.";
         
         currentIP = "";
         bool changed = 0;

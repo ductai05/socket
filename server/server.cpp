@@ -313,17 +313,17 @@ void serveForever()
 // Khởi động và lấy các đường dẫn
 void start_server()
 {
-    // const char* dirName = "uploads";
-    // DWORD ftyp = GetFileAttributesA(dirName);
-    // if (ftyp == INVALID_FILE_ATTRIBUTES)
-    //     CreateDirectoryA(dirName, NULL);
+    const char* dirName = "uploads";
+    DWORD ftyp = GetFileAttributesA(dirName);
+    if (ftyp == INVALID_FILE_ATTRIBUTES)
+        CreateDirectoryA(dirName, NULL);
 
-    // auto start = chrono::high_resolution_clock::now();
-    // cout << "Starting server...\n";
+    auto start = chrono::high_resolution_clock::now();
+    cout << "Starting server...\n";
     // list_apps();
-    // auto end = chrono::high_resolution_clock::now();
-    // chrono::duration<double> elapsed = end - start;
-    // cout << "Server started successfully after: " << elapsed.count() << " second(s)" << '\n';
+    auto end = chrono::high_resolution_clock::now();
+    chrono::duration<double> elapsed = end - start;
+    cout << "Server started successfully after: " << elapsed.count() << " second(s)" << '\n';
     serveForever();
 }
 
