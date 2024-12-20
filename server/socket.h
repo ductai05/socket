@@ -302,7 +302,7 @@ string get_path(const string &command)
     return ""; // Trả về chuỗi rỗng nếu không tìm thấy
 }
 
-void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string> &MAIL, vector<string> &TASK)
+pair<string, string> readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string> &MAIL, vector<string> &TASK)
 {
     bool check = false;
     string fileName = "0latest_email.eml";
@@ -313,7 +313,7 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
         Sleep(1000);
         k++;
         if (k == 20)
-            return;
+            return {"FAILED", "FAILED"};
     } // dam bao latest_email.eml da duoc tao
 
     ifstream inFile(fileName);
@@ -358,13 +358,13 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
         {
             cout << "subject: " << subject << "\n[INVALID] Type: " + responseType + ", NumTask: " + numTask + ", Timestamp: " + time << "\n";
             inFile.close();
-            return;
+            return {"INVALID", "INVALID"};
         }
     }
     else
     {
         cout << "[newest mail: not acceptable responseType]\n";
-        return;
+        return {"FAILED", "FAILED"};
     }
 
     // getBody
@@ -430,227 +430,7 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
     inFile.close();
 
     // numTask, body
-    if (body == "list_apps")
-    {
-        ofstream outFile("uploads/apps_list.txt");
-        ifstream inFile("uploads/app_paths.txt");
-        string line;
-        while (getline(inFile, line))
-        {
-            size_t lastSlash = line.find_last_of("/");
-            outFile << line.substr(lastSlash + 1) << '\n';
-        }
-        outFile.close();
-        inFile.close();
-        newMail(false, body, numTask, "uploads/apps_list.txt");
-        remove("uploads/apps_list.txt");
-    }
-    else if (body == "list_services")
-    {
-        ofstream outFile("uploads/messages.txt");
-        outFile << "Show all apps: Lists server programs and applications\n";
-        outFile << "lists services: Lists all services\n";
-        outFile << "take screenshot: Take a screenshot of the server\n";
-        outFile << "shutdown: Stop and shutdown the server\n";
-        outFile << "webcam on: Turn on the server's camera\n";
-        outFile << "webcam off: Turn off the server's camera\n";
-        outFile << "get file <path>: Get a file from the server\n";
-        outFile << "list file <folder path>: Lists all the files in the folder\n";
-        outFile << "run app <app.exe>: Run an app\n";
-        outFile << "list running apps: List all running apps\n";
-        outFile << "close app <app.exe>: Close an app\n";
-        outFile << "close app by PID <app PID>: Close an app with the corresponding PID\n";
-        outFile.close();
-        newMail(false, body, numTask, string("uploads") + "/" + "messages.txt");
-        remove("uploads/messages.txt");
-    }
-    else if (body == "get_screenshot")
-    {
-        get_screenshot();
-        newMail(false, body, numTask, "uploads/screen.png");
-        remove("uploads/screen.png");
-    }
-    else if (body == "shutdown")
-    {
-        ofstream outFile("uploads/messages.txt");
-        outFile << "Server is shutting down.";
-        outFile.close();
-        newMail(false, body, numTask, "uploads/messages.txt");
-        remove("uploads/messages.txt");
-        shut_down();
-        exit(0);
-    }
-    else if (body == "webcam_on")
-    {
-        ofstream outFile("uploads/messages.txt");
-        if (camera_switch(1))
-        {
-            outFile << "Successfully turned on the camera";
-        }
-        else
-        {
-            outFile << "Failed when turning on the camera";
-        }
-        outFile.close();
-        newMail(false, body, numTask, "uploads/messages.txt");
-        remove("uploads/messages.txt");
-    }
-    else if (body == "webcam_off")
-    {
-        ofstream outFile("uploads/messages.txt");
-        if (camera_switch(0))
-        {
-            outFile << "Successfully turned off the camera";
-        }
-        else
-        {
-            outFile << "Failed when turning off the camera";
-        }
-        outFile.close();
-        newMail(false, body, numTask, "uploads/messages.txt");
-        remove("uploads/messages.txt");
-    }
-    else if (body.find("get_file") != string::npos)
-    {
-        string path = get_path(body);
-        DWORD fileAttr = GetFileAttributesA(path.c_str());
-        if (!(fileAttr != INVALID_FILE_ATTRIBUTES))
-        {
-
-            ofstream outFile("uploads/messages.txt");
-            outFile << "Invalid path";
-            outFile.close();
-            newMail(false, body, numTask, "uploads/messages.txt");
-            remove("uploads/messages.txt");
-        }
-        else
-            newMail(false, body, numTask, path);
-    }
-    else if (body.find("list_file") != string::npos)
-    {
-        string path = get_path(body);
-        DWORD fileAttr = GetFileAttributesA(path.c_str());
-        if (!(fileAttr != INVALID_FILE_ATTRIBUTES))
-        {
-            ofstream outFile("uploads/messages.txt");
-            outFile << "Invalid path";
-            outFile.close();
-            newMail(false, body, numTask, "uploads/messages.txt");
-            remove("uploads/messages.txt");
-        }
-        else
-        {
-            list_files(path);
-            newMail(false, body, numTask, "uploads/files_list.txt");
-            remove("uploads/files_list.txt");
-        }
-    }
-    else if (body.find("run_app") != string::npos)
-    {
-        ofstream outFile("uploads/messages.txt");
-        string path = get_path(body);
-        if (run_app(path))
-            outFile << "Successfully run the application\n";
-        else
-            outFile << "Failed when running the application\n";
-        outFile.close();
-        newMail(false, body, numTask, "uploads/messages.txt");
-        remove("uploads/messages.txt");
-    }
-    else if (body == "running_apps")
-    {
-        list_running_apps();
-        newMail(false, body, numTask, "uploads/running_apps.txt");
-        remove("uploads/running_apps.txt");
-    }
-    else if (body.find("close_app") != string::npos)
-    {
-        string app = get_path(body);
-        ofstream outFile("uploads/messages.txt");
-        if (end_task(app))
-        {
-            outFile << "Successfully close the application\n";
-        }
-        else
-        {
-            outFile << "Failed when closing the application\n";
-        }
-        outFile.close();
-        newMail(false, body, numTask, "uploads/messages.txt");
-        remove("uploads/messages.txt");
-    }
-    else if (body.find("close_by_id") != string::npos)
-    {
-        string PID = get_path(body);
-        cerr << "PID: " << PID << '\n';
-        ofstream outFile("uploads/messages.txt");
-        if (end_task_PID(PID))
-        {
-            outFile << "Successfully close the application\n";
-        }
-        else
-        {
-            outFile << "Failed when closing the application\n";
-        }
-        outFile.close();
-        newMail(false, body, numTask, "uploads/messages.txt");
-        remove("uploads/messages.txt");
-    }
-    else
-    {
-        cerr << "[Service not found]\n";
-        ofstream outFile("uploads/messages.txt");
-        outFile << "Service not found!\n";
-        outFile.close();
-        newMail(false, body, numTask, "uploads/messages.txt");
-        remove("uploads/messages.txt");
-    }
-}
-
-void autoGetMail(bool isClientLISTEN = false)
-{
-    string userPass = "ai23socket@gmail.com:nhrr llaa ggzb yzbj";
-
-    int orderNow = -2;
-    vector<string> allMAIL;
-    vector<string> allTASK;
-
-    getID(userPass, isClientLISTEN);
-    readIDMail(orderNow); // get init order
-
-    string timeLISTEN = getCurrentDateTime();
-    if (isClientLISTEN)
-    {
-        cout << "CLIENT Start listen at: " << timeLISTEN << "\n";
-    }
-    else
-        cout << "SERVER Start listen at: " << timeLISTEN << "\n";
-
-    bool waiting = true;
-    while (true)
-    {
-        if (!getID(userPass, isClientLISTEN))
-            break;
-        if (readIDMail(orderNow))
-        {
-            cout << "* New email has been found!\n";
-            if (getNewestMail(orderNow, userPass))
-            {
-                readLatestMail(timeLISTEN, isClientLISTEN, allMAIL, allTASK);
-                waiting = true;
-
-                // Get new order
-                getID(userPass, isClientLISTEN);
-                readIDMail(orderNow);
-            }
-        }
-        if (waiting)
-        {
-            cout << "* Waiting for new request...\n";
-            waiting = false;
-        }
-        Sleep(500);
-    }
+    return {numTask, body};
 }
 
 #endif
