@@ -22,7 +22,7 @@
 using namespace std;
 #include "socket.h"
 
-#define PORT 8080
+#define PORT 65535
 
 string sendTask(const string& serverIP, const string &numTask, const string &body)
 {
