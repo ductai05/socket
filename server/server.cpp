@@ -295,6 +295,7 @@ void createSocket(bool logIP = true)
     string numTask, request;
     ss >> numTask;
     getline(ss, request);
+    if(request.size() && request[0] == ' ') request.erase(0, 1);
     
     // Xử lý yêu cầu
     handle_request(numTask, request, new_socket, server_fd);
