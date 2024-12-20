@@ -103,7 +103,7 @@ void sendMail(const string& from, const string& to, const string& subject, const
         emailFile << "--boundary\n";
         emailFile << "Content-Type: application/octet-stream; name=\"" << fileName << "\"\n";
         
-        string name = filename;
+        string name = fileName;
         size_t lastSlash = fileName.find_last_of("/");
         if (lastSlash != std::string::npos)
             name = fileName.substr(lastSlash + 1);

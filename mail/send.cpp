@@ -18,14 +18,14 @@
 #include <map>
 #include <regex>
 // #include "process.h"
-#include "socket.h"
+#include "mail.h"
 using namespace std;
 
 
 int main()
 {
     string task;
-    task = "list_apps";
+    task = "servers_IP";
     // list_apps; list_services; get_screenshot; shutdown; webcam_on; webcam_off; running_apps;
     // get_file “<đường dẫn>” 
     // list_files “<đường dẫn>” 
