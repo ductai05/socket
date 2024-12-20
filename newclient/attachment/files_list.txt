@@ -1,0 +1,13 @@
+D:/
+|--- $RECYCLE.BIN/
+|--- AI.zip
+|--- DeliveryOptimization/
+|--- desktop.ini
+|--- Download/
+|--- Feedback/
+|--- MapData/
+|--- My files/
+|--- Phương pháp Toán cho AI/
+|--- Pictures/
+|--- sys/
+|--- System Volume Information

@@ -4,70 +4,80 @@
 #include <time.h>
 #include <iostream>
 #include <conio.h>
+
 using namespace std;
+using namespace Gdiplus;
 
 int GetEncoderClsid(const WCHAR *format, CLSID *pClsid)
 {
-	using namespace Gdiplus;
-	UINT num = 0;
-	UINT size = 0;
+    UINT num = 0;
+    UINT size = 0;
 
-	ImageCodecInfo *pImageCodecInfo = NULL;
+    ImageCodecInfo *pImageCodecInfo = NULL;
 
-	GetImageEncodersSize(&num, &size);
-	if (size == 0)
-		return -1;
+    GetImageEncodersSize(&num, &size);
+    if (size == 0)
+        return -1;
 
-	pImageCodecInfo = (ImageCodecInfo *)(malloc(size));
-	if (pImageCodecInfo == NULL)
-		return -1;
+    pImageCodecInfo = (ImageCodecInfo *)(malloc(size));
+    if (pImageCodecInfo == NULL)
+        return -1;
 
-	GetImageEncoders(num, size, pImageCodecInfo);
-	for (UINT j = 0; j < num; ++j)
-	{
-		if (wcscmp(pImageCodecInfo[j].MimeType, format) == 0)
-		{
-			*pClsid = pImageCodecInfo[j].Clsid;
-			free(pImageCodecInfo);
-			return j;
-		}
-	}
-	free(pImageCodecInfo);
-	return 0;
+    GetImageEncoders(num, size, pImageCodecInfo);
+    for (UINT j = 0; j < num; ++j)
+    {
+        if (wcscmp(pImageCodecInfo[j].MimeType, format) == 0)
+        {
+            *pClsid = pImageCodecInfo[j].Clsid;
+            free(pImageCodecInfo);
+            return j;
+        }
+    }
+    free(pImageCodecInfo);
+    return 0;
 }
 
-void gdiscreen(const int &Height, const int &Width)
+void gdiscreen(const int &Height, const int &Width, int targetHeight, int targetWidth)
 {
-	using namespace Gdiplus;
-	IStream *istream;
-	HRESULT res = CreateStreamOnHGlobal(NULL, true, &istream);
-	GdiplusStartupInput gdiplusStartupInput;
-	ULONG_PTR gdiplusToken;
-	GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
+	
+    GdiplusStartupInput gdiplusStartupInput;
+    ULONG_PTR gdiplusToken;
+    GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
+
 	{
-		HDC scrdc, memdc;
-		HBITMAP membit;
-		scrdc = ::GetDC(0);
+        HDC scrdc, memdc;
+        HBITMAP membit;
+        scrdc = ::GetDC(0);
+        memdc = CreateCompatibleDC(scrdc);
+        membit = CreateCompatibleBitmap(scrdc, Width, Height);
+        HBITMAP hOldBitmap = (HBITMAP)SelectObject(memdc, membit);
+        BitBlt(memdc, 0, 0, Width, Height, scrdc, 0, 0, SRCCOPY);
 
-		memdc = CreateCompatibleDC(scrdc);
-		membit = CreateCompatibleBitmap(scrdc, Width, Height);
-		HBITMAP hOldBitmap = (HBITMAP)SelectObject(memdc, membit);
-		BitBlt(memdc, 0, 0, Width, Height, scrdc, 0, 0, SRCCOPY);
+		// Create the bitmap to store the resized image
+		Bitmap originalBitmap(membit, NULL);
+		Bitmap scaledBitmap(targetWidth, targetHeight, PixelFormat24bppRGB);
+		Graphics graphics(&scaledBitmap);
+        graphics.SetInterpolationMode(InterpolationModeHighQualityBicubic); // Better quality
 
-		Gdiplus::Bitmap bitmap(membit, NULL);
+		// Draw the scaled image
+		graphics.DrawImage(&originalBitmap, 0, 0, targetWidth, targetHeight);
+
 		CLSID clsid;
 		GetEncoderClsid(L"image/png", &clsid);
-		bitmap.Save(L"uploads\\screen.png", &clsid, NULL);
-		bitmap.Save(istream, &clsid, NULL);
-		DeleteObject(memdc);
-		DeleteObject(membit);
+
+        scaledBitmap.Save(L"uploads\\screen.png", &clsid, NULL);
+
+
+        DeleteObject(memdc);
+        DeleteObject(membit);
 		::ReleaseDC(0, scrdc);
-	}
-	GdiplusShutdown(gdiplusToken);
+    }
+    GdiplusShutdown(gdiplusToken);
 }
 
 int main()
 {
-	gdiscreen(1880, 2880);
-	return 0;
+	const int height = 1880, width = 2880;
+    gdiscreen(height, width, height*60/100, width*60/100);
+    return 0;
 }
