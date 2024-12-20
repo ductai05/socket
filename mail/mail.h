@@ -1,4 +1,3 @@
-// mail.h
 #ifndef MAIL_H
 #define MAIL_H
 
@@ -104,7 +103,7 @@ void sendMail(const string& from, const string& to, const string& subject, const
         emailFile << "--boundary\n";
         emailFile << "Content-Type: application/octet-stream; name=\"" << fileName << "\"\n";
         
-        string name = "";
+        string name = fileName;
         size_t lastSlash = fileName.find_last_of("/");
         if (lastSlash != std::string::npos)
             name = fileName.substr(lastSlash + 1);
@@ -118,7 +117,8 @@ void sendMail(const string& from, const string& to, const string& subject, const
     emailFile.close();
 
     // Tạo lệnh curl
-    std::string ex = "curl --url \"smtp://smtp.gmail.com:587\" --ssl-reqd "
+    std::string ex = "curl --url \"smtp://smtp.gmail.com:587\" "
+                     "--ssl-reqd "
                      "--mail-from \"" + from + "\" "
                      "--mail-rcpt \"" + to + "\" "
                      "--user \"" + userPass + "\" "
@@ -149,7 +149,7 @@ void newMail(bool client, string task, string numTask, string fileContent){
     string subject = typeOfSend + daytime;
     string body = (client ? "[task] " : "[rep] ") + task;
     string userPass = "ai23socket@gmail.com:nhrr llaa ggzb yzbj";
-    //userPass = "ductaidt05@gmail.com:bveh frje cysx mjot";
+    // userPass = "ductaidt05@gmail.com:bveh frje cysx mjot";
     sendMail(from, to, subject, body, userPass, fileContent);
 }
 
@@ -158,15 +158,13 @@ void newMail(bool client, string task, string numTask, string fileContent){
 bool getID(string userPass, bool isClientLISTEN){
     remove("0id.txt");
     string ex = "curl -s -# -v imaps://imap.gmail.com/INBOX --ssl-reqd --connect-timeout 20 --max-time 15 -u \"" 
-    + userPass +"\" -X \"UID SEARCH ALL\" -o 0id.txt";
+    + userPass +"\" -X \"UID SEARCH ALL\" -o 0id.txt > nul 2>&1";
     int result = system(ex.c_str());
     if (result == -1) {
         if (isClientLISTEN) cout << "\nCLIENT getID: FAIL; ";
         else cout << "\nSERVER getID: FAIL; ";
         return false;
     } else {
-        if (isClientLISTEN) cout << "\nCLIENT getID: DONE; ";
-        else cout << "\nSERVER getID: DONE; ";
         return true;
     }
 }
@@ -218,14 +216,13 @@ bool readIDMail(int &orderNow){
         orderNow = now;
         isHaveMail = true;
     }
-    cout << "lastOrder: " << orderNow << "\n";
     return isHaveMail;
 }
 
 bool getNewestMail(int orderNow, string userPass){
 
     string ex = "curl -v imaps://imap.gmail.com/INBOX/;UID=" + to_string(orderNow) 
-    + " --ssl-reqd --connect-timeout 20  --max-time 15 -u \"" + userPass + "\" -o 0latest_email.eml";
+    + " --ssl-reqd --connect-timeout 20  --max-time 15 -u \"" + userPass + "\" -o 0latest_email.eml > nul 2>&1";
 
     int result = system(ex.c_str());
     if (result == -1) {
@@ -417,14 +414,14 @@ void autoGetMail(bool isClientLISTEN = false){
         if (!getID(userPass, isClientLISTEN)) break;
         if (readIDMail(orderNow)){
             cout << "Get a new mail. Waiting server...\n";
-            Sleep(3000);
+            Sleep(100);
             if (getNewestMail(orderNow, userPass)){
                 readLatestMail(timeLISTEN, isClientLISTEN, allMAIL, allTASK);
+                cout << "Sleep time per a listen: 5s.\n";
+                cout << "Waiting for new request/response...\n";
             }
         }
-        
-        cout << "Sleep 7s... \n";
-        Sleep(7000);
+        Sleep(5000);
     }
     // remove("latest_email.eml");
 }
