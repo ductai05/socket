@@ -7,7 +7,6 @@
 #include <vector>
 #include "socket.h"
 #include <algorithm>
-#define NOMINMAX  
 #include <windows.h>
 #include <filesystem>
 #include <cstdlib> 
