@@ -367,9 +367,9 @@ void drawRemotePage(SDL_Renderer* renderer, TTF_Font* font, Sidebar& sidebar,
 
         // Option texts for the dropdown
         const std::vector<std::string> optionTexts = {
-            "Show All Apps", "Shutdown", "Webcam On", "Webcam off", "Take Screenshot",
-            "Get File", "List File", "Run App", "Close App", "List Running Apps",
-            "Close app by PID", "Delete File", "List Servers", "Change Server"
+            "Show all apps", "Shutdown", "Webcam on", "Webcam off", "Take screenshot",
+            "Get file", "List file", "Run app", "Close app", "List running apps",
+            "Close app by PID", "Delete file", "List servers", "Change server"
         };
 
         const int OPTION_WIDTH = 220;  // Width of each option box
@@ -470,7 +470,7 @@ void handleEvents(SDL_Renderer* renderer, SDL_Event& event, bool& option1Selecte
         // Handle submit button
         if (mouseX >= submitButton.x && mouseX <= submitButton.x + submitButton.w &&
             mouseY >= submitButton.y && mouseY <= submitButton.y + submitButton.h) {
-            enteringPID = true; 
+            enteringPID = true;
             if (imageTexture) {
                 SDL_DestroyTexture(imageTexture);
                 imageTexture = nullptr;

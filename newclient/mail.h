@@ -528,7 +528,7 @@ void autoGetMail(bool isClientLISTEN = false){
         if (!getID(userPass, isClientLISTEN)) break;
         if (readIDMail(orderNow)){
             // cout << "Get a new mail. Waiting server...\n";
-            Sleep(2000);
+            Sleep(200);
             if (getNewestMail(orderNow, userPass)){
                 readLatestMail(timeLISTEN, isClientLISTEN, allMAIL, allTASK);
             }
