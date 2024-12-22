@@ -763,6 +763,7 @@ C:/Program Files/Common Files/microsoft shared/ClickToRun/OfficeClickToRun.exe
 C:/Program Files/Common Files/microsoft shared/ClickToRun/officesvcmgr.exe
 C:/Program Files/Common Files/microsoft shared/ink/TabTip.exe
 C:/Program Files/Common Files/microsoft shared/MSInfo/msinfo32.exe
+C:/Program Files/Common Files/microsoft shared/OFFICE16/LICLUA.EXE
 C:/Program Files/Common Files/microsoft shared/VSTO/10.0/VSTOInstaller.exe
 C:/Program Files/Git/bin/bash.exe
 C:/Program Files/Git/bin/git.exe
@@ -1150,38 +1151,72 @@ C:/Program Files/Java/jre-1.8/bin/servertool.exe
 C:/Program Files/Java/jre-1.8/bin/ssvagent.exe
 C:/Program Files/Java/jre-1.8/bin/tnameserv.exe
 C:/Program Files/Java/jre-1.8/bin/unpack200.exe
+C:/Program Files/Microsoft Office/Office16/OSPPREARM.EXE
 C:/Program Files/Microsoft Office/root/Client/AppVDllSurrogate.exe
 C:/Program Files/Microsoft Office/root/Client/AppVDllSurrogate32.exe
 C:/Program Files/Microsoft Office/root/Client/AppVDllSurrogate64.exe
 C:/Program Files/Microsoft Office/root/Client/AppVLP.exe
 C:/Program Files/Microsoft Office/root/Integration/Integrator.exe
+C:/Program Files/Microsoft Office/root/Office16/ACCICONS.EXE
 C:/Program Files/Microsoft Office/root/Office16/ADDINS/Microsoft Power Query for Excel Integrated/bin/Microsoft.Mashup.Container.Loader.exe
 C:/Program Files/Microsoft Office/root/Office16/ADDINS/Microsoft Power Query for Excel Integrated/bin/Microsoft.Mashup.Container.NetFX45.exe
 C:/Program Files/Microsoft Office/root/Office16/AppSharingHookController64.exe
+C:/Program Files/Microsoft Office/root/Office16/CLVIEW.EXE
+C:/Program Files/Microsoft Office/root/Office16/CNFNOT32.EXE
+C:/Program Files/Microsoft Office/root/Office16/EXCEL.EXE
 C:/Program Files/Microsoft Office/root/Office16/excelcnv.exe
+C:/Program Files/Microsoft Office/root/Office16/GRAPH.EXE
 C:/Program Files/Microsoft Office/root/Office16/lync.exe
 C:/Program Files/Microsoft Office/root/Office16/lync99.exe
 C:/Program Files/Microsoft Office/root/Office16/lynchtmlconv.exe
 C:/Program Files/Microsoft Office/root/Office16/misc.exe
+C:/Program Files/Microsoft Office/root/Office16/MSACCESS.EXE
 C:/Program Files/Microsoft Office/root/Office16/msoadfsb.exe
 C:/Program Files/Microsoft Office/root/Office16/msoasb.exe
 C:/Program Files/Microsoft Office/root/Office16/msoev.exe
+C:/Program Files/Microsoft Office/root/Office16/MSOHTMED.EXE
+C:/Program Files/Microsoft Office/root/Office16/MSOSREC.EXE
+C:/Program Files/Microsoft Office/root/Office16/MSPUB.EXE
+C:/Program Files/Microsoft Office/root/Office16/MSQRY32.EXE
+C:/Program Files/Microsoft Office/root/Office16/NAMECONTROLSERVER.EXE
 C:/Program Files/Microsoft Office/root/Office16/OcPubMgr.exe
 C:/Program Files/Microsoft Office/root/Office16/officeappguardwin32.exe
 C:/Program Files/Microsoft Office/root/Office16/OfficeScrBroker.exe
 C:/Program Files/Microsoft Office/root/Office16/OfficeScrSanBroker.exe
+C:/Program Files/Microsoft Office/root/Office16/OLCFG.EXE
+C:/Program Files/Microsoft Office/root/Office16/ONENOTE.EXE
+C:/Program Files/Microsoft Office/root/Office16/ONENOTEM.EXE
+C:/Program Files/Microsoft Office/root/Office16/ORGCHART.EXE
+C:/Program Files/Microsoft Office/root/Office16/OSPPREARM.EXE
+C:/Program Files/Microsoft Office/root/Office16/OUTLOOK.EXE
+C:/Program Files/Microsoft Office/root/Office16/PDFREFLOW.EXE
 C:/Program Files/Microsoft Office/root/Office16/PerfBoost.exe
+C:/Program Files/Microsoft Office/root/Office16/POWERPNT.EXE
+C:/Program Files/Microsoft Office/root/Office16/PPTICO.EXE
 C:/Program Files/Microsoft Office/root/Office16/protocolhandler.exe
+C:/Program Files/Microsoft Office/root/Office16/SCANPST.EXE
 C:/Program Files/Microsoft Office/root/Office16/SDXHelper.exe
 C:/Program Files/Microsoft Office/root/Office16/SDXHelperBgt.exe
+C:/Program Files/Microsoft Office/root/Office16/SELFCERT.EXE
+C:/Program Files/Microsoft Office/root/Office16/SETLANG.EXE
+C:/Program Files/Microsoft Office/root/Office16/SkypeSrv/SKYPESERVER.EXE
 C:/Program Files/Microsoft Office/root/Office16/UcMapi.exe
+C:/Program Files/Microsoft Office/root/Office16/VPREVIEW.EXE
+C:/Program Files/Microsoft Office/root/Office16/WINWORD.EXE
 C:/Program Files/Microsoft Office/root/Office16/Wordconv.exe
+C:/Program Files/Microsoft Office/root/Office16/WORDICON.EXE
+C:/Program Files/Microsoft Office/root/Office16/XLICONS.EXE
+C:/Program Files/Microsoft Office/root/vfs/ProgramFilesCommonX64/Microsoft Shared/DW/DW20.EXE
 C:/Program Files/Microsoft Office/root/vfs/ProgramFilesCommonX64/Microsoft Shared/OFFICE16/AI/ai.exe
 C:/Program Files/Microsoft Office/root/vfs/ProgramFilesCommonX64/Microsoft Shared/OFFICE16/AI/aimgr.exe
+C:/Program Files/Microsoft Office/root/vfs/ProgramFilesCommonX64/Microsoft Shared/OFFICE16/FLTLDR.EXE
 C:/Program Files/Microsoft Office/root/vfs/ProgramFilesCommonX64/Microsoft Shared/OFFICE16/model3dtranscoderwin32.exe
+C:/Program Files/Microsoft Office/root/vfs/ProgramFilesCommonX64/Microsoft Shared/OFFICE16/MSOICONS.EXE
+C:/Program Files/Microsoft Office/root/vfs/ProgramFilesCommonX64/Microsoft Shared/OFFICE16/MSOXMLED.EXE
 C:/Program Files/Microsoft Office/root/vfs/ProgramFilesCommonX64/Microsoft Shared/OFFICE16/OLicenseHeartbeat.exe
 C:/Program Files/Microsoft Office/root/vfs/ProgramFilesCommonX64/Microsoft Shared/OFFICE16/operfmon.exe
 C:/Program Files/Microsoft Office/root/vfs/ProgramFilesCommonX64/Microsoft Shared/Smart Tag/SmartTagInstall.exe
+C:/Program Files/Microsoft Office/root/vfs/ProgramFilesCommonX64/Microsoft Shared/Source Engine/OSE.EXE
 C:/Program Files/Microsoft Office/root/vfs/ProgramFilesCommonX86/Microsoft Shared/EQUATION/eqnedt32.exe
 C:/Program Files/Microsoft Office/root/vfs/ProgramFilesCommonX86/Microsoft Shared/OFFICE16/AI/ai.exe
 C:/Program Files/Microsoft Office/root/vfs/ProgramFilesCommonX86/Microsoft Shared/OFFICE16/AI/aimgr.exe
@@ -1191,7 +1226,10 @@ C:/Program Files/Microsoft Office/root/vfs/ProgramFilesX86/Microsoft Office/Offi
 C:/Program Files/Microsoft Office/root/vfs/ProgramFilesX86/Microsoft Office/Office16/DCF/Common.DBConnection.exe
 C:/Program Files/Microsoft Office/root/vfs/ProgramFilesX86/Microsoft Office/Office16/DCF/Common.DBConnection64.exe
 C:/Program Files/Microsoft Office/root/vfs/ProgramFilesX86/Microsoft Office/Office16/DCF/Common.ShowHelp.exe
+C:/Program Files/Microsoft Office/root/vfs/ProgramFilesX86/Microsoft Office/Office16/DCF/DATABASECOMPARE.EXE
 C:/Program Files/Microsoft Office/root/vfs/ProgramFilesX86/Microsoft Office/Office16/DCF/filecompare.exe
+C:/Program Files/Microsoft Office/root/vfs/ProgramFilesX86/Microsoft Office/Office16/DCF/SPREADSHEETCOMPARE.EXE
+C:/Program Files/Microsoft Office/root/vfs/ProgramFilesX86/Microsoft Office/Office16/MSOHTMED.EXE
 C:/Program Files/Microsoft Office/root/vfs/Windows/Installer/{90160000-000F-0000-1000-0000000FF1CE}/accicons.exe
 C:/Program Files/Microsoft Office/root/vfs/Windows/Installer/{90160000-000F-0000-1000-0000000FF1CE}/dbcicons.exe
 C:/Program Files/Microsoft Office/root/vfs/Windows/Installer/{90160000-000F-0000-1000-0000000FF1CE}/grv_icons.exe

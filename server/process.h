@@ -30,8 +30,9 @@ void shut_down()
 }
 
 // nếu str kết thúc bằng ending
-bool endsWith(const string& str, const string& ending) 
+bool endsWith(string str, const string& ending) 
 {
+    for(auto &ch : str) ch = tolower(ch);
     if (str.length() >= ending.length()) 
         return str.compare(str.length() - ending.length(), ending.length(), ending) == 0;
     return false;
