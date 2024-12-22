@@ -1,14 +1,28 @@
-c:\users\duong\documents\sdl1\project1\project1\x64\debug\vc143.pdb
-c:\users\duong\documents\sdl1\project1\project1\x64\debug\vc143.idb
-c:\users\duong\documents\sdl1\project1\project1\x64\debug\main.obj
-c:\users\duong\documents\sdl1\project1\x64\debug\project1.exe
-c:\users\duong\documents\sdl1\project1\x64\debug\project1.pdb
-c:\users\duong\documents\sdl1\project1\project1\x64\debug\project1.ilk
-c:\users\duong\documents\sdl1\project1\project1\x64\debug\project1.tlog\cl.command.1.tlog
-c:\users\duong\documents\sdl1\project1\project1\x64\debug\project1.tlog\cl.items.tlog
-c:\users\duong\documents\sdl1\project1\project1\x64\debug\project1.tlog\cl.read.1.tlog
-c:\users\duong\documents\sdl1\project1\project1\x64\debug\project1.tlog\cl.write.1.tlog
-c:\users\duong\documents\sdl1\project1\project1\x64\debug\project1.tlog\link.command.1.tlog
-c:\users\duong\documents\sdl1\project1\project1\x64\debug\project1.tlog\link.read.1.tlog
-c:\users\duong\documents\sdl1\project1\project1\x64\debug\project1.tlog\link.secondary.1.tlog
-c:\users\duong\documents\sdl1\project1\project1\x64\debug\project1.tlog\link.write.1.tlog
+#include <vector>
+#include <fstream>
+#include <iostream>
+// #include <filesystem>
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <cstdlib>
+#include <cstdio>
+#include <string>
+#include <fstream>
+#include <thread>
+#include <chrono>
+#include <thread>
+#include <iomanip>
+#include <sstream>
+#include <windows.h>
+#include <map>
+#include <regex>
+// #include "process.h"
+#include "socket.h"
+using namespace std;
+
+
+int main()
+{
+    newMail(false, "list apps", "1", "socket.h"); // true =: client send request to server
+}
