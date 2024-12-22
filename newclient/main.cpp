@@ -9,7 +9,7 @@
 #include <algorithm>
 #define NOMINMAX  
 #include <windows.h>
-// #include <filesystem>
+#include <filesystem>
 #include <cstdlib> 
 #include<thread>
 #include <windows.h>
@@ -187,13 +187,13 @@ void drawLoginPage(SDL_Renderer* renderer, TTF_Font* font, TTF_Font* titleFont, 
     SDL_SetRenderDrawColor(renderer, 255, 69, 0, 255);
     SDL_Rect actionButton = { 70, 380, 280, 40 };
     SDL_RenderFillRect(renderer, &actionButton);
-    renderText(renderer, font, registering ? "  REGISTER" : "     LOGIN", 160, 385, textColor);
+    renderText(renderer, font, registering ? "  REGISTER" : "  LOGIN", 160, 385, textColor);
 
     if (!registering) {
         SDL_SetRenderDrawColor(renderer, 34, 139, 34, 255);
         SDL_Rect registerButton = { 70, 430, 280, 40 };
         SDL_RenderFillRect(renderer, &registerButton);
-        renderText(renderer, font, "    REGISTER", 145, 435, textColor);
+        renderText(renderer, font, "REGISTER", 145, 435, textColor);
     }
 
     renderText(renderer, font, message, 70, 480, textColor);
@@ -259,7 +259,7 @@ void drawSubmitButton(SDL_Renderer* renderer, TTF_Font* font) {
     SDL_Rect submitButton = { 560, 500, 180, 50 };
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255); // màu đỏ
     SDL_RenderFillRect(renderer, &submitButton);
-    renderText(renderer, font, "  SEND", 620, 518, { 255, 255, 255 });
+    renderText(renderer, font, "SUBMIT", 620, 520, { 255, 255, 255 });
 }
 void drawButton(SDL_Renderer* renderer, const SDL_Rect& rect, const std::string& text, TTF_Font* font, SDL_Color color, SDL_Color textColor) {
     SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
@@ -321,9 +321,9 @@ void drawRemotePage(SDL_Renderer* renderer, TTF_Font* font, Sidebar& sidebar,
 
     }
 
-    SDL_Rect upButton = { 730, 56, 60, 30 };
-    SDL_Rect downButton = { 660, 56, 70, 30 };
-    SDL_Rect clear = { 590, 56, 70, 30 };
+    SDL_Rect upButton = { 730, 58, 60, 30 };
+    SDL_Rect downButton = { 660, 58, 70, 30 };
+    SDL_Rect clear = { 590, 58, 70, 30 };
 
     drawButton(renderer, upButton, "Up", font, { 100, 100, 255, 255 }, { 255, 255, 255, 255 });
     drawButton(renderer, downButton, "Down", font, { 100, 100, 255, 255 }, { 255, 255, 255, 255 });
@@ -334,8 +334,8 @@ void drawRemotePage(SDL_Renderer* renderer, TTF_Font* font, Sidebar& sidebar,
     SDL_Rect typeRequestBox = { 130, 500, 180, 50 };
     SDL_SetRenderDrawColor(renderer, 64, 64, 64, 255);
     SDL_RenderFillRect(renderer, &typeRequestBox);
-    renderText(renderer, font, "Option", 185, 518, { 255, 255, 255 });
-    renderText(renderer, font, "Select option ", 164, 470, { 255, 255, 0 });
+    renderText(renderer, font, "Option", 180, 520, { 255, 255, 255 });
+    renderText(renderer, font, "Select option ", 160, 470, { 255, 255, 0 });
 
     // Process ID Box
     SDL_Rect pidBox = { 350, 500, 180, 50 };
@@ -377,9 +377,9 @@ void drawRemotePage(SDL_Renderer* renderer, TTF_Font* font, Sidebar& sidebar,
 
         // Option texts for the dropdown
         const std::vector<std::string> optionTexts = {
-            "Show All Apps", "Shutdown", "Webcam On", "Webcam Off", "Take Screenshot",
+            "Show All Apps", "Shutdown", "Webcam On", "Webcam off", "Take Screenshot",
             "Get File", "List File", "Run App", "Close App", "List Running Apps",
-            "Close App By PID", "Delete File", "List Servers", "Change Server"
+            "Close app by PID", "Delete File", "List Servers", "Change Server"
         };
 
         const int OPTION_WIDTH = 220;  // Width of each option box
@@ -480,7 +480,7 @@ void handleEvents(SDL_Renderer* renderer, SDL_Event& event, bool& option1Selecte
         // Handle submit button
         if (mouseX >= submitButton.x && mouseX <= submitButton.x + submitButton.w &&
             mouseY >= submitButton.y && mouseY <= submitButton.y + submitButton.h) {
-            enteringPID = false; 
+            enteringPID = true; 
             if (imageTexture) {
                 SDL_DestroyTexture(imageTexture);
                 imageTexture = nullptr;
@@ -494,7 +494,7 @@ void handleEvents(SDL_Renderer* renderer, SDL_Event& event, bool& option1Selecte
                     newMail(true, selectedOptionText, numtask, "");
                 processID = "";
                 logMessages.push_back("--------------------------------------------------------------------------------------------------------------");
-                logMessages.push_back("ID: " + numtask + " The mail was sent successfully.Waiting for a response from the server.");
+                logMessages.push_back("ID: " + numtask + " - Mail sent successfully. Waiting for a response sever.                          |");
                 logMessages.push_back("--------------------------------------------------------------------------------------------------------------");
 
 
@@ -735,7 +735,7 @@ int main(int argc, char* argv[]) {
     TTF_Font* font = TTF_OpenFont("C:\\Windows\\Fonts\\Arial.ttf", 17.5);
     TTF_Font* titleFont = TTF_OpenFont("C:\\Windows\\Fonts\\Arial.ttf", 33);
 
-    SDL_Surface* iconSurface = IMG_Load("assert\\image1.png");  // Đảm bảo rằng tệp icon.png tồn tại và có định dạng phù hợp
+    SDL_Surface* iconSurface = IMG_Load("image1.png");  // Đảm bảo rằng tệp icon.png tồn tại và có định dạng phù hợp
     if (!iconSurface) {
         cerr << "IMG_Load Error: " << IMG_GetError() << endl;
         SDL_DestroyWindow(window);
@@ -752,13 +752,13 @@ int main(int argc, char* argv[]) {
     // với backgroundTexture là của trang login
     // với backgroundTexture1 là của trang app 
     // bổ sung 
-    SDL_Surface* backgroundSurface = IMG_Load("assert\\background.png");
+    SDL_Surface* backgroundSurface = IMG_Load("background.png");
     SDL_Texture* backgroundTexture = nullptr;
-    SDL_Surface* backgroundSurface1 = IMG_Load("assert\\background1.png");
+    SDL_Surface* backgroundSurface1 = IMG_Load("background1.png");
     SDL_Texture* backgroundTexture1 = nullptr;
-    SDL_Surface* backgroundSurface2 = IMG_Load("assert\\background2.png");
+    SDL_Surface* backgroundSurface2 = IMG_Load("background2.png");
     SDL_Texture* backgroundTexture2 = nullptr;
-    SDL_Surface* backgroundSurface3 = IMG_Load("assert\\background3.png");
+    SDL_Surface* backgroundSurface3 = IMG_Load("background3.png");
     SDL_Texture* backgroundTexture3 = nullptr;
 
     if (backgroundSurface) {
@@ -788,7 +788,7 @@ int main(int argc, char* argv[]) {
     bool option1Selected = false;
     bool option2Enabled = false;
     string option2Title = "None";
-    bool enteringPID = false;         // Track Process ID input state
+    bool enteringPID = true;         // Track Process ID input state
     string processID = "";       // Store Process ID input
     bool draggingSlider = false;  // Biến để theo dõi trạng thái kéo thả thanh trượt
     vector<std::string> logMessages;
@@ -867,7 +867,7 @@ int main(int argc, char* argv[]) {
                             }
                             else {
 
-                                enteringPID = false;
+                                enteringPID = true;
 
                             }
                         }
@@ -1017,6 +1017,6 @@ int main(int argc, char* argv[]) {
     if (backgroundTexture) SDL_DestroyTexture(backgroundTexture);
     batThread.join();
     TTF_Quit();
-    SDL_Quit();
+    SDL_Quit;;
     return 0;
 }
