@@ -1,0 +1,20 @@
+Return-Path: <ai23socket@gmail.com>
+Received: from 0sendEmail.txt ([171.239.84.206])
+        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-72aad836d0fsm5476343b3a.73.2024.12.21.19.50.22
+        for <ai23socket@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 21 Dec 2024 19:50:23 -0800 (PST)
+Message-ID: <67678c7f.050a0220.1e6d47.efad@mx.google.com>
+Date: Sat, 21 Dec 2024 19:50:23 -0800 (PST)
+From: ai23socket@gmail.com
+To: ai23socket@gmail.com
+Subject: [request_105007]: 2024-12-22 10:50:07
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="boundary"
+
+--boundary
+Content-Type: text/plain; charset="UTF-8"
+
+[task] delete_file "ddd"
+
+--boundary--
