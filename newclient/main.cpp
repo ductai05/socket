@@ -478,19 +478,16 @@ void handleEvents(SDL_Renderer* renderer, SDL_Event& event, bool& option1Selecte
             loadImage = false;
             if (selectedOptionText != "None") {
                 string numtask = getCurrentTime();
+                logMessages.push_back("--------------------------------------------------------------------------------------------------------------");
+                logMessages.push_back("ID: " + numtask + " - Mail sent successfully. Waiting for server response.                        |");
+                logMessages.push_back("--------------------------------------------------------------------------------------------------------------");
+
+                drawRemotePage(renderer, font, sidebar, option1Selected, option2Enabled, option2Title, scrollBar, processID, logMessages, option, selectedOptionText, backgroundTexture, imageTexture, loadImage, visibleLines, logHeight, scrollPosition);
                 if (processID != "")
                     newMail(true, selectedOptionText + " \"" + processID + "\"", numtask, "");
                 else
                     newMail(true, selectedOptionText, numtask, "");
                 processID = "";
-                logMessages.push_back("--------------------------------------------------------------------------------------------------------------");
-                logMessages.push_back("ID: " + numtask + " - Mail sent successfully. Waiting for a response sever.                          |");
-                logMessages.push_back("--------------------------------------------------------------------------------------------------------------");
-
-
-                drawRemotePage(renderer, font, sidebar, option1Selected, option2Enabled, option2Title, scrollBar, processID, logMessages, option, selectedOptionText, backgroundTexture, imageTexture, loadImage, visibleLines, logHeight, scrollPosition);
-
-
 
                 std::string name = "attachment/" + numtask + ".txt";
                 //dem++;
