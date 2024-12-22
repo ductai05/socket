@@ -17,21 +17,32 @@
 #include <windows.h>
 #include <map>
 #include <regex>
-// #include "process.h"
 #include "mail.h"
 using namespace std;
 
 
 int main()
 {
-    string task;
-    task = "servers_IP";
-    // list_apps; list_services; get_screenshot; shutdown; webcam_on; webcam_off; running_apps;
-    // get_file “<đường dẫn>” 
-    // list_files “<đường dẫn>” 
+    // list_apps;
+    // get_screenshot;
+    // shutdown;
+    // webcam_on;
+    // webcam_off;
+    // running_apps;
+    // get_file “<đường dẫn>”
+    // list_files “<đường dẫn>”
     // find_path “<tên app>”
     // run_app “<đường dẫn>”
     // close_app “<tên.exe>”
-
-    newMail(true, task, "0", ""); // true =: client send request to server
+    // delete_file "<đường dẫn>"
+    // servers_IP
+    // change_server "<IP>"
+    // close_by_id "<PID>"
+    string command = "close_app";
+    string text = "zalo.exe";
+    srand(time(0));
+    string id = to_string(rand());
+    
+    string request = command + (text == "" ? text : " \"" + text + "\"");
+    newMail(true, request, id, ""); // true =: client send request to server
 }
