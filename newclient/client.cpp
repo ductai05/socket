@@ -536,41 +536,10 @@ void handleEvents(SDL_Renderer* renderer, SDL_Event& event, bool& option1Selecte
                             std::string line;
 
                             while (std::getline(fileKem, line)) {
-                                std::istringstream stream(line); // Use stringstream to tokenize the line
-                                std::string word;
-                                std::string chunk;
-                                size_t totalLength = 0;
-
-                                // Iterate through each word in the line
-                                while (stream >> word) {
-                                    // Check if adding the word exceeds the 70-character limit
-                                    if (totalLength + word.size() + (totalLength > 0 ? 1 : 0) > 70) {
-                                        if (!chunk.empty()) {
-                                            logMessages.push_back(chunk); // Save the current chunk
-                                        }
-                                        chunk = word;                  // Start a new chunk with the current word
-                                        totalLength = word.size();     // Reset total length
-                                    }
-                                    else {
-                                        // Add the word to the current chunk
-                                        if (!chunk.empty()) {
-                                            chunk += " "; // Add a space between words
-                                        }
-                                        chunk += word;
-                                        totalLength += word.size() + 1; // Update the total length (including space)
-                                    }
-                                }
-
-                                // Add any remaining chunk to logMessages
-                                if (!chunk.empty()) {
-                                    logMessages.push_back(chunk);
+                                    logMessages.push_back(line);
+                                    // Update scrollPosition to the size of logMessages
                                     scrollPosition = logMessages.size();
-                                }
                             }
-
-                            // Update scrollPosition to the size of logMessages
-
-
                             fileKem.close();
                         }
                     }
