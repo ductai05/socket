@@ -196,6 +196,7 @@ void list_running_apps()
     }
     fin.close();
     fout.close();
+    remove("uploads\\running_apps_raw.txt");
 }
 
 #endif

@@ -93,7 +93,7 @@ bool isPortOpen(const string &ip, int port) {
 #define CLOCK std::chrono::high_resolution_clock::time_point 
 
 void checkIP(map<string, bool> &serversIP, const string &ip, int port) {
-    if (isPortOpen(ip, port)) 
+    if (isPortOpen(ip, port))
     {
         lock_guard<mutex> lock(mtx);
         serversIP[ip] = true;
