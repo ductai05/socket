@@ -1,0 +1,11 @@
+D:/
+|--- $RECYCLE.BIN/
+|--- DeliveryOptimization/
+|--- desktop.ini
+|--- Download/
+|--- Feedback/
+|--- MapData/
+|--- My files/
+|--- Pictures/
+|--- sys/
+|--- System Volume Information

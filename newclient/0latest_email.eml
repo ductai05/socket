@@ -1,0 +1,26 @@
+Return-Path: <ai23socket@gmail.com>
+Received: from 0sendEmail.txt ([113.161.91.13])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-2f2ed52cf35sm7872629a91.11.2024.12.21.21.58.38
+        for <ai23socket@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Sat, 21 Dec 2024 21:58:39 -0800 (PST)
+Message-ID: <6767aa8f.170a0220.70945.cce3@mx.google.com>
+Date: Sat, 21 Dec 2024 21:58:39 -0800 (PST)
+From: ai23socket@gmail.com
+To: ai23socket@gmail.com
+Subject: [response_125829]: 2024-12-22 12:58:35
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="boundary"
+
+--boundary
+Content-Type: text/plain; charset="UTF-8"
+
+[rep] list_files "D:/"
+
+--boundary
+Content-Type: application/octet-stream; name="uploads/files_list.txt"
+Content-Disposition: attachment; filename="files_list.txt"
+Content-Transfer-Encoding: base64
+
+RDovDQp8LS0tICRSRUNZQ0xFLkJJTi8NCnwtLS0gRGVsaXZlcnlPcHRpbWl6YXRpb24vDQp8LS0tIGRlc2t0b3AuaW5pDQp8LS0tIERvd25sb2FkLw0KfC0tLSBGZWVkYmFjay8NCnwtLS0gTWFwRGF0YS8NCnwtLS0gTXkgZmlsZXMvDQp8LS0tIFBpY3R1cmVzLw0KfC0tLSBzeXMvDQp8LS0tIFN5c3RlbSBWb2x1bWUgSW5mb3JtYXRpb24NCg==
+--boundary--

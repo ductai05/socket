@@ -5,9 +5,8 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include "socket.h"
+#include "mail.h"
 #include <algorithm>
-#define NOMINMAX  
 #include <windows.h>
 #include <filesystem>
 #include <cstdlib> 
@@ -245,15 +244,6 @@ void drawHelpPage(SDL_Renderer* renderer, TTF_Font* font, Sidebar& sidebar, SDL_
 
     renderText(renderer, font, "These modes allow you to easily control, monitor, and manage the server ", 130, 490, textColor);
     renderText(renderer, font, "remotely in an efficient manner.", 130, 510, textColor);
-
-
-
-
-
-
-
-
-
 }
 void drawSubmitButton(SDL_Renderer* renderer, TTF_Font* font) {
     SDL_Rect submitButton = { 560, 500, 180, 50 };
@@ -664,15 +654,7 @@ void toggleSidebar(Sidebar& sidebar) {
     sidebar.expanded = !sidebar.expanded;
     sidebar.currentPosition = sidebar.expanded ? EXPANDED_SIDEBAR_WIDTH : INITIAL_SIDEBAR_WIDTH;
 }
-void runBatFile(const std::string& batFilePath) {
-    int result = system(batFilePath.c_str());
-    if (result == 0) {
-        std::cout << "Tệp .bat đã được chạy thành công!" << std::endl;
-    }
-    else {
-        std::cerr << "Lỗi khi chạy tệp .bat." << std::endl;
-    }
-}
+
 void copyToClipboard(const string& text) {
     // Mở clipboard
     if (OpenClipboard(nullptr)) {
@@ -708,11 +690,11 @@ string pasteFromClipboard() {
     }
     return result;
 }
-int main(int argc, char* argv[]) {
+
+int runClient()
+{
     std::string folderName = "attachment"; // Tên thư mục cần xóa
     std::string command = "rmdir /s /q \"" + folderName + "\""; // 
-    std::thread batThread(runBatFile, "runLISTEN");
-
 
     int result = system(command.c_str()); // Gọi lệnh
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
@@ -735,7 +717,7 @@ int main(int argc, char* argv[]) {
     TTF_Font* font = TTF_OpenFont("C:\\Windows\\Fonts\\Arial.ttf", 17.5);
     TTF_Font* titleFont = TTF_OpenFont("C:\\Windows\\Fonts\\Arial.ttf", 33);
 
-    SDL_Surface* iconSurface = IMG_Load("image1.png");  // Đảm bảo rằng tệp icon.png tồn tại và có định dạng phù hợp
+    SDL_Surface* iconSurface = IMG_Load("assets/image1.png");  // Đảm bảo rằng tệp icon.png tồn tại và có định dạng phù hợp
     if (!iconSurface) {
         cerr << "IMG_Load Error: " << IMG_GetError() << endl;
         SDL_DestroyWindow(window);
@@ -752,13 +734,13 @@ int main(int argc, char* argv[]) {
     // với backgroundTexture là của trang login
     // với backgroundTexture1 là của trang app 
     // bổ sung 
-    SDL_Surface* backgroundSurface = IMG_Load("background.png");
+    SDL_Surface* backgroundSurface = IMG_Load("assets/background.png");
     SDL_Texture* backgroundTexture = nullptr;
-    SDL_Surface* backgroundSurface1 = IMG_Load("background1.png");
+    SDL_Surface* backgroundSurface1 = IMG_Load("assets/background1.png");
     SDL_Texture* backgroundTexture1 = nullptr;
-    SDL_Surface* backgroundSurface2 = IMG_Load("background2.png");
+    SDL_Surface* backgroundSurface2 = IMG_Load("assets/background2.png");
     SDL_Texture* backgroundTexture2 = nullptr;
-    SDL_Surface* backgroundSurface3 = IMG_Load("background3.png");
+    SDL_Surface* backgroundSurface3 = IMG_Load("assets/background3.png");
     SDL_Texture* backgroundTexture3 = nullptr;
 
     if (backgroundSurface) {
@@ -1015,8 +997,22 @@ int main(int argc, char* argv[]) {
     SDL_DestroyWindow(window);
     if (imageTexture) SDL_DestroyTexture(imageTexture);
     if (backgroundTexture) SDL_DestroyTexture(backgroundTexture);
-    batThread.join();
     TTF_Quit();
-    SDL_Quit;;
+    SDL_Quit;
+}
+
+void runListen()
+{
+    autoGetMail(true);
+}
+
+int main(int argc, char* argv[]) 
+{
+    vector<thread> threads;
+    threads.emplace_back(runClient);
+    threads.emplace_back(runListen);
+    
+    for(auto &thread: threads)
+        thread.join();
     return 0;
 }

@@ -25,38 +25,38 @@ using namespace std;
 //----------------------------SEND MAIL-----------------------------------------
 
 
-std::string getCurrentDateTime() {
-    std::time_t t = std::time(nullptr);
-    std::tm now;
+string getCurrentDateTime() {
+    time_t t = time(nullptr);
+    tm now;
 
     // Sử dụng localtime_s để đảm bảo an toàn
     localtime_s(&now, &t);
 
-    std::ostringstream oss;
-    oss << std::put_time(&now, "%Y-%m-%d %H:%M:%S");
+    ostringstream oss;
+    oss << put_time(&now, "%Y-%m-%d %H:%M:%S");
     return oss.str();
 }
 
-std::string getCurrentTime() {
-    std::time_t t = std::time(nullptr);
-    std::tm now;
+string getCurrentTime() {
+    time_t t = time(nullptr);
+    tm now;
 
     // Sử dụng localtime_s để đảm bảo an toàn
     localtime_s(&now, &t);
 
-    std::ostringstream oss;
-    oss << std::put_time(&now, "%H%M%S");
+    ostringstream oss;
+    oss << put_time(&now, "%H%M%S");
     return oss.str();
 }
 
 // Hàm mã hóa Base64
-string base64_encode(const std::string& in) {
+string base64_encode(const string& in) {
     static const char* base64_chars =
         "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
         "abcdefghijklmnopqrstuvwxyz"
         "0123456789+/";
 
-    std::string out;
+    string out;
     int val = 0, valb = 0; // Initialize valb to 0
     for (unsigned char c : in) {
         val = (val << 8) + c;
@@ -76,9 +76,9 @@ string base64_encode(const std::string& in) {
 void sendMail(const string& from, const string& to, const string& subject, const string& body, const string& userPass, const string& fileName) {
     string encodedFileContent;
     if (!fileName.empty()){
-        ifstream file(fileName, std::ios::binary);
+        ifstream file(fileName, ios::binary);
         if (!file) {
-            std::cerr << "Khong the mo tep dinh kem!" << std::endl;
+            cerr << "Khong the mo tep dinh kem!" << endl;
             return;
         }
 
@@ -95,7 +95,7 @@ void sendMail(const string& from, const string& to, const string& subject, const
     // Tạo tệp email
     ofstream emailFile("0sendEmail.txt");
     if (!emailFile) {
-        std::cerr << "Khong the mo tep de ghi noi dung mail!" << std::endl;
+        cerr << "Khong the mo tep de ghi noi dung mail!" << endl;
         return;
     }
 
@@ -111,7 +111,7 @@ void sendMail(const string& from, const string& to, const string& subject, const
         emailFile << body << "\n\n";
     } else {
         // co tep dinh kem:
-        emailFile << body << "\n\n"; //" " << encodedFileContent << "\n\n";
+        emailFile << body << "\n\n"; 
     }
       
     // Thêm tệp đính kèm
@@ -121,7 +121,7 @@ void sendMail(const string& from, const string& to, const string& subject, const
         
         string name = "";
         size_t lastSlash = fileName.find_last_of("/");
-        if (lastSlash != std::string::npos)
+        if (lastSlash != string::npos)
             name = fileName.substr(lastSlash + 1);
 
         emailFile << "Content-Disposition: attachment; filename=\"" << name << "\"\n";
@@ -132,18 +132,42 @@ void sendMail(const string& from, const string& to, const string& subject, const
     emailFile << "--boundary--\n";
     emailFile.close();
 
-    // Tạo lệnh curl
-    std::string ex = "curl --url \"smtp://smtp.gmail.com:587\" --ssl-reqd "
+     string ex = "curl --url \"smtp://smtp.gmail.com:587\" --ssl-reqd "
                      "--mail-from \"" + from + "\" "
                      "--mail-rcpt \"" + to + "\" "
                      "--user \"" + userPass + "\" "
                      "--upload-file \"0sendEmail.txt\"";
 
-    // Gọi lệnh curl
-    int result = system(ex.c_str());
-    if (result == -1) {
-        std::cerr << "Khong the gui email!\n";
+     STARTUPINFOA si;
+    PROCESS_INFORMATION pi;
+
+    ZeroMemory(&si, sizeof(si));
+    si.cb = sizeof(si);
+    si.dwFlags = STARTF_USESHOWWINDOW;
+    si.wShowWindow = SW_HIDE; // Ẩn cửa sổ
+
+    ZeroMemory(&pi, sizeof(pi));
+
+    // Tạo bản sao không đổi của chuỗi lệnh
+     char *commandLine = new char[ex.size() + 1];
+    strcpy(commandLine, ex.c_str());
+    
+     if (!CreateProcessA(nullptr, commandLine, nullptr, nullptr, FALSE, CREATE_NO_WINDOW, nullptr, nullptr, &si, &pi)) {
+        cerr << "Khong the gui email!\n";
+         delete[] commandLine;
         return;
+    }
+
+    WaitForSingleObject(pi.hProcess, INFINITE);
+    DWORD exitCode;
+    GetExitCodeProcess(pi.hProcess, &exitCode);
+    
+    CloseHandle(pi.hProcess);
+    CloseHandle(pi.hThread);
+     delete[] commandLine;
+
+      if (exitCode != 0) {
+        cerr << "Khong the gui email!\n";
     }
 
     // Xóa tệp tạm thời
@@ -170,33 +194,68 @@ void newMail(bool client, string task, string numTask, string fileContent){
 
 //----------------------------AUTO GET MAIL--------------------------------------
 
-bool getID(string userPass, bool isClientLISTEN){
+#include <iostream>
+#include <string>
+#include <windows.h>
+#include <fstream>
+
+bool getID(string userPass, bool isClientLISTEN) {
     remove("0id.txt");
-    string ex = "curl -s -# -v imaps://imap.gmail.com/INBOX --ssl-reqd --connect-timeout 20 --max-time 15 -u \"" 
-    + userPass +"\" -X \"UID SEARCH ALL\" -o 0id.txt > nul 2>&1";
-    int result = system(ex.c_str());
-    if (result == -1) {
+    string ex = "curl -s -# -v imaps://imap.gmail.com/INBOX --ssl-reqd --connect-timeout 20 --max-time 15 -u \""
+                     + userPass + "\" -X \"UID SEARCH ALL\" -o 0id.txt";
+    
+    STARTUPINFOA si;
+    PROCESS_INFORMATION pi;
+
+    ZeroMemory(&si, sizeof(si));
+    si.cb = sizeof(si);
+    si.dwFlags = STARTF_USESHOWWINDOW;
+    si.wShowWindow = SW_HIDE; // Ẩn cửa sổ
+
+    ZeroMemory(&pi, sizeof(pi));
+
+    // Tạo một bản sao không đổi của chuỗi lệnh
+    char *commandLine = new char[ex.size() + 1];
+    strcpy(commandLine, ex.c_str());
+
+    // Gọi CreateProcess
+    if (!CreateProcessA(nullptr, commandLine, nullptr, nullptr, FALSE, CREATE_NO_WINDOW, nullptr, nullptr, &si, &pi)) {
+        if (isClientLISTEN) cout << "\nCLIENT getID: FAIL; ";
+        else cout << "\nSERVER getID: FAIL; ";
+        delete[] commandLine;
+        return false;
+    }
+
+    // Chờ tiến trình con kết thúc
+    WaitForSingleObject(pi.hProcess, INFINITE);
+    DWORD exitCode;
+    GetExitCodeProcess(pi.hProcess, &exitCode);
+
+    CloseHandle(pi.hProcess);
+    CloseHandle(pi.hThread);
+
+    delete[] commandLine;
+
+    if (exitCode != 0) {
         if (isClientLISTEN) cout << "\nCLIENT getID: FAIL; ";
         else cout << "\nSERVER getID: FAIL; ";
         return false;
     } else {
-        /*if (isClientLISTEN) cout << "\nCLIENT getID: DONE; ";
-        else cout << "\nSERVER getID: DONE; ";*/
         return true;
     }
 }
 
-bool compareTimeStrings(const std::string& timeStr1, const std::string& timeStr2) {
-    std::tm tm1 = {}, tm2 = {};
+bool compareTimeStrings(const string& timeStr1, const string& timeStr2) {
+    tm tm1 = {}, tm2 = {};
 
-    std::istringstream ss1(timeStr1);
-    std::istringstream ss2(timeStr2);
+    istringstream ss1(timeStr1);
+    istringstream ss2(timeStr2);
     
-    ss1 >> std::get_time(&tm1, "%Y-%m-%d %H:%M:%S");
-    ss2 >> std::get_time(&tm2, "%Y-%m-%d %H:%M:%S");
+    ss1 >> get_time(&tm1, "%Y-%m-%d %H:%M:%S");
+    ss2 >> get_time(&tm2, "%Y-%m-%d %H:%M:%S");
 
-    std::time_t time1 = std::mktime(&tm1);
-    std::time_t time2 = std::mktime(&tm2);
+    time_t time1 = mktime(&tm1);
+    time_t time2 = mktime(&tm2);
 
     return time1 > time2;
 }
@@ -208,7 +267,7 @@ bool readIDMail(int &orderNow){
 
     ifstream file("0id.txt"); // Mở file
     if (!file.is_open()) {
-        std::cerr << "Can't read id!\n";
+        cerr << "Can't read id!\n";
         return false;
     }
 
@@ -237,16 +296,42 @@ bool readIDMail(int &orderNow){
     return isHaveMail;
 }
 
-bool getNewestMail(int orderNow, string userPass){
+bool getNewestMail(int orderNow, string userPass) {
+    string ex = "curl -v imaps://imap.gmail.com/INBOX/;UID=" + to_string(orderNow)
+                    + " --ssl-reqd --connect-timeout 20  --max-time 15 -u \"" + userPass + "\" -o 0latest_email.eml";
 
-    string ex = "curl -v imaps://imap.gmail.com/INBOX/;UID=" + to_string(orderNow) 
-    + " --ssl-reqd --connect-timeout 20  --max-time 15 -u \"" + userPass + "\" -o 0latest_email.eml > nul 2>&1";
+    STARTUPINFOA si;
+    PROCESS_INFORMATION pi;
 
-    int result = system(ex.c_str());
-    if (result == -1) {
+    ZeroMemory(&si, sizeof(si));
+    si.cb = sizeof(si);
+    si.dwFlags = STARTF_USESHOWWINDOW;
+    si.wShowWindow = SW_HIDE; // Ẩn cửa sổ
+
+    ZeroMemory(&pi, sizeof(pi));
+
+    // Tạo bản sao không đổi của chuỗi lệnh
+     char *commandLine = new char[ex.size() + 1];
+    strcpy(commandLine, ex.c_str());
+    
+    if (!CreateProcessA(nullptr, commandLine, nullptr, nullptr, FALSE, CREATE_NO_WINDOW, nullptr, nullptr, &si, &pi)) {
         cout << "Can't get newest mail.\n";
+        delete[] commandLine;
         return false;
-    } 
+    }
+
+    WaitForSingleObject(pi.hProcess, INFINITE);
+    DWORD exitCode;
+    GetExitCodeProcess(pi.hProcess, &exitCode);
+    
+    CloseHandle(pi.hProcess);
+    CloseHandle(pi.hThread);
+     delete[] commandLine;
+    if (exitCode != 0) {
+          cout << "Can't get newest mail.\n";
+        return false;
+    }
+
     return true;
 }
 
@@ -281,7 +366,7 @@ map<char, int> base64_map = {
 
 
 // Ham giai ma base64
-vector<unsigned char> base64_decode(const std::string& in) {
+vector<unsigned char> base64_decode(const string& in) {
     vector<unsigned char> out;
     int val = 0, valb = 0; // Initialize valb to 0
     for (char c : in) {
@@ -298,13 +383,13 @@ vector<unsigned char> base64_decode(const std::string& in) {
     return out;
 }
 
-void saveFile(const std::string &filename, const std::vector<unsigned char> &data) {
+void saveFile(const string &filename, const vector<unsigned char> &data) {
     string directory = "attachment";
     string command = "mkdir " + directory;
     system(command.c_str());
     string fullPath = directory + "/" + filename;
 
-    ofstream out(fullPath, std::ios::binary);
+    ofstream out(fullPath, ios::binary);
     out.write(reinterpret_cast<const char*>(data.data()), data.size());
     out.close();
 }
@@ -373,7 +458,7 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
                 break; 
             }
         }
-        cout << line << "\n";
+        // cout << line << "\n";
     } else {
         while(getline(inFile, line)){
             if (line.find("[task]") != string::npos) {
@@ -383,9 +468,9 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
                 break; 
             }
         }
-        cout << line << "\n";
+        // cout << line << "\n";
     }
-    cout << "toi day1\n";
+    // cout << "toi day1\n";
 
     // getFileAttachmentName
     while(getline(inFile, line)){
@@ -414,10 +499,10 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
     // Luu file
     saveFile(fileAttachmentName, decoded_data);
     inFile.close();
-    cout << "toi day2\n";
+    // cout << "toi day2\n";
 
     string outName = "attachment/" + numTask + ".txt";
-    cout << outName << "   " << body << "\n";
+    // cout << outName << "   " << body << "\n";
     ofstream outFile(outName); 
     outFile << fileAttachmentName << "\n";
     outFile.close();
@@ -426,9 +511,9 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
 
 void autoGetMail(bool isClientLISTEN = false){
     string timeLISTEN = getCurrentDateTime();
-    if (isClientLISTEN){
-        cout << "CLIENT Start listen at: " << timeLISTEN << "\n"; // Start listen at: 2024-11-27 21:56:49
-    } else cout << "SERVER Start listen at: " << timeLISTEN << "\n"; // Start listen at: 2024-11-27 21:56:49
+    // if (isClientLISTEN){
+    //     cout << "CLIENT Start listen at: " << timeLISTEN << "\n"; // Start listen at: 2024-11-27 21:56:49
+    // } else cout << "SERVER Start listen at: " << timeLISTEN << "\n"; // Start listen at: 2024-11-27 21:56:49
 
     string userPass = "ai23socket@gmail.com:nhrr llaa ggzb yzbj";
     // userPass = "ductai.dt05@gmail.com:bveh frje cysx mjot";
@@ -442,7 +527,7 @@ void autoGetMail(bool isClientLISTEN = false){
     while(true){
         if (!getID(userPass, isClientLISTEN)) break;
         if (readIDMail(orderNow)){
-            cout << "Get a new mail. Waiting server...\n";
+            // cout << "Get a new mail. Waiting server...\n";
             Sleep(2000);
             if (getNewestMail(orderNow, userPass)){
                 readLatestMail(timeLISTEN, isClientLISTEN, allMAIL, allTASK);
@@ -450,7 +535,7 @@ void autoGetMail(bool isClientLISTEN = false){
         }
         
         // cout << "Sleep 2s... \n";
-        //Sleep(2000);
+        // Sleep(2000);
     }
     // remove("latest_email.eml");
 }

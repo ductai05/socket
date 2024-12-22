@@ -1,20 +1,20 @@
 Return-Path: <ai23socket@gmail.com>
-Received: from 0sendEmail.txt ([42.119.101.62])
-        by smtp.gmail.com with ESMTPSA id d2e1a72fcca58-72aad815835sm4533845b3a.27.2024.12.21.01.03.31
+Received: from 0sendEmail.txt ([113.161.91.13])
+        by smtp.gmail.com with ESMTPSA id 98e67ed59e1d1-2f4478aa37esm5934150a91.46.2024.12.21.21.58.31
         for <ai23socket@gmail.com>
         (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
-        Sat, 21 Dec 2024 01:03:31 -0800 (PST)
-Message-ID: <67668463.050a0220.23fe24.d586@mx.google.com>
-Date: Sat, 21 Dec 2024 01:03:31 -0800 (PST)
+        Sat, 21 Dec 2024 21:58:32 -0800 (PST)
+Message-ID: <6767aa88.170a0220.2a3a3e.fbcf@mx.google.com>
+Date: Sat, 21 Dec 2024 21:58:32 -0800 (PST)
 From: ai23socket@gmail.com
 To: ai23socket@gmail.com
-Subject: [request_4662]: 2024-12-21 16:03:26
+Subject: [request_125829]: 2024-12-22 12:58:29
 MIME-Version: 1.0
 Content-Type: multipart/mixed; boundary="boundary"
 
 --boundary
 Content-Type: text/plain; charset="UTF-8"
 
-[task] close_app "zalo.exe"
+[task] list_files "D:/"
 
 --boundary--
