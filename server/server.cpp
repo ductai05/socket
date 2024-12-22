@@ -324,7 +324,7 @@ void start_server()
 
     auto start = chrono::high_resolution_clock::now();
     cout << "Starting server...\n";
-    // list_apps();
+    list_apps();
     auto end = chrono::high_resolution_clock::now();
     chrono::duration<double> elapsed = end - start;
     cout << "Server started successfully after: " << elapsed.count() << " second(s)" << '\n';

@@ -509,7 +509,7 @@ void readLatestMail(const string &timeLISTEN, bool isClientLISTEN, vector<string
 
 }
 
-void autoGetMail(bool isClientLISTEN = false){
+void autoGetMail(bool &stopClient, bool isClientLISTEN = false){
     string timeLISTEN = getCurrentDateTime();
     // if (isClientLISTEN){
     //     cout << "CLIENT Start listen at: " << timeLISTEN << "\n"; // Start listen at: 2024-11-27 21:56:49
@@ -524,11 +524,11 @@ void autoGetMail(bool isClientLISTEN = false){
     vector<string> allMAIL;
     vector<string> allTASK;
 
-    while(true){
+    while(stopClient == false){
         if (!getID(userPass, isClientLISTEN)) break;
         if (readIDMail(orderNow)){
             // cout << "Get a new mail. Waiting server...\n";
-            Sleep(200);
+            Sleep(500);
             if (getNewestMail(orderNow, userPass)){
                 readLatestMail(timeLISTEN, isClientLISTEN, allMAIL, allTASK);
             }

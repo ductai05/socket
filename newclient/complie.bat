@@ -4,7 +4,7 @@ set COMPILER=g++
 
 echo Compiling...
 
-%COMPILER% -o client.exe main.cpp ^
+%COMPILER% -o client.exe client.cpp ^
     -I"DL2\include" ^
     -I"DL2_IMAGE\include" ^
     -I"DL2_TTF\include" ^
@@ -15,5 +15,4 @@ echo Compiling...
 
 echo Done!
 
-client.exe
 pause

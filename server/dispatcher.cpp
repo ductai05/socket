@@ -212,7 +212,7 @@ void handleRequest(map<string, bool> &serversIP, string &currentIP, const string
         else
         {
             if(currentIP == newIP)
-                outFile << newIP << "Is already your current server.";
+                outFile << newIP << " Is already your current server.";
             else
             {
                 currentIP = newIP;

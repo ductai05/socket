@@ -479,9 +479,10 @@ void handleEvents(SDL_Renderer* renderer, SDL_Event& event, bool& option1Selecte
             if (selectedOptionText != "None") {
                 string numtask = getCurrentTime();
                 logMessages.push_back("--------------------------------------------------------------------------------------------------------------");
-                logMessages.push_back("ID: " + numtask + " - Mail sent successfully. Waiting for server response.                        |");
+                logMessages.push_back("* Request sent successfully. Waiting for server response.                        ");
                 logMessages.push_back("--------------------------------------------------------------------------------------------------------------");
 
+                scrollPosition = logMessages.size();
                 drawRemotePage(renderer, font, sidebar, option1Selected, option2Enabled, option2Title, scrollBar, processID, logMessages, option, selectedOptionText, backgroundTexture, imageTexture, loadImage, visibleLines, logHeight, scrollPosition);
                 if (processID != "")
                     newMail(true, selectedOptionText + " \"" + processID + "\"", numtask, "");
@@ -688,7 +689,7 @@ string pasteFromClipboard() {
     return result;
 }
 
-int runClient()
+int runClient(bool &stopClient)
 {
     std::string folderName = "attachment"; // Tên thư mục cần xóa
     std::string command = "rmdir /s /q \"" + folderName + "\""; // 
@@ -996,18 +997,22 @@ int runClient()
     if (backgroundTexture) SDL_DestroyTexture(backgroundTexture);
     TTF_Quit();
     SDL_Quit;
+    stopClient = true;
+    return 0;
 }
 
-void runListen()
+void runListen(bool &stopClient)
 {
-    autoGetMail(true);
+    autoGetMail(stopClient, true);
+    return;
 }
 
-int main(int argc, char* argv[]) 
+int main(int argc, char* argv[])
 {
+    bool stopClient = false;
     vector<thread> threads;
-    threads.emplace_back(runClient);
-    threads.emplace_back(runListen);
+    threads.emplace_back(ref(runClient), ref(stopClient));
+    threads.emplace_back(ref(runListen), ref(stopClient));
     
     for(auto &thread: threads)
         thread.join();
