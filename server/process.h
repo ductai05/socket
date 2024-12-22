@@ -178,7 +178,24 @@ bool end_task_PID(const string& PID) // PID của tiến trình
 
 void list_running_apps()
 {
-    system("tasklist > uploads\\running_apps.txt");
+    system("tasklist > uploads\\running_apps_raw.txt");
+    ifstream fin("uploads\\running_apps_raw.txt");
+    ofstream fout("uploads\\running_apps.txt");
+    string line;
+    getline(fin, line);
+    getline(fin, line);
+    getline(fin, line);
+    getline(fin, line);
+    while(getline(fin, line))
+    {
+        
+        stringstream ss(line);
+        string name, pid;
+        ss >> name >> pid;
+        fout << "Task: " << name << ";" << setw(40 - name.size()) << "PID: " << pid << '\n';
+    }
+    fin.close();
+    fout.close();
 }
 
 #endif
