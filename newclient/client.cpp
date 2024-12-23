@@ -288,29 +288,23 @@ void drawRemotePage(SDL_Renderer* renderer, TTF_Font* font, Sidebar& sidebar,
     SDL_Rect logConsole = { 120, 70, 670 + xIncrease * 4, 390 };
 
     if (loadImage && imageTexture) {
-        SDL_RenderCopy(renderer, imageTexture, nullptr, &logConsole);
+        SDL_Rect imageSurf = { 120 + xIncrease * 2, 70, 670, 390 };
+        SDL_RenderCopy(renderer, imageTexture, nullptr, &imageSurf);
     }
     else {
-        if (loadImage && imageTexture) {
-            SDL_RenderCopy(renderer, imageTexture, nullptr, &logConsole);
+        // Set background color
+        SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+        SDL_RenderFillRect(renderer, &logConsole);
+
+        // Calculate total lines and adjust scroll position
+        int totalLines = static_cast<int>(logMessages.size());
+        scrollPosition = max1(0, min1(scrollPosition, totalLines - visibleLines));
+
+        // Render visible lines
+        for (int i = scrollPosition; i < min1(scrollPosition + visibleLines, totalLines); ++i) {
+            int textY = logConsole.y + (i - scrollPosition) * logHeight; // Adjust Y position for each line
+            renderText(renderer, font, logMessages[i], logConsole.x + 5, textY, { 0, 255, 0 });
         }
-        else {
-            // Set background color
-            SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-            SDL_RenderFillRect(renderer, &logConsole);
-
-            // Calculate total lines and adjust scroll position
-            int totalLines = static_cast<int>(logMessages.size());
-            scrollPosition = max1(0, min1(scrollPosition, totalLines - visibleLines));
-
-            // Render visible lines
-            for (int i = scrollPosition; i < min1(scrollPosition + visibleLines, totalLines); ++i) {
-                int textY = logConsole.y + (i - scrollPosition) * logHeight; // Adjust Y position for each line
-                renderText(renderer, font, logMessages[i], logConsole.x + 5, textY, { 0, 255, 0 });
-            }
-        }
-
-
     }
 
     SDL_Rect upButton = { 730 + xIncrease * 4, 56, 60, 30 };
@@ -549,11 +543,11 @@ void handleButtonClick(SDL_Renderer* renderer, SDL_Event& event, int& scrollPosi
 
         if (x >= upButton.x && x <= upButton.x + upButton.w && y >= upButton.y && y <= upButton.y + upButton.h) {
             cout << "up";
-            scrollPosition = max1(0, scrollPosition - 5); // Move up
+            scrollPosition = max1(0, scrollPosition - 15); // Move up
         }
         if (x >= downButton.x && x <= downButton.x + downButton.w && y >= downButton.y && y <= downButton.y + downButton.h) {
             cout << "down";
-            scrollPosition = min1(scrollPosition + 5, totalLines - visibleLines); // Move down
+            scrollPosition = min1(scrollPosition + 15, totalLines - visibleLines); // Move down
         }
         if (x >= clear.x && x <= clear.x + clear.w && y >= clear.y && y <= clear.y + clear.h) {
             cout << "clear";
