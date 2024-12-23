@@ -15,7 +15,7 @@
 #pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
 using namespace std;
 
-
+int selectedOptionID = -1;
 const std::vector<std::string> optionTextShow = {
     "Show all apps", "Shutdown", "Webcam on", "Webcam off", "Take screenshot",
     "Get file", "List file", "Run app", "Close app", "List running apps",
@@ -224,31 +224,33 @@ void drawHelpPage(SDL_Renderer* renderer, TTF_Font* font, Sidebar& sidebar, SDL_
     SDL_Color textColor = { 255, 255, 255 };
     int textOffset = sidebar.currentPosition;
 
-    renderText(renderer, font, "When connecting to the server via Remote, you will see a control interface", 130, 170, textColor);
-    renderText(renderer, font, "for managing and operating the server remotely.You can select the", 130, 190, textColor);
-    renderText(renderer, font, "appropriate options to interact with the server and enter the corresponding", 130, 210, textColor);
-    renderText(renderer, font, "paths in the adjacent field.", 130, 230, textColor);
-    renderText(renderer, font, "The available control modes include", 130, 250, textColor);
-    renderText(renderer, font, "Show all apps: List all apps of the server", 130, 270, textColor);
-    renderText(renderer, font, "Take screenshot: Take a screenshot of the server", 130, 290, textColor);
-    renderText(renderer, font, "Shutdown: Shutdown the server", 130, 310, textColor);
-    renderText(renderer, font, "Webcam on: Turn on the server's camera", 130, 330, textColor);
-    renderText(renderer, font, "Webcam off: Turn off the server's camera", 130, 350, textColor);
-    renderText(renderer, font, "Get file <path>: Get a file from the server", 130, 370, textColor);
-    renderText(renderer, font, "List file <folder path>: Lists all the files in the folder", 130, 390, textColor);
-    renderText(renderer, font, "Run app <app.exe>: Run an app", 130, 410, textColor);
-    renderText(renderer, font, "List running apps: List all running apps", 130, 430, textColor);
-    renderText(renderer, font, "Close app <app.exe> : Close an app", 130, 450, textColor);
-    renderText(renderer, font, "Close app by PID <app PID>: Close an app with the corresponding PID", 130, 470, textColor);
-    renderText(renderer, font, "Change Server<id>: Switches to another server for control", 130, 490, textColor);
-    renderText(renderer, font, "Delete<file>: Delete file of the server", 130, 510, textColor);
-    renderText(renderer, font, "List Servers: List all servers ", 130, 530, textColor);
+    int leftPadding = 130 + xIncrease;
+
+    renderText(renderer, font, "When connecting to the server via Remote, you will see a control interface", leftPadding, 170, textColor);
+    renderText(renderer, font, "for managing and operating the server remotely.You can select the", leftPadding, 190, textColor);
+    renderText(renderer, font, "appropriate options to interact with the server and enter the corresponding", leftPadding, 210, textColor);
+    renderText(renderer, font, "paths in the adjacent field.", leftPadding, 230, textColor);
+    renderText(renderer, font, "The available control modes include", leftPadding, 250, textColor);
+    renderText(renderer, font, "Show all apps: List all apps of the server", leftPadding, 270, textColor);
+    renderText(renderer, font, "Take screenshot: Take a screenshot of the server", leftPadding, 290, textColor);
+    renderText(renderer, font, "Shutdown: Shutdown the server", leftPadding, 310, textColor);
+    renderText(renderer, font, "Webcam on: Turn on the server's camera", leftPadding, 330, textColor);
+    renderText(renderer, font, "Webcam off: Turn off the server's camera", leftPadding, 350, textColor);
+    renderText(renderer, font, "Get file <path>: Get a file from the server", leftPadding, 370, textColor);
+    renderText(renderer, font, "List file <folder path>: Lists all the files in the folder", leftPadding, 390, textColor);
+    renderText(renderer, font, "Run app <app.exe>: Run an app", leftPadding, 410, textColor);
+    renderText(renderer, font, "List running apps: List all running apps", leftPadding, 430, textColor);
+    renderText(renderer, font, "Close app <app.exe> : Close an app", leftPadding, 450, textColor);
+    renderText(renderer, font, "Close app by PID <app PID>: Close an app with the corresponding PID", leftPadding, 470, textColor);
+    renderText(renderer, font, "Change Server<id>: Switches to another server for control", leftPadding, 490, textColor);
+    renderText(renderer, font, "Delete<file>: Delete file of the server", leftPadding, 510, textColor);
+    renderText(renderer, font, "List Servers: List all servers ", leftPadding, 530, textColor);
 }
 void drawSubmitButton(SDL_Renderer* renderer, TTF_Font* font) {
-    SDL_Rect submitButton = { 560, 500, 180, 50 };
+    SDL_Rect submitButton = { 560+ xIncrease * 3, 500, 180, 50 };
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255); // màu đỏ
     SDL_RenderFillRect(renderer, &submitButton);
-    renderText(renderer, font, " SEND", 620, 516, { 255, 255, 255 });
+    renderText(renderer, font, " SEND", 620+ xIncrease * 3, 516, { 255, 255, 255 });
 }
 void drawButton(SDL_Renderer* renderer, const SDL_Rect& rect, const std::string& text, TTF_Font* font, SDL_Color color, SDL_Color textColor) {
     SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
@@ -283,7 +285,7 @@ void drawRemotePage(SDL_Renderer* renderer, TTF_Font* font, Sidebar& sidebar,
     renderText(renderer, font, "Remote PC App", 120, 20, headerColor);
 
     // Log console
-    SDL_Rect logConsole = { 120, 70, 670, 390 };
+    SDL_Rect logConsole = { 120, 70, 670 + xIncrease * 4, 390 };
 
     if (loadImage && imageTexture) {
         SDL_RenderCopy(renderer, imageTexture, nullptr, &logConsole);
@@ -311,9 +313,9 @@ void drawRemotePage(SDL_Renderer* renderer, TTF_Font* font, Sidebar& sidebar,
 
     }
 
-    SDL_Rect upButton = { 730, 56, 60, 30 };
-    SDL_Rect downButton = { 660, 56, 70, 30 };
-    SDL_Rect clear = { 590, 56, 70, 30 };
+    SDL_Rect upButton = { 730 + xIncrease * 4, 56, 60, 30 };
+    SDL_Rect downButton = { 660 + xIncrease * 4, 56, 70, 30 };
+    SDL_Rect clear = { 590 + xIncrease * 4, 56, 70, 30 };
 
     drawButton(renderer, upButton, "Up", font, { 100, 100, 255, 255 }, { 255, 255, 255, 255 });
     drawButton(renderer, downButton, "Down", font, { 100, 100, 255, 255 }, { 255, 255, 255, 255 });
@@ -321,14 +323,16 @@ void drawRemotePage(SDL_Renderer* renderer, TTF_Font* font, Sidebar& sidebar,
 
 
     // Type of Request Dropdown
-    SDL_Rect typeRequestBox = { 130, 500, 180, 50 };
+    SDL_Rect typeRequestBox = { 130 + xIncrease, 500, 180, 50 };
     SDL_SetRenderDrawColor(renderer, 64, 64, 64, 255);
     SDL_RenderFillRect(renderer, &typeRequestBox);
-    renderText(renderer, font, "Option", 190, 516, { 255, 255, 255 });
-    renderText(renderer, font, "Select option ", 173, 470, { 255, 255, 0 });
+    renderText(renderer, font, "Option", 190+ xIncrease, 516, { 255, 255, 255 });
+    renderText(renderer, font, "Select option ", 173 + xIncrease, 470, { 255, 255, 0 });
 
     // Process ID Box
-    SDL_Rect pidBox = { 350, 500, 180, 50 };
+    // Selected option display
+    renderText(renderer, font, "Selected: " + (selectedOptionID == -1 ? "" : optionTextShow[selectedOptionID]), 350+ xIncrease * 2, 470, { 255, 255, 0 });
+    SDL_Rect pidBox = { 350 + xIncrease * 2, 500, 180, 50 };
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
     SDL_RenderDrawRect(renderer, &pidBox);
 
@@ -340,12 +344,12 @@ void drawRemotePage(SDL_Renderer* renderer, TTF_Font* font, Sidebar& sidebar,
         displayText = processID.substr(processID.length() - 20);  // Lấy 20 ký tự cuối
 
     // Render đoạn văn bản đã được cắt (hiển thị 10 ký tự cuối cùng)
-    renderText(renderer, font, displayText, 360, 516, textColor);
+    renderText(renderer, font, displayText, 360 + xIncrease * 2, 516, textColor);
 
     // Dropdown menu
     if (option1Selected) {
         // Dropdown box dimensions
-        SDL_Rect dropdownBox = { 218, 120, 465, 270 };  // Adjusted for the dropdown size
+        SDL_Rect dropdownBox = { 218 + xIncrease * 2, 120, 465, 270 };  // Adjusted for the dropdown size
         SDL_SetRenderDrawColor(renderer, 128, 128, 128, 255);  // Background color (gray)
         SDL_RenderFillRect(renderer, &dropdownBox);  // Fill the background of the dropdown
         SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);  // Border color (white)
@@ -368,14 +372,14 @@ void drawRemotePage(SDL_Renderer* renderer, TTF_Font* font, Sidebar& sidebar,
         // Loop through each option and render it
         for (size_t i = 0; i < optionTexts.size(); ++i) {
             // Determine which column (left or right) the option should go in
-            int posX = (i < 7) ? MARGIN_X_LEFT : MARGIN_X_RIGHT;
+            int posX = ((i < 7) ? MARGIN_X_LEFT : MARGIN_X_RIGHT) + xIncrease * 2;
 
             // Calculate the Y position for the options (arranged vertically)
             int posY = MARGIN_Y + static_cast<int>(i % 7) * SPACING_Y;
 
             // Draw the option box
             SDL_Rect optionBox = { posX, posY, OPTION_WIDTH, OPTION_HEIGHT };
-            SDL_SetRenderDrawColor(renderer, 128, 128, 128, 255);  // Option background color (gray)
+            SDL_SetRenderDrawColor(renderer, 128 , 128, 128, 255);  // Option background color (gray)
             SDL_RenderFillRect(renderer, &optionBox);  // Fill the background
             SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);  // Border color (white)
             SDL_RenderDrawRect(renderer, &optionBox);  // Draw the border
@@ -387,11 +391,6 @@ void drawRemotePage(SDL_Renderer* renderer, TTF_Font* font, Sidebar& sidebar,
                 { 255, 255, 255 });  // Text color (white)
         }
     }
-
-    // Selected option display
-    renderText(renderer, font, "Selected: " + selectedOptionText,
-        350, 470, { 255, 255, 0 });
-
     drawSubmitButton(renderer, font);
     SDL_RenderPresent(renderer);
 }
@@ -428,17 +427,18 @@ void handleEvents(SDL_Renderer* renderer, SDL_Event& event, bool& option1Selecte
             const int SPACING_Y = 38; // Vertical spacing between options
 
             for (size_t i = 0; i < optionTexts.size(); ++i) {
-                int posX = (i < 7) ? MARGIN_X_LEFT : MARGIN_X_RIGHT;
+                int posX = ((i < 7) ? MARGIN_X_LEFT : MARGIN_X_RIGHT)  + xIncrease * 2;
                 int posY = MARGIN_Y + static_cast<int>(i % 7) * SPACING_Y;
 
-                SDL_Rect optionBox = { posX, posY, OPTION_WIDTH, OPTION_HEIGHT };
+                SDL_Rect optionBox = { posX, posY, OPTION_WIDTH, OPTION_HEIGHT };   
 
                 if (mouseX >= optionBox.x && mouseX <= optionBox.x + optionBox.w &&
                     mouseY >= optionBox.y && mouseY <= optionBox.y + optionBox.h) {
                     // Set the selected option to 1 and reset the others
                     std::fill(option.begin(), option.end(), 0);
+                    selectedOptionID = i;
                     option[i] = 1;  // Mark the selected option
-                    selectedOptionText = optionTextShow[i];
+                    selectedOptionText = optionTexts[i];
                     option1Selected = false;  // Close dropdown after selection
                     loadImage = (optionTexts[i] == "get_screenshot");  // Trigger image loading if needed
                     processID = "";  // Reset process ID
@@ -459,9 +459,9 @@ void handleEvents(SDL_Renderer* renderer, SDL_Event& event, bool& option1Selecte
             loadImage = false;
             if (selectedOptionText != "None") {
                 string numtask = getCurrentTime();
-                logMessages.push_back("--------------------------------------------------------------------------------------------------------------");
+                logMessages.push_back("------------------------------------------------------------------------------------------------------------------------------------------------");
                 logMessages.push_back("* Request sent successfully. Waiting for server response.                        ");
-                logMessages.push_back("--------------------------------------------------------------------------------------------------------------");
+                logMessages.push_back("------------------------------------------------------------------------------------------------------------------------------------------------");
 
                 scrollPosition = logMessages.size();
                 drawRemotePage(renderer, font, sidebar, option1Selected, option2Enabled, option2Title, scrollBar, processID, logMessages, option, selectedOptionText, backgroundTexture, imageTexture, loadImage, visibleLines, logHeight, scrollPosition);
@@ -534,7 +534,7 @@ void handleEvents(SDL_Renderer* renderer, SDL_Event& event, bool& option1Selecte
         }
 
         // Handle type request box
-        SDL_Rect typeRequestBox = { 130, 500, 180, 50 };
+        SDL_Rect typeRequestBox = { 130 + + xIncrease, 500, 180, 50 };
         if (mouseX >= typeRequestBox.x && mouseX <= typeRequestBox.x + typeRequestBox.w &&
             mouseY >= typeRequestBox.y && mouseY <= typeRequestBox.y + typeRequestBox.h) {
             option1Selected = !option1Selected;
@@ -548,15 +548,17 @@ void handleButtonClick(SDL_Renderer* renderer, SDL_Event& event, int& scrollPosi
         int y = event.button.y;
 
         if (x >= upButton.x && x <= upButton.x + upButton.w && y >= upButton.y && y <= upButton.y + upButton.h) {
-            cout << " hi";
+            cout << "up";
             scrollPosition = max1(0, scrollPosition - 5); // Move up
         }
         if (x >= downButton.x && x <= downButton.x + downButton.w && y >= downButton.y && y <= downButton.y + downButton.h) {
+            cout << "down";
             scrollPosition = min1(scrollPosition + 5, totalLines - visibleLines); // Move down
         }
         if (x >= clear.x && x <= clear.x + clear.w && y >= clear.y && y <= clear.y + clear.h) {
+            cout << "clear";
             logMessages.clear();
-            SDL_Rect logConsole = { 120, 70, 650, 390 };
+            SDL_Rect logConsole = { 120, 70, 650+ xIncrease * 4, 390 };
             SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
             SDL_RenderFillRect(renderer, &logConsole);
         }
@@ -778,12 +780,11 @@ int runClient(bool &stopClient)
 
 
                     if (currentPage == REMOTE) {
-                        SDL_Rect typeRequestBox = { 130, 500, 180, 50 };
-                        SDL_Rect pidBox = { 360, 500, 180, 50 };
-                        SDL_Rect submitButton = { 560, 500, 180, 50 };
-                        SDL_Rect upButton = { 730, 58, 60, 30 };
-                        SDL_Rect downButton = { 660, 58, 70, 30 };
-                        SDL_Rect clear = { 590, 58, 70, 30 };
+                        SDL_Rect pidBox = { 360+ xIncrease * 2, 500, 180, 50 };
+                        SDL_Rect submitButton = { 560 + xIncrease * 3, 500, 180, 50 };
+                        SDL_Rect upButton = { 730 + xIncrease * 4, 58, 60, 30 };
+                        SDL_Rect downButton = { 660 + xIncrease * 4, 58, 70, 30 };
+                        SDL_Rect clear = { 590 + xIncrease * 4, 58, 70, 30 };
 
                         // Check if Type of Request dropdown is clicked
                         handleEvents(renderer, event, option1Selected, option, selectedOptionText, loadImage, submitButton, processID, logMessages, tenfile, scrollPosition, logHeight, visibleLines, imageTexture, check, font, sidebar,

@@ -11,7 +11,7 @@ echo Compiling...
     -L"DL2\lib" ^
     -L"DL2_IMAGE\lib" ^
     -L"DL2_TTF\lib" ^
-    -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -mwindows
+    -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf
 
 echo Done!
 client.exe
