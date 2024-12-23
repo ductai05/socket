@@ -231,7 +231,7 @@ void drawHelpPage(SDL_Renderer* renderer, TTF_Font* font, Sidebar& sidebar, SDL_
     renderText(renderer, font, "appropriate options to interact with the server and enter the corresponding", 130, 210, textColor);
     renderText(renderer, font, "paths in the adjacent field.", 130, 230, textColor);
     renderText(renderer, font, "The available control modes include", 130, 250, textColor);
-    renderText(renderer, font, "Show all apps: list all apps of the server", 130, 270, textColor);
+    renderText(renderer, font, "Show all apps: List all apps of the server", 130, 270, textColor);
     renderText(renderer, font, "Take screenshot: Take a screenshot of the server", 130, 290, textColor);
     renderText(renderer, font, "Shutdown: Shutdown the server", 130, 310, textColor);
     renderText(renderer, font, "Webcam on: Turn on the server's camera", 130, 330, textColor);
@@ -242,8 +242,9 @@ void drawHelpPage(SDL_Renderer* renderer, TTF_Font* font, Sidebar& sidebar, SDL_
     renderText(renderer, font, "List running apps: List all running apps", 130, 430, textColor);
     renderText(renderer, font, "Close app <app.exe> : Close an app", 130, 450, textColor);
     renderText(renderer, font, "Close app by PID <app PID>: Close an app with the corresponding PID", 130, 470, textColor);
-    renderText(renderer, font, "Change Server<id>: Switches to another server for control ", 130, 490, textColor);
-    renderText(renderer, font, "List Servers: list all servers ", 130, 510, textColor);
+    renderText(renderer, font, "Change Server<id>: Switches to another server for control", 130, 490, textColor);
+    renderText(renderer, font, "Delete<file>: Delete file of the server", 130, 510, textColor);
+    renderText(renderer, font, "List Servers: List all servers ", 130, 530, textColor);
 }
 void drawSubmitButton(SDL_Renderer* renderer, TTF_Font* font) {
     SDL_Rect submitButton = { 560, 500, 180, 50 };
