@@ -15,6 +15,13 @@
 #pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
 using namespace std;
 
+
+const std::vector<std::string> optionTextShow = {
+    "Show all apps", "Shutdown", "Webcam on", "Webcam off", "Take screenshot",
+    "Get file", "List file", "Run app", "Close app", "List running apps",
+    "Close app by PID", "Delete file", "List servers", "Change server"
+};
+
 int min1(int a, int b) {
     return (a < b) ? a : b;
 }
@@ -136,58 +143,56 @@ void drawLoginPage(SDL_Renderer* renderer, TTF_Font* font, TTF_Font* titleFont, 
         SDL_RenderCopy(renderer, backgroundTexture, nullptr, nullptr);
     }
 
-    SDL_SetRenderDrawColor(renderer, 0, 255, 215, 0);
+        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 0); // trắng
 
-    SDL_Color textColor = { 255, 215, 0 };
-    renderText(renderer, titleFont, registering ? "REGISTER" : "  LOGIN", 158, 180, textColor);
-    renderText(renderer, font, "USERNAME:", 70, 250, textColor);
+    SDL_Color textColor = { 255, 255, 255 };
+    if(registering)
+        renderText(renderer, titleFont,"REGISTER", 130, 180, textColor);
+    else    
+        renderText(renderer, titleFont, "LOGIN", 160, 180, textColor);
 
-    SDL_Rect usernameBox = { 60, 248, 280, 35 };
+    renderText(renderer, font, "USERNAME:", 75, 255, textColor);
+
+    SDL_Rect usernameBox = { 70, 248, 280, 35 };
     SDL_RenderDrawRect(renderer, &usernameBox);
 
     // Render username
-    renderText(renderer, font, username, 175, 250, textColor, usernameBox.w - 10);
+    renderText(renderer, font, username, 180, 255, textColor, usernameBox.w - 10);
 
     // Hiển thị con trỏ trong ô username nếu được chọn
     if (usernameSelected) {
-        Uint32 currentTime = SDL_GetTicks();
-        if ((currentTime / 500) % 2 == 0) {  // Đổi trạng thái con trỏ mỗi 500ms
-            int cursorX = 175 + username.length() * 10;
-            SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-            int cursorHeight = 20;
-            SDL_RenderDrawLine(renderer, cursorX, 249, cursorX, 249 + cursorHeight);
-        }
+        SDL_SetRenderDrawColor(renderer, 0, 255, 215, 0); // xanh
+        SDL_RenderDrawRect(renderer, &usernameBox);
     }
 
-    renderText(renderer, font, "PASSWORD:", 65, 300, textColor);
-    SDL_Rect passwordBox = { 60, 298, 280, 35 };
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 0); // trắng
+    renderText(renderer, font, "PASSWORD:", 75, 305, textColor);
+    SDL_Rect passwordBox = { 70, 298, 280, 35 };
     SDL_RenderDrawRect(renderer, &passwordBox);
 
     // Render hidden password
     string hiddenPassword(password.size(), '*');
-    renderText(renderer, font, hiddenPassword, 175, 300, textColor, passwordBox.w - 10);
+    renderText(renderer, font, hiddenPassword, 180, 308, textColor, passwordBox.w - 10);
 
     // Hiển thị con trỏ trong ô password nếu được chọn
     if (passwordSelected) {
-        Uint32 currentTime = SDL_GetTicks();
-        if ((currentTime / 500) % 2 == 0) {
-            int cursorX = 175 + password.length() * 10;
-            SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-            int cursorHeight = 20;
-            SDL_RenderDrawLine(renderer, cursorX, 299, cursorX, 299 + cursorHeight);
-        }
+        SDL_SetRenderDrawColor(renderer, 0, 255, 215, 0); // xanh
+        SDL_RenderDrawRect(renderer, &passwordBox);
     }
 
-    SDL_SetRenderDrawColor(renderer, 255, 69, 0, 255);
+    SDL_SetRenderDrawColor(renderer, 13, 110, 253, 255);
     SDL_Rect actionButton = { 70, 380, 280, 40 };
     SDL_RenderFillRect(renderer, &actionButton);
-    renderText(renderer, font, registering ? "    REGISTER" : "  LOGIN", 160, 385, textColor);
+    if(registering)
+        renderText(renderer, font, "REGISTER", 163, 390, textColor);
+    else    
+        renderText(renderer, font, "LOGIN", 179, 390, textColor);
 
     if (!registering) {
-        SDL_SetRenderDrawColor(renderer, 34, 139, 34, 255);
+        SDL_SetRenderDrawColor(renderer, 250, 60, 25, 255);
         SDL_Rect registerButton = { 70, 430, 280, 40 };
         SDL_RenderFillRect(renderer, &registerButton);
-        renderText(renderer, font, "  REGISTER", 145, 435, textColor);
+        renderText(renderer, font, "REGISTER", 165, 441, textColor);
     }
 
     renderText(renderer, font, message, 70, 480, textColor);
@@ -239,9 +244,6 @@ void drawHelpPage(SDL_Renderer* renderer, TTF_Font* font, Sidebar& sidebar, SDL_
     renderText(renderer, font, "Close app by PID <app PID>: Close an app with the corresponding PID", 130, 470, textColor);
     renderText(renderer, font, "Change Server<id>: Switches to another server for control ", 130, 490, textColor);
     renderText(renderer, font, "List Servers: list all servers ", 130, 510, textColor);
-
-    renderText(renderer, font, "These modes allow you to easily control, monitor, and manage the server ", 130, 530, textColor);
-    renderText(renderer, font, "remotely in an efficient manner.", 130, 550, textColor);
 }
 void drawSubmitButton(SDL_Renderer* renderer, TTF_Font* font) {
     SDL_Rect submitButton = { 560, 500, 180, 50 };
@@ -257,6 +259,7 @@ void drawButton(SDL_Renderer* renderer, const SDL_Rect& rect, const std::string&
     int textY = rect.y + (rect.h / 2) - 10;                  // Approximation for centering text vertically
     renderText(renderer, font, text, textX, textY, textColor);
 }
+
 void drawRemotePage(SDL_Renderer* renderer, TTF_Font* font, Sidebar& sidebar,
     bool option1Selected, bool option2Enabled,
     const std::string& option2Title, ScrollBar& scrollBar,
@@ -322,8 +325,8 @@ void drawRemotePage(SDL_Renderer* renderer, TTF_Font* font, Sidebar& sidebar,
     SDL_Rect typeRequestBox = { 130, 500, 180, 50 };
     SDL_SetRenderDrawColor(renderer, 64, 64, 64, 255);
     SDL_RenderFillRect(renderer, &typeRequestBox);
-    renderText(renderer, font, "Option", 185, 516, { 255, 255, 255 });
-    renderText(renderer, font, "Select option ", 165, 470, { 255, 255, 0 });
+    renderText(renderer, font, "Option", 190, 516, { 255, 255, 255 });
+    renderText(renderer, font, "Select option ", 173, 470, { 255, 255, 0 });
 
     // Process ID Box
     SDL_Rect pidBox = { 350, 500, 180, 50 };
@@ -332,27 +335,13 @@ void drawRemotePage(SDL_Renderer* renderer, TTF_Font* font, Sidebar& sidebar,
 
     SDL_Color textColor = { 255, 255, 255 };
 
-    // Xử lý đoạn văn bản dài hơn 20 hoặc 30 ký tự
-    std::string displayText = processID;  // Đoạn văn bản cần hiển thị
-
-    if (processID.length() > 30) {
-        displayText = processID.substr(processID.length() - 13);  // Lấy 10 ký tự cuối
-    }
-    else if (processID.length() > 20) {
-        displayText = processID.substr(processID.length() - 13);  // Lấy 10 ký tự cuối
-    }
+    // Xử lý đoạn văn bản 
+    string displayText = processID;  // Đoạn văn bản cần hiển thị
+    if(processID.length() > 20)
+        displayText = processID.substr(processID.length() - 20);  // Lấy 20 ký tự cuối
 
     // Render đoạn văn bản đã được cắt (hiển thị 10 ký tự cuối cùng)
     renderText(renderer, font, displayText, 360, 516, textColor);
-
-
-
-    // Hiển thị con trỏ nhập liệu (dấu nháy) để người dùng biết vị trí
-    //Uint32 currentTime = SDL_GetTicks();
-    //if ((currentTime / 500) % 2 == 0) {  // Đổi trạng thái con trỏ mỗi 500ms
-        //SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);  // Màu trắng cho con trỏ
-        //SDL_RenderDrawLine(renderer, 307 + processID.length() * 10, 523, 307 + processID.length() * 10, 523 + 30);  // Dựng con trỏ
-    //}
 
     // Dropdown menu
     if (option1Selected) {
@@ -400,14 +389,9 @@ void drawRemotePage(SDL_Renderer* renderer, TTF_Font* font, Sidebar& sidebar,
         }
     }
 
-
-
-
-
-
     // Selected option display
     renderText(renderer, font, "Selected: " + selectedOptionText,
-        366, 470, { 255, 255, 0 });
+        350, 470, { 255, 255, 0 });
 
     drawSubmitButton(renderer, font);
     SDL_RenderPresent(renderer);
@@ -455,7 +439,7 @@ void handleEvents(SDL_Renderer* renderer, SDL_Event& event, bool& option1Selecte
                     // Set the selected option to 1 and reset the others
                     std::fill(option.begin(), option.end(), 0);
                     option[i] = 1;  // Mark the selected option
-                    selectedOptionText = optionTexts[i];
+                    selectedOptionText = optionTextShow[i];
                     option1Selected = false;  // Close dropdown after selection
                     loadImage = (optionTexts[i] == "get_screenshot");  // Trigger image loading if needed
                     processID = "";  // Reset process ID
@@ -542,8 +526,12 @@ void handleEvents(SDL_Renderer* renderer, SDL_Event& event, bool& option1Selecte
                         }
                     }
                 }
+                else{
+                    logMessages.push_back("* Server not reponse.");
+                    scrollPosition = logMessages.size();
+                    drawRemotePage(renderer, font, sidebar, option1Selected, option2Enabled, option2Title, scrollBar, processID, logMessages, option, selectedOptionText, backgroundTexture, imageTexture, loadImage, visibleLines, logHeight, scrollPosition);
+                }
             }
-
         }
 
         // Handle type request box
