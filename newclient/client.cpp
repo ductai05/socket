@@ -118,8 +118,9 @@ void renderSidebar(SDL_Renderer* renderer, Sidebar& sidebar, TTF_Font* font) {
 
     // Vẽ ba dấu ngạch dậm nằm ngang và trồng lên nhau
     SDL_Rect line1 = { 5, 2, lineWidth + 20, lineHeight };  // Dấu ngạch dậm đầu tiên
-    SDL_Rect line2 = { 5, 2 + lineHeight + 1.5 + spacing, lineWidth + 20, lineHeight };  // Dấu ngạch dậm thứ hai
-    SDL_Rect line3 = { 5, 2 + 2 * (lineHeight + spacing) + 3, lineWidth + 20, lineHeight };  // Dấu ngạch dậm thứ ba
+    SDL_Rect line2 = { 5, 2 + lineHeight + 2 + spacing, lineWidth + 20, lineHeight };  // Dấu ngạch dậm thứ hai
+    SDL_Rect line3 = { 5, 2 + 2 * (lineHeight + spacing) + 4, lineWidth + 20, lineHeight };  // Dấu ngạch dậm thứ ba
+
 
     // Vẽ các dấu ngạch dậm
     SDL_RenderFillRect(renderer, &line1);
@@ -128,7 +129,7 @@ void renderSidebar(SDL_Renderer* renderer, Sidebar& sidebar, TTF_Font* font) {
 }
 
 // vẽ trang login 
-void drawLoginPage(SDL_Renderer* renderer, TTF_Font* font, TTF_Font* titleFont, const string& username, const string& password, bool registering, const string& message, SDL_Texture* backgroundTexture) {
+void drawLoginPage(SDL_Renderer* renderer, TTF_Font* font, TTF_Font* titleFont, const string& username, const string& password, bool registering, const string& message, SDL_Texture* backgroundTexture, bool usernameSelected, bool passwordSelected) {
     SDL_RenderClear(renderer);
 
     if (backgroundTexture) {
@@ -136,8 +137,6 @@ void drawLoginPage(SDL_Renderer* renderer, TTF_Font* font, TTF_Font* titleFont, 
     }
 
     SDL_SetRenderDrawColor(renderer, 0, 255, 215, 0);
-    //SDL_Rect borderRect = { 37, 180, 360, 330 };
-    //SDL_RenderDrawRect(renderer, &borderRect);
 
     SDL_Color textColor = { 255, 215, 0 };
     renderText(renderer, titleFont, registering ? "REGISTER" : "  LOGIN", 158, 180, textColor);
@@ -146,57 +145,54 @@ void drawLoginPage(SDL_Renderer* renderer, TTF_Font* font, TTF_Font* titleFont, 
     SDL_Rect usernameBox = { 60, 248, 280, 35 };
     SDL_RenderDrawRect(renderer, &usernameBox);
 
-    // Render văn bản người dùng đã nhập
+    // Render username
     renderText(renderer, font, username, 175, 250, textColor, usernameBox.w - 10);
 
-    // Lấy thời gian hiện tại để thay đổi trạng thái con trỏ mỗi 500ms
-    Uint32 currentTime = SDL_GetTicks();
-    if ((currentTime / 500) % 2 == 0) {  // Đổi trạng thái con trỏ mỗi 500ms
-        // Tính toán vị trí của con trỏ dựa trên độ dài chuỗi username
-        int cursorX = 175 + username.length() * 10;  // Giả định rằng mỗi ký tự chiếm 10px
-
-        // Tạo hiệu ứng nhấp nháy cho con trỏ nhỏ
-        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);  // Màu trắng cho con trỏ
-        int cursorHeight = 20; // Chiều cao con trỏ nhỏ hơn (ví dụ: 20px)
-        SDL_RenderDrawLine(renderer, cursorX, 249, cursorX, 249 + cursorHeight);  // Vẽ con trỏ tại vị trí
+    // Hiển thị con trỏ trong ô username nếu được chọn
+    if (usernameSelected) {
+        Uint32 currentTime = SDL_GetTicks();
+        if ((currentTime / 500) % 2 == 0) {  // Đổi trạng thái con trỏ mỗi 500ms
+            int cursorX = 175 + username.length() * 10;
+            SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+            int cursorHeight = 20;
+            SDL_RenderDrawLine(renderer, cursorX, 249, cursorX, 249 + cursorHeight);
+        }
     }
 
     renderText(renderer, font, "PASSWORD:", 65, 300, textColor);
     SDL_Rect passwordBox = { 60, 298, 280, 35 };
     SDL_RenderDrawRect(renderer, &passwordBox);
 
-    // Tạo mật khẩu ẩn bằng dấu sao (hiddenPassword)
+    // Render hidden password
     string hiddenPassword(password.size(), '*');
-
-    // Render mật khẩu ẩn vào ô nhập mật khẩu
     renderText(renderer, font, hiddenPassword, 175, 300, textColor, passwordBox.w - 10);
 
-    // Lấy thời gian hiện tại để thay đổi trạng thái con trỏ mỗi 500ms
-   // Đảm bảo lấy thời gian hiện tại
-    if ((currentTime / 500) % 2 == 0) {  // Đổi trạng thái con trỏ mỗi 500ms
-        // Tính toán vị trí của con trỏ dựa trên độ dài chuỗi password
-        int cursorX = 175 + password.length() * 10;  // Giả định rằng mỗi ký tự chiếm 10px
-
-        // Tạo hiệu ứng nhấp nháy cho con trỏ nhỏ
-        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);  // Màu trắng cho con trỏ
-        int cursorHeight = 20;  // Chiều cao con trỏ
-        SDL_RenderDrawLine(renderer, cursorX, 299, cursorX, 299 + cursorHeight);  // Vẽ con trỏ tại vị trí
+    // Hiển thị con trỏ trong ô password nếu được chọn
+    if (passwordSelected) {
+        Uint32 currentTime = SDL_GetTicks();
+        if ((currentTime / 500) % 2 == 0) {
+            int cursorX = 175 + password.length() * 10;
+            SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+            int cursorHeight = 20;
+            SDL_RenderDrawLine(renderer, cursorX, 299, cursorX, 299 + cursorHeight);
+        }
     }
 
     SDL_SetRenderDrawColor(renderer, 255, 69, 0, 255);
     SDL_Rect actionButton = { 70, 380, 280, 40 };
     SDL_RenderFillRect(renderer, &actionButton);
-    renderText(renderer, font, registering ? "  REGISTER" : "  LOGIN", 160, 385, textColor);
+    renderText(renderer, font, registering ? "    REGISTER" : "  LOGIN", 160, 385, textColor);
 
     if (!registering) {
         SDL_SetRenderDrawColor(renderer, 34, 139, 34, 255);
         SDL_Rect registerButton = { 70, 430, 280, 40 };
         SDL_RenderFillRect(renderer, &registerButton);
-        renderText(renderer, font, "REGISTER", 145, 435, textColor);
+        renderText(renderer, font, "  REGISTER", 145, 435, textColor);
     }
 
     renderText(renderer, font, message, 70, 480, textColor);
 }
+
 // vẽ trang  app 
 void drawAppPage(SDL_Renderer* renderer, TTF_Font* font, Sidebar& sidebar, SDL_Texture* backgroundTexture) {
     SDL_RenderClear(renderer);
@@ -230,26 +226,28 @@ void drawHelpPage(SDL_Renderer* renderer, TTF_Font* font, Sidebar& sidebar, SDL_
     renderText(renderer, font, "appropriate options to interact with the server and enter the corresponding", 130, 210, textColor);
     renderText(renderer, font, "paths in the adjacent field.", 130, 230, textColor);
     renderText(renderer, font, "The available control modes include", 130, 250, textColor);
-    renderText(renderer, font, "Show all apps: list_apps", 130, 270, textColor);
+    renderText(renderer, font, "Show all apps: list all apps of the server", 130, 270, textColor);
     renderText(renderer, font, "Take screenshot: Take a screenshot of the server", 130, 290, textColor);
-    renderText(renderer, font, "Shutdown: Stop and shutdown the server", 130, 310, textColor);
-    renderText(renderer, font, "webcam on: Turn on the server's camera", 130, 330, textColor);
+    renderText(renderer, font, "Shutdown: Shutdown the server", 130, 310, textColor);
+    renderText(renderer, font, "Webcam on: Turn on the server's camera", 130, 330, textColor);
     renderText(renderer, font, "Webcam off: Turn off the server's camera", 130, 350, textColor);
     renderText(renderer, font, "Get file <path>: Get a file from the server", 130, 370, textColor);
     renderText(renderer, font, "List file <folder path>: Lists all the files in the folder", 130, 390, textColor);
     renderText(renderer, font, "Run app <app.exe>: Run an app", 130, 410, textColor);
     renderText(renderer, font, "List running apps: List all running apps", 130, 430, textColor);
     renderText(renderer, font, "Close app <app.exe> : Close an app", 130, 450, textColor);
-    renderText(renderer, font, "close app by PID <app PID>: Close an app with the corresponding PID", 130, 470, textColor);
+    renderText(renderer, font, "Close app by PID <app PID>: Close an app with the corresponding PID", 130, 470, textColor);
+    renderText(renderer, font, "Change Server<id>: Switches to another server for control ", 130, 490, textColor);
+    renderText(renderer, font, "List Servers: list all servers ", 130, 510, textColor);
 
-    renderText(renderer, font, "These modes allow you to easily control, monitor, and manage the server ", 130, 490, textColor);
-    renderText(renderer, font, "remotely in an efficient manner.", 130, 510, textColor);
+    renderText(renderer, font, "These modes allow you to easily control, monitor, and manage the server ", 130, 530, textColor);
+    renderText(renderer, font, "remotely in an efficient manner.", 130, 550, textColor);
 }
 void drawSubmitButton(SDL_Renderer* renderer, TTF_Font* font) {
     SDL_Rect submitButton = { 560, 500, 180, 50 };
     SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255); // màu đỏ
     SDL_RenderFillRect(renderer, &submitButton);
-    renderText(renderer, font, "SUBMIT", 620, 520, { 255, 255, 255 });
+    renderText(renderer, font, " SEND", 620, 516, { 255, 255, 255 });
 }
 void drawButton(SDL_Renderer* renderer, const SDL_Rect& rect, const std::string& text, TTF_Font* font, SDL_Color color, SDL_Color textColor) {
     SDL_SetRenderDrawColor(renderer, color.r, color.g, color.b, color.a);
@@ -311,9 +309,9 @@ void drawRemotePage(SDL_Renderer* renderer, TTF_Font* font, Sidebar& sidebar,
 
     }
 
-    SDL_Rect upButton = { 730, 58, 60, 30 };
-    SDL_Rect downButton = { 660, 58, 70, 30 };
-    SDL_Rect clear = { 590, 58, 70, 30 };
+    SDL_Rect upButton = { 730, 56, 60, 30 };
+    SDL_Rect downButton = { 660, 56, 70, 30 };
+    SDL_Rect clear = { 590, 56, 70, 30 };
 
     drawButton(renderer, upButton, "Up", font, { 100, 100, 255, 255 }, { 255, 255, 255, 255 });
     drawButton(renderer, downButton, "Down", font, { 100, 100, 255, 255 }, { 255, 255, 255, 255 });
@@ -324,8 +322,8 @@ void drawRemotePage(SDL_Renderer* renderer, TTF_Font* font, Sidebar& sidebar,
     SDL_Rect typeRequestBox = { 130, 500, 180, 50 };
     SDL_SetRenderDrawColor(renderer, 64, 64, 64, 255);
     SDL_RenderFillRect(renderer, &typeRequestBox);
-    renderText(renderer, font, "Option", 180, 520, { 255, 255, 255 });
-    renderText(renderer, font, "Select option ", 160, 470, { 255, 255, 0 });
+    renderText(renderer, font, "Option", 185, 516, { 255, 255, 255 });
+    renderText(renderer, font, "Select option ", 165, 470, { 255, 255, 0 });
 
     // Process ID Box
     SDL_Rect pidBox = { 350, 500, 180, 50 };
@@ -341,11 +339,11 @@ void drawRemotePage(SDL_Renderer* renderer, TTF_Font* font, Sidebar& sidebar,
         displayText = processID.substr(processID.length() - 13);  // Lấy 10 ký tự cuối
     }
     else if (processID.length() > 20) {
-        displayText = processID.substr(processID.length() - 14);  // Lấy 10 ký tự cuối
+        displayText = processID.substr(processID.length() - 13);  // Lấy 10 ký tự cuối
     }
 
     // Render đoạn văn bản đã được cắt (hiển thị 10 ký tự cuối cùng)
-    renderText(renderer, font, displayText, 360, 520, textColor);
+    renderText(renderer, font, displayText, 360, 516, textColor);
 
 
 
@@ -409,7 +407,7 @@ void drawRemotePage(SDL_Renderer* renderer, TTF_Font* font, Sidebar& sidebar,
 
     // Selected option display
     renderText(renderer, font, "Selected: " + selectedOptionText,
-        375, 470, { 255, 255, 0 });
+        366, 470, { 255, 255, 0 });
 
     drawSubmitButton(renderer, font);
     SDL_RenderPresent(renderer);
@@ -754,6 +752,8 @@ int runClient(bool &stopClient)
     int visibleLines = 390 / logHeight;
     bool quit = false;
     bool check = false;
+    bool usernameSelected = false;
+    bool passwordSelected = false; 
 
 
     while (running) {
@@ -880,7 +880,8 @@ int runClient(bool &stopClient)
                 if (event.type == SDL_MOUSEBUTTONDOWN) {
                     int mouseX = event.button.x;
                     int mouseY = event.button.y;
-
+                    passwordSelected = false;
+                    usernameSelected = false;
                     // Handle the "Login/Register" button click
                     if (mouseX >= 70 && mouseX <= 340 && mouseY >= 380 && mouseY <= 420) {
                         if (registering) {
@@ -909,11 +910,16 @@ int runClient(bool &stopClient)
                     // Handle username input box click
                     else if (mouseX >= 170 && mouseX <= 380 && mouseY >= 250 && mouseY <= 280) {
                         enteringUsername = true;
+                        usernameSelected = true;
+                        passwordSelected = false;
                     }
                     // Handle password input box click
                     else if (mouseX >= 170 && mouseX <= 380 && mouseY >= 300 && mouseY <= 330) {
                         enteringUsername = false;
+                        usernameSelected = false; 
+                        passwordSelected = true; 
                     }
+                    
                 }
 
                 if (event.type == SDL_TEXTINPUT) {
@@ -939,7 +945,7 @@ int runClient(bool &stopClient)
 
             // Render appropriate page based on currentPage
             if (currentPage == LOGIN) {
-                drawLoginPage(renderer, font, titleFont, username, password, registering, message, backgroundTexture);
+                drawLoginPage(renderer, font, titleFont, username, password, registering, message, backgroundTexture, usernameSelected, passwordSelected);
             }
             else if (currentPage == APP) {
                 drawAppPage(renderer, font, sidebar, backgroundTexture2);
