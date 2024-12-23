@@ -3,6 +3,4 @@
   +  https://slproweb.com/products/Win32OpenSSL.html   -> tải Win64 OpenSSL v3.4.0 Light , file EXE -> cài đặt
 -  Thêm C:\Program Files\OpenSSL-Win64\bin vào PATH
 
-2. Cài đặt gmail để nhận gửi mail (bằng app password)
-- Bật bảo mật 2 lớp cho gmail (có xác minh sđt)
-- Tạo mật khẩu ứng dụng ở https://myaccount.google.com/apppasswords
+2. Tải release ở https://github.com/ductai05/socket/releases/tag/v1.0.0
