@@ -2,6 +2,8 @@
 
 Đồ án lập trình C++: thông qua cURL và Winsock, sử dụng IMAP, SMTP và Socket để điều khiển một cụm máy tính Server trong một mạng LAN từ một máy Client (Client và LAN Server Network giao tiếp thông qua Gmail). 
 
+#### Demo Youtube: https://www.youtube.com/watch?v=wPzeurOE8So
+
 #### Thành viên nhóm
 
 *   **Đinh Đức Anh Khoa** - 23122001
