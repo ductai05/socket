@@ -11,6 +11,6 @@
 #### **Môn học:** CSC10008 - Mạng máy tính
 #### **Lớp:** AI23, FIT@HCMUS
 
-25/12/2024, HCMC.
+26/12/2024, HCMC.
 
-![App Client](https://github.com/ductai05/socket/blob/main/add-on/report/img/request.png)
+![App Client](https://github.com/ductai05/socket/blob/main/add-on/report/img/thumb.png)
